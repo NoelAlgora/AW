@@ -1,0 +1,44 @@
+h1{
+	text-align: center;
+}
+
+body{
+	background-image: url("../img/fondo.jpg");
+	background-size: 100%;
+}
+
+span.negrita {
+	font-weight: bolder;
+	font-weight: 700;
+}
+
+table{
+	height: 250px;
+	width: 440px;
+	border: 2px solid black;
+}
+
+img{
+	height: 250px;
+	width: 440px;
+}
+
+#usuario{
+	height: 150px;
+	width: 150px;		
+}
+
+#tablausuarios{
+	width: 640px;
+	height: 150px;
+	border-spacing: 10px;
+}
+
+#logo{
+
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	height: 110px;
+	width: 250px;
+}
