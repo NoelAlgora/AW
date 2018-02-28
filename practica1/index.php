@@ -10,7 +10,7 @@
 
 <div class ="centrar">
 	<h3> ¿Quiénes somos? </h3>
-	<p> Somos una plataforma de alquiler de coches, con sede en Madrid desde hace más de 20 años. La profesionalidad y la confianza son los pilares que nos han llevado al éxito. 
+	<p> Somos una gran plataforma de alquiler de coches, con sede en Madrid desde hace más de 20 años. La profesionalidad y la confianza son los pilares que nos han llevado al éxito. 
 	<h3> ¿Cuales son nuestros servicios? </h3>
 	<p> Nuestros servicios abarcan desde el alquiler de un vehículo, tanto a particulares como a empresas, como poner en alquiler tu propio coche, del que nos encargamos de hasta el más mínimo detalle. </p> 
 	<h3> ¿Quieres contactar con nosotros? Pincha <a href="contacto.html"> Aqui </a></h3>
