@@ -1,42 +1,4 @@
-<!DOCTYPE html>
-<head>
-	<title>Inicio</title>
-	<meta charset="UTF-8">
-	<html lang="es">
-	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
-</head>
-<body>
-	<p><img id= "logo" src="img/logo.png" alt="logo" /></p>
-	<h1> Alquilamos tu carro, Ven a conocernos! </h1>
-
-	<ul>
-		<li><a href="index.html">Home</a></li>
-		<li><a href="detalle.html">Detalles</a></li>
-		<li><a href="bocetos.html">Bocetos</a></li>
-		<li><a href="miembros.html">Miembros</a></li>
-		<li><a href="planificacion.html">Planificación</a></li>
-		<li><a href="contacto.html">Contacto</a></li>
-	</ul>
-
-	<div>
-		<table>
-		  <tr>
-		    <th><img src="img/circuito.jpg" /></th>
-		    <th><img src="img/coche.jpg" /></th> 
-		    <th><img src="img/parking.jpg" /></th>
-		  </tr>
-		</table>
 	</div>
-
-	<div>
-		<h3> ¿Quiénes somos? </h3>
-		<p> Somos una plataforma de alquiler de coches, con sede en Madrid desde hace más de 20 años. La profesionalidad y la confianza son los pilares que nos han llevado al éxito. 
-		<h3> ¿Cuales son nuestros servicios? </h3>
-		<p> Nuestros servicios abarcan desde el alquiler de un vehículo, tanto a particulares como a empresas, como poner en alquiler tu propio coche, del que nos encargamos de hasta el más mínimo detalle. </p> 
-		<h3> ¿Quieres contactar con nosotros? Pincha <a href="contacto.html"> Aqui </a></h3>
-		<p> O si lo prefieres, ven a visitarnos, Calle Sierra de Atapuerca 34 </p>
-	</div>
-
 	<footer>
 		<h3> Nuestras bases legales </h3>
 		<p> Las bases legales de esta investigación se encuentran representadas, en primer lugar, en la Constitución Española, de donde se destaca el Artículo 141, cuando establece que: 
@@ -47,5 +9,3 @@
 		corresponde al Poder Nacional. La Hacienda, considerada como persona jurídica, se denomina Fisco Nacional. </p>
 	</footer>
 </body>
-
-

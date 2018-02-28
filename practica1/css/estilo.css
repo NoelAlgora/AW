@@ -1,37 +1,75 @@
-h1{
-	text-align: center;
-}
-
 body{
 	background-image: url("../img/fondo.jpg");
 	background-size: 100%;
+	margin: 0;
 }
 
-span.negrita {
-	font-weight: bolder;
+.side-nav {
+    height: 100% ; /* 100% Full-height */
+    width: 200px; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    border-right: solid 2px #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    //transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+.container {
+	margin-left: 200px;
+	padding: 15px;
+}
+
+footer {
+	border-top: solid 2px #111;
+	margin-left: 200px;
+	text-align: center;
+	padding: 15px;
+}
+.centrar {
+	text-align: center;
+}
+
+.negrita {
 	font-weight: 700;
 }
 
-table{
+.images {
 	height: 250px;
-	width: 440px;
-	border: 2px solid black;
 }
-
-img{
-	height: 250px;
-	width: 440px;
+.images img {
+	width: 33%;
+	height: 100%;
 }
 
 #usuario{
 	height: 150px;
 	width: 150px;		
 }
+.form-wrapper{
+	text-align: center;
+}
+form {
+	display: inline-block;
+	text-align: start;
+}
 
-#tablausuarios{
-	width: 640px;
-	height: 150px;
-	border-spacing: 10px;
+.miembro {
+	border: solid 2px #111;
+}
+
+.miembro-img{
+	max-width: 150px;
+	max-height: 150px;
+	display: inline-block;
+	padding: 15px;
+}
+
+.miembro-info{
+	display: inline-block;
+	padding-left: 15px;
 }
 
 #logo{
