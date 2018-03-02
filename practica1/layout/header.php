@@ -1,6 +1,9 @@
 <!DOCTYPE html>
+
 <head>
-	<title><?= $pageTitle ?></title>
+	<title>
+		<?= $pageTitle ?>
+	</title>
 	<meta charset="UTF-8">
 	<html lang="es">
 	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
@@ -20,5 +23,5 @@
 
 	<div class="container">
 
-	<p><img id= "logo" src="img/logo.png" alt="logo"/></p>
-	<h1 class="centrar"> Alquilamos tu carro, Ven a conocernos! </h1>
+		<p><img id="logo" src="img/logo.png"  alt="logo" /></p>
+		<h1 class="centrar"> Alquilamos tu carro, Ven a conocernos! </h1>

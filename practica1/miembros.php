@@ -6,9 +6,9 @@
 	<li><a href="#carlos">Carlos Martín Gutiérrez</a></li>
 	<li><a href="#marcos">Marcos Calero Fernández</a></li>
 	<li><a href="#noel">Noel Algora Igual</a></li>
-	<li><a href="#miguel">Miguel noseuqe </a></li>
+	<li><a href="#miguel">Miguel Pomboza </a></li>
 	<li><a href="#jorge">Jorge Boticario Figueras </a></li>
-	<li><a href="#fernando">Fernando noseque</a></li>
+	<li><a href="#fernando">Fernando Gonzalez Barrado</a></li>
 </ul>
 
 
