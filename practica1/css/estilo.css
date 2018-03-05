@@ -54,11 +54,6 @@ footer {
   height: 100%;
 }
 
-#usuario {
-  height: 150px;
-  width: 150px;
-}
-
 .form-wrapper {
   text-align: center;
 }
@@ -70,6 +65,13 @@ form {
 
 .miembro {
   border: solid 2px #111;
+}
+
+.bocetos-img{
+  max-width: 250px;
+  max-height: 250px;
+  display: inline-block;
+  padding: 15px;
 }
 
 .miembro-img {

@@ -2,9 +2,9 @@
 <?php include('layout/header.php'); ?>
 
 <div class="images">
-  <img src="img/circuito.jpg" /></th>
-  <img src="img/coche.jpg" /></th>
-  <img src="img/parking.jpg" /></th>
+  <img src="img/circuito.jpg" alt="Circuito de carreras"/>
+  <img src="img/coche.jpg" alt="Coche rojo"/>
+  <img src="img/parking.jpg" alt="Parking con vehículos"/>
 </div>
 
 <div class="centrar">

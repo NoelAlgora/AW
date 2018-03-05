@@ -1,10 +1,12 @@
+<!DOCTYPE html>
+
 <?php $pageTitle = "Miembros"; ?>
 <?php include('layout/header.php'); ?>
 <h2 class="centrar">Contacto</h2>
 <div class="form-wrapper">
 	<form name="contacto" action="mailto:nalgora@ucm.es" method="post" enctype="multipart/form-data" autocomplete="on">
 		<span class="negrita"> Nombre: </span>
-		<input type="text" name="nombre"/ >
+		<input type="text" name="nombre"/>
 		<br>
 		<br>
 		<span class="negrita"> Dirección de email de contacto: </span>
@@ -27,7 +29,7 @@
 		<input type="text" name="consulta" value="" />
 		<br>
 		<br>
-		<button type="submit" value"enviar">Enviar Form</button>
+		<button type="submit" value="enviar">Enviar Form</button>
 	</form>
 </div>
 <?php include('layout/footer.php'); ?>
