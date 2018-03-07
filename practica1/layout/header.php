@@ -1,11 +1,11 @@
 <!DOCTYPE html>
+<html lang="es">
 
 <head>
 	<title>
 		<?= $pageTitle ?>
 	</title>
 	<meta charset="UTF-8">
-	<html lang="es">
 	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
 </head>
 

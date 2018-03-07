@@ -12,9 +12,9 @@
 </ul>
 
 
-<div class="team">	
+<div class="team">
 	<div id="carlos" class="miembro">
-		<img class="miembro-img" src="img/yo.jpg"  alt="Imagen miembro">
+		<img class="miembro-img" src="img/yo.jpg" alt="Imagen miembro">
 		<div class="miembro-info">
 			<h3>Carlos Martin Gutierrez</h3>
 			<p>Email: <a href="mailto:camart12@ucm.es">camart12@ucm.es</a></p>

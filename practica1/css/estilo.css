@@ -49,11 +49,6 @@ footer {
   height: 250px;
 }
 
-.images img {
-  width: 33%;
-  height: 100%;
-}
-
 .form-wrapper {
   text-align: center;
 }
@@ -67,9 +62,9 @@ form {
   border: solid 2px #111;
 }
 
-.bocetos-img{
-  max-width: 250px;
-  max-height: 250px;
+.bocetos-img {
+  max-width: 300px;
+  max-height: 300px;
   display: inline-block;
   padding: 15px;
 }

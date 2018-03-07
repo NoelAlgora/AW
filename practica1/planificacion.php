@@ -1,7 +1,7 @@
 <?php $pageTitle = "Inicio"; ?>
 <?php include('layout/header.php'); ?>
 
-<div >
+<div>
 	<h3> Planificación del proyecto </h3>
 	<p> En este apartado se desarrollarán y explicarán las diferentes partes de nuestro proyecto, así como su planificación, su estructura y dinámica de trabajo. </p>
 	<p> Debido a que no conocemos exactamente los requisitos de la entrega, no podemos efectuar una planificación detalla del proceso de desarrollo. Intentaremos especificar la planificación lo mejor posible, aplicando a priori la dinámica de trabajo. </p>
@@ -18,7 +18,6 @@
 		<li>Se establecerá una línea base para cumplir satisfactoriamente con las fechas de entrega del proyecto.</li>
 		<li>Se utilizarán técnicas de metodologías ágiles, como reuniones periódicas para revisar el trabajo.</li>
 	</ul>
-
 	<p>Queda pendiente establecer objetivos concretos a medida que vamos conociendo los requisitos y las fechas de entrega.</p>
 </div>
 <?php include('layout/footer.php'); ?>
