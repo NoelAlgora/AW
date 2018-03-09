@@ -49,6 +49,11 @@ footer {
   height: 250px;
 }
 
+.images img {
+  max-width: 33%;
+  max-height: 100%;
+}
+
 .form-wrapper {
   text-align: center;
 }
