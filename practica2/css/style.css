@@ -4,7 +4,7 @@
 } */
 
 body {
-  background-color: black;
+  background-color: white;
 }
 
 header {
@@ -29,6 +29,31 @@ nav {
 
 a {
   text-decoration: none;
+}
+
+.login{
+  margin: auto;
+  margin-top: 20%;
+  width: 30%;
+  border: 3px solid #73AD21;
+  padding: 30px;
+  background-color: lightblue;
+}
+
+h3{
+  text-align: center;
+  height: 15px;
+}
+
+.login_username{
+  width: 100%;
+}
+.login_password{
+  width: 100%; 
+}
+.login_boton {
+  height: 30px;
+  width: 100%;
 }
 
 #sidebar-right {
