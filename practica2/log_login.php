@@ -26,7 +26,7 @@ else {
   else {
     //Notificar exito
 		$_SESSION["login"] = true;
-		$_SESSION["nombre"] = $user->getNombre();
+		$_SESSION["nombre"] = $user_name;
     echo "Bienvenido " . $_SESSION["nombre"] ;
   }
 }
