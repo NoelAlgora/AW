@@ -40,7 +40,7 @@ class DAOusuario implements IUsuario
   }
 
   //Inserta el Usuario en la base de datos y nos devuelve la id o 0 si error
-  public function insertUsuario(Usuario $usuario){
+  public function insertUsuario($user_name,$email,$user_password){
       $data_source = new DataSource();
       $result = $data_source->setData("INSERT INTO usuario (username, email, password) VALUES (:nombre,:email,:password)",
         array(':nombre'=>$usuario->getNombre(),':email'=>$usuario->getEmail(),':password'=>$usuario->getPassword())); 

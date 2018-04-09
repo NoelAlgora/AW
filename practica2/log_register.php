@@ -17,10 +17,7 @@ else {
 
   if (!$user) {
     //no existe un usuario con ese nombre, por lo que habra que crear el usuario y meterlo en la base de datos.
-    $user = new Usuario($user_name,$email,$user_password);
-
-
-    $id = $dao->insertUsuario($user);
+    $id = $dao->insertUsuario($user_name,$email,$user_password);
 
     if($id){
       echo "Registro correcto";
