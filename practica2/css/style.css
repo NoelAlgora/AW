@@ -1,0 +1,64 @@
+/* *{
+  margin:0;
+  padding: 0;
+} */
+
+body {
+  background-color: black;
+}
+
+header {
+  height: 10%;
+  background-color: lightblue;
+}
+
+header div.saludo {
+  width: 100%;
+  text-align: right;
+}
+
+footer {
+  background-color: lightgreen;
+  height: 5%;
+}
+
+nav {
+  background-color: lightgray;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+#sidebar-right {
+  background-color: pink;
+  flex-basis: 20%;
+}
+
+#contenido {
+  background-color: yellow;
+  flex-basis: 80%;
+}
+
+#container {
+  display: flex;
+  flex-flow: row;
+  align-items: stretch;
+  min-height: 80%;
+}
+
+/* cambia a lo especificado si los pixeles de la pantalla no superan 640px, por si queremos
+meter mas elementos en el container*/
+
+@media all and (max-width: 640px) {
+  #container {
+    flex-flow: column;
+  }
+  #contenido {
+    order: 1;
+  }
+  #sidebar-right {
+    order: 2;
+  }
+}

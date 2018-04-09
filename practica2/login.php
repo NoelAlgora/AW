@@ -1,87 +1,84 @@
-<!DOCTYPE>
+</!DOCTYPE html>
+<?php
+    if(!isset($_SESSION))
+    {
+        session_start();
+    }
+?>
 <html lang="es">
-<head>
-  <title> Login </title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="css/estilo.css" />
-</head>
+  <head>
+    <title> Bienvenido a CaralCarro</title>
+    <link rel="stylesheet" type="text/css" href="css/loggin.css"> 
+    <link rel="icon" type="image/png" href="favicon.jpg" />
+    <meta charset="utf-8">
+  </head>
+  <body>
+  <?php
+    // Abrimos conexión a la DB
+    $db = mysqli_connect('localhost','root','','melomanos');
+    ?>
+    <div id="content">
+      <div class="container">
 
-<div class="form">
-      
-      <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Sign Up</a></li>
-        <li class="tab"><a href="#login">Log In</a></li>
-      </ul>
-      
-      <div class="tab-content">
-        <div id="signup">   
-          <h1>Sign Up for Free</h1>
-          
-          <form action="/" method="post">
-          
-          <div class="top-row">
-            <div class="field-wrap">
-              <label>
-                First Name<span class="req">*</span>
-              </label>
-              <input type="text" required autocomplete="off" />
-            </div>
-        
-            <div class="field-wrap">
-              <label>
-                Last Name<span class="req">*</span>
-              </label>
-              <input type="text"required autocomplete="off"/>
-            </div>
+        <form id='login' method="post" style="height:380px;" action = "loggin.php" accept-charset='UTF-8'>
+        <input type='hidden' name='form-name' value='login'>
+          <div id="login_header" style="color: black">
+            El Rincón del Melómano
           </div>
+          <div id="login_content">
+            <span>
+                         <input class="tip" name="username" type="text" maxlength="25";  "onblur="onBlur(this);">
+                         <label for="username" style="color: black">Usuario</label>
+                         <div class="tooltip" data-text="Enter your username"></div>
+                      </span>
+            <span>
+                         <input class="tip" name="password" type="password" maxlength="16";  onblur="onBlur(this);">
+                         <label for="password" style="color: black">Password</label>
+                         <div class="tooltip" data-text="Enter your password"></div>
+                      </span>
+                    <p>
+              <a class="link_registro" href="registro.php">No tienes cuenta? REGÍSTRATE!</a>
+            </p>
+          <br>
+          <div id="login_footer">
+            <button id="login_btn" type="submit">Entrar</button>
+          </div>
+          </div>
+           <?php
+                echo "<br><br>";
+                if (isset($_POST['username']) && isset($_POST['password'])){
+                  $usuario = $_POST['username'];
+                  $password = $_POST['password'];
 
-          <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Set A Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          
-          <button type="submit" class="button button-block"/>Get Started</button>
-          
-          </form>
+                  if(!empty($usuario) && !empty($password)){
+                    //Pass user to next page
+                    $_SESSION['usuario'] = $usuario;
+                    $checkUser = mysqli_query($db, "SELECT nombreusuario FROM usuarios WHERE nombreusuario = '$usuario'");
+                    //Get password from user in database
+                      $passQuery = mysqli_query($db, "SELECT contrasena FROM usuarios WHERE nombreusuario = '$usuario'");
+                      $pwd = mysqli_fetch_assoc($passQuery);
+                      if($pwd['contrasena'] != $password  || mysqli_num_rows($checkUser) == 0)
+                        echo "<script type='text/javascript'>alert('Usuario o contraseña incorrectos!')</script>";
+                      else{
+                        //Check if user is administrator
+                        if($usuario == 'admin'){
+                          echo '<script>window.location = "admin.php" </script>';
+                        }
+                        else echo '<script>window.location = "main.php" </script>';
+                      }
+                 }
+                 else echo "<script type='text/javascript'>alert('Por favor, rellene todos los campos')</script>";
+                }
+              ?>  
+        </form>
+      </div>
+    </div>
+  <?php
+    mysqli_close($db);
+  ?>
+  </body>
 
-        </div>
-        
-        <div id="login">   
-          <h1>Welcome Back!</h1>
-          
-          <form action="/" method="post">
-          
-            <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          
-          <p class="forgot"><a href="#">Forgot Password?</a></p>
-          
-          <button class="button button-block"/>Log In</button>
-          
-          </form>
-
-        </div>
-        
-      </div><!-- tab-content -->
-      
-</div> <!-- /form -->
+  <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</html>
