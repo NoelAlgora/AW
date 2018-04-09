@@ -27,13 +27,30 @@ nav {
   height: auto;
 }
 
+.fondo {
+
+  background-image: url('../img/fondo.jpg');
+  /* Set rules to fill background */
+  min-height: 100%;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 a {
   text-decoration: none;
 }
 
 .login{
   margin: auto;
-  margin-top: 20%;
+  margin-top: 10%;
+  margin-bottom: 10%;
   width: 30%;
   border: 3px solid #73AD21;
   padding: 30px;
@@ -49,7 +66,7 @@ h3{
   width: 100%;
 }
 .login_password{
-  width: 100%; 
+  width: 100%;
 }
 .login_boton {
   height: 30px;
@@ -62,7 +79,6 @@ h3{
 }
 
 #contenido {
-  background-color: yellow;
   flex-basis: 80%;
 }
 

@@ -1,9 +1,5 @@
 <?php
-
 require('dat_source.php');
-
-
-//No se si por cada metodo una conexion , o una conexion por DAO -> factory + dao??
 
 //se podria utilizar bindparams PDO
 class DAOusuario
@@ -14,9 +10,7 @@ class DAOusuario
     $data_source = DataSource::getInstance();
     $result = $data_source->getData("SELECT username, password FROM usuario WHERE username = :nombre AND password = :password",
       array(':nombre'=>$name,':password'=>$pass));
-
     return $result;
-
   }
 
   /*Busca usuario por nombre, si existe devuelve $result con el id, sino es un false.
@@ -27,14 +21,13 @@ class DAOusuario
       array(':nombre'=>$nombre));
 
     return $result;
-    //Podriamos devolver un TO pero no es necesario para el uso que se da
   }
 
   //Inserta el Usuario en la base de datos y nos devuelve la id o 0 si error
   public function insertUsuario($user_name,$email,$user_password){
       $data_source = DataSource::getInstance();
       $result = $data_source->setData("INSERT INTO usuario (username, email, password) VALUES (:nombre,:email,:password)",
-        array(':nombre'=>$user_name,':email'=>$email,':password'=>$user_password)); 
+        array(':nombre'=>$user_name,':email'=>$email,':password'=>$user_password));
       //llega la id o 0 si error, no devolvemos TO
       return $result;
   }

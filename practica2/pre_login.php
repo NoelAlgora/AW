@@ -1,18 +1,28 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-  <title> Login  </title>
+  <title>
+    Login
+  </title>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-	<div class="login">
-		<div>
-			<h3> Login </h3>
-	    <form method="post">
-	    	<input class= "login_username" type="text" name="username" placeholder="Username" required="required" /><br>
-	        <input class= "login_password" type="password" name="password" placeholder="Password" required="required" /><br>
-	        <button class= "login_boton" type="submit">Log in</button>
-	    </form>
-	</div>	
+
+<body class="fondo">
+  <div id="container">
+    <div class="login">
+      <h3> Log in </h3>
+      <form method="post" action="log_login.php" method="post">
+        <input class="login_username" type="text" name="username" placeholder="Username" required="required" /><br>
+        <input class="login_password" type="password" name="password" placeholder="Password" required="required" /><br>
+        <button class="login_boton" type="submit">Log in</button>
+        <p>Aun no te has registrado? <a href="pre_register.php"> Registrarme!</a></p>
+      </form>
+    </div>
+  </div>
+</body>
+
 </html>

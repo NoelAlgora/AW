@@ -9,6 +9,7 @@ class DataSource {
 
   //PDO para cerrar la conexion con la base de datos??? , habria que "reconectar"??
 
+  //singleton
   private function __construct(){
     try {
       $this->conexion = new PDO($this->dsn,$this->user,$this->password);

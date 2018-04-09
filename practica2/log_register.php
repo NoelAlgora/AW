@@ -20,8 +20,7 @@ else {
     $id = $dao->insertUsuario($user_name,$email,$user_password);
 
     if($id){
-      echo "Registro correcto";
-			//notificar login correcto
+    	header('Location: index.php');
     }
     else {
       echo "Registro incorrecto";
