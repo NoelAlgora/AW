@@ -1,10 +1,10 @@
-<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
   <title>
-    Registro
+    Login
   </title>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -14,13 +14,12 @@
 <body class="fondo">
   <div id="container">
     <div class="login">
-      <h3>Registro</h3>
-      <form class="login_form" action="log_register.php" method="post">
+      <h3> Log in </h3>
+      <form method="post" action="<?= $helper->url('user','login');?>" method="post">
         <input class="login_username" type="text" name="username" placeholder="Username" required="required" /><br>
         <input class="login_password" type="password" name="password" placeholder="Password" required="required" /><br>
-        <input class="login_username" type="text" name="email" placeholder="Email" required="required" /><br>
-        <button class="login_boton" type="submit">Registrar</button>
-        <p>Ya tienes cuenta? <a href="pre_login.php"> Login!</a></p>
+        <button class="login_boton" type="submit">Log in</button>
+        <p>Aun no te has registrado? <a href="pre_register.php"> Registrarme!</a></p>
       </form>
     </div>
   </div>

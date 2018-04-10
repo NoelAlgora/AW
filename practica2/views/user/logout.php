@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,20 +13,18 @@
 <body>
   <?php $pageTitle = "Log Out"; ?>
   <?php
-    session_start();
-    session_unset();
-    session_destroy();
+
   ?>
-    <?php require('layout/header.php'); ?>
-    <?php require('layout/nav.php'); ?>
+    <?php require('views/layout/header.php'); ?>
+    <?php require('views/layout/nav.php'); ?>
     <div id="container">
       <div id="contenido">
         <h4>Log out</h4>
         <p>Hasta pronto!</p>
       </div>
 
-      <?php require('layout/sidebar-right.php'); ?>
+      <?php require('views/layout/sidebar-right.php'); ?>
     </div>
-    <?php require('layout/footer.php'); ?>
+    <?php require('views/layout/footer.php'); ?>
 </body>
 </html>

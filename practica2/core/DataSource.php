@@ -2,9 +2,7 @@
 class DataSource {
 
   private static $instancia;
-  private $user = "root";
-  private $password = "";
-  private $dsn = "mysql:host=localhost;dbname=caralcarro";
+  private $user, $pass, $database, $host;
   private $conexion;
 
   //PDO para cerrar la conexion con la base de datos??? , habria que "reconectar"??
@@ -12,7 +10,15 @@ class DataSource {
   //singleton
   private function __construct(){
     try {
-      $this->conexion = new PDO($this->dsn,$this->user,$this->password);
+      $db_cfg = require_once 'config/db.php';
+      $this->host=$db_cfg["host"];
+      $this->user=$db_cfg["user"];
+      $this->pass=$db_cfg["pass"];
+      $this->database=$db_cfg["database"];
+      //$this->conexion = new PDO($this->dsn,$this->user,$this->password);
+      $this->conexion = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->database,
+        $this->user, $this->pass);
+
     } catch (PDOException $e) {
       echo "Error conexion base de datos: " . $e->getMessage();
     }
@@ -23,6 +29,10 @@ class DataSource {
       self::$instancia =  new DataSource();
     }
     return self::$instancia;
+  }
+
+  public function conexion(){
+      return $this->conexion;
   }
 
   //falta comprobar errores de la sql y values
