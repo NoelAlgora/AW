@@ -29,6 +29,14 @@ class UserController extends ControladorBase
         );
     }
 
+    public function alquiler()
+    {
+        $this->view(
+            "vehiculos/all_alquiler.php",
+            []
+        );
+    }
+
     public function login()
     {
         $formErrors = [];
@@ -50,7 +58,7 @@ class UserController extends ControladorBase
                 $result = $dao->searchUsuarioByNamePass($user_name,$user_password);
                 var_dump($result);
                 if ($result == null){
-                    $formErrors[] = "Login incorrecto";
+                    echo "<script type='text/javascript'>alert('Usuario o contraseña incorrectos!')</script>";
                 }
                 else {
                     $_SESSION["login"] = true;
@@ -99,17 +107,12 @@ class UserController extends ControladorBase
                         $this->redirect("Site", "index");
                     }
                     else {
-                        $formErrors[] = 'Registro incorrecto';
+                        echo "<script type='text/javascript'>alert('Registro incorrecto!')</script>";
                     }
                 }
-                else {
-                    $formErrors[] = 'Existe un usuario ya';
-                }
+                else { echo "<script type='text/javascript'>alert('El Usuario ya Existe, Intentelo otra vez!')</script>";}
             }
-            else
-            {
-                $formErrors[] = 'Campos vacios';
-            }
+            else{ echo "<script type='text/javascript'>alert('Por favor, rellene todos los campos')</script>";}
         }
 
         $this->view(

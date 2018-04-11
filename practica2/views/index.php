@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+  <?php $pageTitle = "Inicio"; ?>
   <title>
     <?php echo $pageTitle; ?>
   </title>
@@ -11,7 +12,7 @@
 </head>
 
 <body>
-  <?php $pageTitle = "Inicio"; ?>
+  
   <?php require('views/layout/header.php'); ?>
   <?php include('views/layout/nav.php'); ?>
   <div id="container">

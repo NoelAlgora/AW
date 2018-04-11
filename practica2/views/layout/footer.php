@@ -1,4 +1,3 @@
-
 <footer>
-  <h4> Footer </h4>
+  <h3> Copy Right C</h3>
 </footer>
