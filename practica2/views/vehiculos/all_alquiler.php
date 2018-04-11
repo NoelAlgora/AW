@@ -16,23 +16,20 @@
       <div id="tabla_vehiculos">
          <?php 
             $db = mysqli_connect('localhost','root','','caralcarro');
-            $consulta = mysqli_query($db, "SELECT count(*) as total FROM vehiculo_alquiler");
-            $numeroCoches = mysqli_fetch_array($consulta);
             $listaCoches = mysqli_query($db, "SELECT id, marca, modelo, imagen FROM vehiculo_alquiler");
+            $i = 0;
 
             echo "<table id='tabla_vehiculos'>";
             echo "<caption><h3><b>Vehículos disponibles en alquiler</b><h3></caption>";
+            echo "<tr>";
             while ($coche = mysqli_fetch_assoc($listaCoches)){
-              for ($i=0; $i < $numeroCoches['total']/4; $i++) { 
-                echo "<tr>";
-                for ($j=0; $j < 4; $j++) { 
-                  /*echo '<td id=><a href = "vehiculo.php?id='.urldecode($coche['id']).'">*/
-                  $imagen_coche = $coche['imagen'];
-                  echo "<td>$imagen_coche</td>";
-                }
-                echo "</tr>";
+              echo '<td><img id="img_alquiler" src="data:image/jpeg;base64,'.base64_encode( $coche['imagen'] ).'"/>';
+              echo $coche['marca']." ".$coche['modelo'];
+              echo '</td>';
+              $i++;
+              if($i % 4 == 0){
+                echo '</tr><tr>';
               }
-                
             }
             echo "</table>"; 
          ?>

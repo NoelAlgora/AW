@@ -15,6 +15,8 @@ header {
 header div.saludo {
   width: 100%;
   text-align: right;
+  font-size: 18px;
+  color: black;
 }
 
 footer {
@@ -31,7 +33,7 @@ nav {
   width: auto;
 }
 
-.img_alquiler{
+#img_alquiler{
   max-height: 250px;
   max-width: 250px;
 }
@@ -72,10 +74,6 @@ a {
 #tabla_vehiculos {
   overflow-x:auto;"
 }
-
-
-
-
 
 #nav_table{
   width: 100%;
