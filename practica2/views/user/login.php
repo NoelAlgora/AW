@@ -19,7 +19,7 @@
         <input class="login_username" type="text" name="username" placeholder="Username" required="required" /><br>
         <input class="login_password" type="password" name="password" placeholder="Password" required="required" /><br>
         <button class="login_boton" type="submit">Log in</button>
-        <p>Aun no te has registrado? <a href="pre_register.php"> Registrarme!</a></p>
+        <p>Aun no te has registrado? <a href="<?= $helper->url('user','register');?>"> Registrarme!</a></p>
       </form>
     </div>
   </div>

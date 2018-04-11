@@ -5,6 +5,14 @@ class UserController extends ControladorBase
         parent::__construct();
     }
 
+	public function index()
+    {
+        $this->view(
+            "index.php",
+            []
+        );
+    }
+
     public function logout()
     {
         if(!$this->helper()->isUserLogged())
@@ -55,7 +63,7 @@ class UserController extends ControladorBase
             {
                 $formErrors[] = 'Problemas formulario';
             }
-            
+
         }
 
         $this->view(

@@ -20,7 +20,7 @@
         <input class="login_password" type="password" name="password" placeholder="Password" required="required" /><br>
         <input class="login_username" type="text" name="email" placeholder="Email" required="required" /><br>
         <button class="login_boton" type="submit">Registrar</button>
-        <p>Ya tienes cuenta? <a href="pre_login.php"> Login!</a></p>
+        <p>Ya tienes cuenta? <a href="<?= $helper->url('user','login');?>"> Login!</a></p>
       </form>
     </div>
   </div>
