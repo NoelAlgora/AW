@@ -89,17 +89,20 @@ class UserController extends ControladorBase
         if($this->helper()->isUserLogged())
             return $this->redirect("Site", "index");
 
-        if (isset($_POST["username"]) && isset($_POST["password"])  && isset($_POST["email"])) {
+        if (isset($_POST["username"]) && isset($_POST["password"])  && isset($_POST["email"]) && isset($_POST["apellido"])&&isset($_POST["telefono"])) {
             $user_name = htmlspecialchars(trim(strip_tags($_POST["username"])));
             $user_password = htmlspecialchars(trim(strip_tags($_POST["password"])));
             $email = htmlspecialchars(trim(strip_tags($_POST["email"])));
+            $telefono = htmlspecialchars(trim(strip_tags($_POST["telefono"])));
+            $apellido = htmlspecialchars(trim(strip_tags($_POST["apellido"])));
+            $descripcion =  htmlspecialchars(trim(strip_tags($_POST["descripcion"])));
 
-            if (!empty($user_name) && !empty($user_password) && !empty($email)) {
+            if (!empty($user_name) && !empty($user_password) && !empty($email) && !empty($telefono) && !empty($apellido) ) {
                 $dao = new DaoUsuario();
                 $user = $dao->searchUsuarioByName($user_name);
 
                 if (!$user) {
-                    $id = $dao->insertUsuario($user_name,$email,$user_password);
+                    $id = $dao->insertUsuario($user_name, $apellido, $email, $user_password, $telefono, $descripcion);
 
                     if($id){
                         $_SESSION["login"] = true;
@@ -112,7 +115,6 @@ class UserController extends ControladorBase
                 }
                 else { echo "<script type='text/javascript'>alert('El Usuario ya Existe, Intentelo otra vez!')</script>";}
             }
-            else{ echo "<script type='text/javascript'>alert('Por favor, rellene todos los campos')</script>";}
         }
 
         $this->view(

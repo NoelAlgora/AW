@@ -1,8 +1,8 @@
 <header>
   <table id="tabla_inicio">
     <tr>
-      <td><a href="index.php"><img src="img/logo.png" /></a></td>
-      <td><h2> Bienvenido a CaralCarro!</h2><br></td>
+      <td id="logo_header"><a href="index.php"><img src="img/logo.png" /></a></td>
+      <td><p class='font_header'>Bienvenido a CaralCarro!</p></td>
       <td>
         <div class="saludo">
           <?php

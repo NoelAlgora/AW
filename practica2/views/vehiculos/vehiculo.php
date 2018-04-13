@@ -15,9 +15,6 @@
     <div id="container">
       <div id="contenido">
       </div>
-      <?php require('views/layout/sidebar-right.php'); ?>
 	</div>
-
-    <?php require('views/layout/footer.php'); ?>
 </body>
 </html>

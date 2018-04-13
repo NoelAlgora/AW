@@ -22,9 +22,9 @@ class DaoUsuario extends EntidadBase
   }
 
   //Inserta el Usuario en la base de datos y nos devuelve la id o 0 si error
-  public function insertUsuario($user_name,$email,$user_password){
-      $result = $this->dataSource->setData("INSERT INTO usuario (username, email, password) VALUES (:nombre,:email,:password)",
-        array(':nombre'=>$user_name,':email'=>$email,':password'=>$user_password));
+  public function insertUsuario($user_name,$apellido,$email,$user_password,$telefono,$descripcion){
+      $result = $this->dataSource->setData("INSERT INTO usuario (username, apellido, email, password, telefono, descripcion) VALUES (:nombre,:apellido,:email,:password,:telefono,:descripcion)",
+        array(':nombre'=>$user_name,':apellido'=>$apellido,':email'=>$email,':password'=>$user_password,':telefono'=>$telefono,':descripcion'=>$descripcion));
       //llega la id o 0 si error, no devolvemos TO
       return $result;
   }
