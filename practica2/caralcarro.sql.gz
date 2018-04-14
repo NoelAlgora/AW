@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generaciÃ³n: 11-04-2018 a las 18:41:46
+-- Tiempo de generaciÃ³n: 14-04-2018 a las 16:33:55
 -- VersiÃ³n del servidor: 5.5.40
 -- VersiÃ³n de PHP: 5.5.19
 
@@ -19,6 +19,44 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `caralcarro`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `alquiler`
+--
+
+CREATE TABLE IF NOT EXISTS `alquiler` (
+`id` int(11) unsigned NOT NULL,
+  `user_id` int(11) unsigned NOT NULL,
+  `vehiculo_id` int(11) unsigned NOT NULL,
+  `fecha_inicio` datetime NOT NULL,
+  `fecha_fin` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario`
+--
+
+CREATE TABLE IF NOT EXISTS `usuario` (
+`id` int(11) unsigned NOT NULL,
+  `username` varchar(255) COLLATE utf8_bin NOT NULL,
+  `apellido` text COLLATE utf8_bin NOT NULL,
+  `email` varchar(255) COLLATE utf8_bin NOT NULL,
+  `password` varchar(255) COLLATE utf8_bin NOT NULL,
+  `telefono` int(9) NOT NULL,
+  `descripcion` varchar(200) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `username`, `apellido`, `email`, `password`, `telefono`, `descripcion`) VALUES
+(1, 'carlos', '', 'carlos@hotmail.com', 'carlos', 679696231, 'Soy Carlos y me encantan los lambos!'),
+(2, 'pepe', '', 'pepe', 'pepe', 645789542, 'Me encantan los ferraris');
 
 -- --------------------------------------------------------
 
@@ -2036,4 +2074,5 @@ esÃszW$M¶¾b*Ky“*­SÊÃí©Å8cÉN9‹hPV	˜{GIZÎ B5¡Ë7Ó…ğ@ªá4»äpq‰ï€†EîİSüÍR
 ¥+|Ü`U¦lø¦×]ÀZ	9Å+y±üyÛk¿ø»wVÆ¹¹6.}ÏPŠ’¦<É»æ¸ŸHòkô0¦œŸ[Às84Pùp¨wi·§Oõ¥ â‹`¢Òë³è-[aäîŒBKÕQÎ4}KcVšv€M»ç¼Ô;o¯Ù¹¡º5›öóûK)Jûnõí/‹In›.ßäÁ¿P+[¹0xÉwÈ|Áhêçw\Š[ÎÉVùœÜ9d|²ä1Sˆúés¾E¢ß9H¨‰È2"0pâÊsÑŸ.m{['+øäjĞÙôñ‹ièNIßªÏ0ô[ë¹Ôäƒ8T>úq"‰Çyze¦@PH×¿¨îBÓÂµj†¦åIéW¨%À»¼¥sD±q;Îj‹_¿kL¨•‚¢/”¸xåzğ${ë%v×ïÁìXcyxtÄSç×Í»e÷ØÊtETÿÉxoÁË*{s’}3÷"¾Od‚¿Z?¦³Ä<Œ3Rc.¦ $êœàqÏ´ğ8%æ:t]ğ~ı?Îßj“m~ô«ï–³„“ºÕO[ú#¶ƒ¾[c›“"ò^o³´§H8uèæ|…áÓÃ¦´+\“‹âJ 
 üğß]ÌéÛ6Ï¶óFğÊÑåm·^^'8±xP¾ï‰'@é£§¸x¨€CÒUCë¯Óï¦­ÅR&%§mT•Ÿ•,LŠæ_åJÌç~8ïe9O}å¸‰\]Ünë¥ş‘‹©IÓ¿´´q¤»>û‡B»PhÈ·Êy¸D›zÃP‘Ã–Æ–0æTªà…HÏÇG3Éÿ[b>íâÿ­x~+)¢ß¾ÿW¹¥)ÏGHMö˜¨Ó_û‹ïCüLÈ"àŸ_5Æ_V´éhş97¼rÕ=?N#Pı
 SîSå3V<ú›£Ä<Äì¼ÏR÷=y“¼$ÿây¸ñeJßd¬´S]‹übÿ2ÒA]Šd5‹$Z•ãXû˜÷ÔğVßİÛ)ˆåŸÂê©ùƒ£—3¼&=å@İ5
-‡¦®|p‹©ÙRüÁ+ôê\Ê#Ï¡â749÷ö—«)`V6+¼Ubæÿşír¢{ ‹      ¥‘MNÃ0…÷=Å°k«Vm$6¨BÂ8Sˆpmä¸‹®œ4	`%4½§âbØ`@@T•¼˜ŸÏãçy‹Á`:µ^_ªÜdEOi“Â.İ–iûºÌÒ<mã¹Ècy¥ç Ù&ëÊZ§åsgÊ¢IM˜B	Š\2ìE€„!ÜÊhEänpÃÄäÉhò^wyÒµE£mÍv>ÃÑâS	Y+¡#N%®«Aíå}üqX‰0ZZ™N¡©vÃ AWµæ¾*ràB_3öëİÉÏôüláåÉ¢İ5&ËL]ıïÂÒ”»¦öØ±ßpë¦‚ÇJ’È.æ/¢ÍöîQ	,…ÄèŠ{³¾,‰K”È)ÆÎ³.mLx7Ap‘¡B $¦$DWYß†ä»b-ONçÁ<€Ğk"	µ¢µÍ4e‘[Ô…`¡îëÀx¶8t_b¼f*îà[=cDE‚k»Ô…~@Oçış rôJ  
+‡¦®|p‹©ÙRüÁ+ôê\Ê#Ï¡â749÷ö—«)`V6+¼Ubæÿşír¢{ ‹      µSMOã0½ó+fo´*‚,{YE+­q¦»®]9îS’°km”@Òô_ì¯âáúZZ”ƒgŞËÌó¼±{rrvf>xü_¤:Éj¸«æñm×°(ó$NãºåXoii¹åAçÎ³*jI„)” ÈÃUˆçÁTú"oàoà4Òi4-óm5uV…&g—ã*¼Èşê¤ÉKKYîNyMİÄ•.·ÕuÀâv—í¼}ıÊqsè”™¡Ï©Ä	rõ,¨ŞáWÿÛ&ÂóÇFT«GóSÇ@SÔúO‘¥À…>cl£‹ûŞû=9¦óh=üqù)Çùøò¾¿È“Y=¯t’è²ØÿÇ:ŸW¥¥æf»cTğ@Iâ›1tH¨oïş…Nc!ÑÿÅíbvëÇ(‘S^²›‚ƒ‡%%¶™ÙÔ#¯™ÑÎ_7;¯½îµîÛV Ãİ3ÃãVaón[”Ï¯¹ÖùğË·çÂ ĞßDjD‡&
+)óÛeû)˜ö!0<wwı/1˜1ô°POÁQ¾à¡GÚmdùÿˆ4tP‹  
