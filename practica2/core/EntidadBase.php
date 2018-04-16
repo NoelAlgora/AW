@@ -25,11 +25,11 @@ class EntidadBase{
     }
 
     public function getById($id){
-        return $this->dataSource->getData("SELECT * FROM $this->table WHERE id = :id", array(':id'=>$id));
+        return $this->dataSource->getData("SELECT * FROM $this->table WHERE id = :id", array(':id'=> $id));
     }
 
     public function getBy($column,$value){
-		return $this->dataSource->getAllData("SELECT * FROM $this->table WHERE id = :id", array(':id'=>$id));
+		return $this->dataSource->getAllData("SELECT * FROM $this->table WHERE id = :id", array(':id'=> $id));
     }
 
     public function deleteById($id){
@@ -41,6 +41,8 @@ class EntidadBase{
         $query=$this->db->query("DELETE FROM $this->table WHERE $column='$value'");
         return $query;
     }
+
+
 
 
     /*
