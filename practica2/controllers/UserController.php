@@ -7,10 +7,7 @@ class UserController extends ControladorBase
 
 	public function index()
     {
-        $this->view(
-            "index.php",
-            []
-        );
+        return $this->redirect("Site", "index");
     }
 
     public function logout()
@@ -25,14 +22,6 @@ class UserController extends ControladorBase
 
         $this->view(
             "user/logout.php",
-            []
-        );
-    }
-
-    public function alquiler()
-    {
-        $this->view(
-            "vehiculos/all_alquiler.php",
             []
         );
     }
@@ -81,6 +70,15 @@ class UserController extends ControladorBase
             ]
         );
     }
+
+	public function contacto(){
+		$this->view(
+            "site/contacto.php",
+            [
+                'formErrors' => $formErrors,
+            ]
+        );
+	}
 
     public function register()
     {

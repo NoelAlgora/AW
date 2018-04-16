@@ -42,6 +42,13 @@ class DataSource {
     return $resultado;
   }
 
+  public function getAllData($sql,$values){
+	$consulta = $this->conexion->prepare($sql);
+	$consulta->execute($values);
+	$resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
+	return $resultado;
+  }
+
   public function setData($sql,$values){
     $consulta = $this->conexion->prepare($sql);
     $consulta->execute($values);

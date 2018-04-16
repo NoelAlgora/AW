@@ -17,7 +17,7 @@
     <div id="contenido">
 		<table>
 		<?php
-			foreach ($result as $value) {
+			foreach ($datos['result'] as $value) {
 				echo "<tr>";
 				echo "<td>".$value['marca']."</td>";
 				echo "<td>".$value['modelo']."</td>";

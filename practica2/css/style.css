@@ -11,6 +11,12 @@ header {
   height: 11%;
   background-color: black;
 }
+
+#sidebar-right {
+  background-color: pink;
+  flex-basis: 20%;
+}
+
 .font_header{
   font-family: Impact;
   font-size: 23px;
@@ -228,4 +234,3 @@ textarea.descripcion{
     display: table;
     clear: both;
 }
-
