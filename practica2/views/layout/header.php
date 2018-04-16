@@ -1,6 +1,6 @@
 <header>
-  <h4>Cabecera con logo y cositas</h4>
   <div class="saludo">
+    <a href="index.php"><img class="logo_header" img="logo.png" /></a>
     <?php
       if ( $helper->isUserLogged() ){
         echo "<p>Usuario: " . $helper->getLoggedUser()['username'] ."</p>";

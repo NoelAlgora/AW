@@ -55,12 +55,7 @@ h3{
   max-height: 250px;
   max-width: 250px;
   float: left;
-}
-
-#tabla_inicio{
-  text-align: center;
-  width: 100%;
-}
+}/* imagenes de los coches en alquiler*/
 
 .fondo {
   background-image: url('../img/fondo.jpg');
@@ -74,10 +69,29 @@ h3{
   height: auto;
   width: 65%;
   border: 3px solid #000000;
-}
+}/*es para all_alquiler (se quita si no se utiliza ese script*/
 
 .font_info{
   font-family: Impact;
+}
+
+.right_sidebar_contacto{
+  float: right;
+}
+
+.font_contacto{
+  font-family: Impact;
+  color: red;
+}
+
+.contacto_letra{
+  font-weight: bold;
+}
+
+.img_redes{
+  padding: 2px;
+  max-width: 20px;
+  max-height: 20px;
 }
 
 .login{
@@ -96,14 +110,18 @@ h3{
 }
 
 #container {
-  display: flex;
+  /*display: flex;
   flex-flow: row;
   align-items: stretch;
-  min-height: 80%;
+  min-height: 80%;*/
+  width: 80%;
+  margin: auto;
 }
 
-#logo_header{
+.logo_header{
   float: left;
+  max-width: 40px;
+  max-height: 30px;
 }
 
 /* cambia a lo especificado si los pixeles de la pantalla no superan 640px, por si queremos
@@ -136,6 +154,9 @@ ul {
 
 li {
     float: left;
+}
+li.pestaña_añadir{
+  float: right;
 }
 
 li a {
@@ -204,15 +225,35 @@ textarea.descripcion{
   margin: auto;
   margin-top: 11%;
   margin-bottom: 11%;
-  width: 30%;
+  width: 40%;
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 25px;
 }
 
+.container_contacto{
+  margin: auto;
+  margin-bottom: 11%;
+  width: 50%;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 25px;
+  display: inline-block;
+}
+
+.right_sidebar_contacto
+{
+  margin-left: 5%;
+  width: 45%;
+}
+
+.contacto_frase{
+  text-align: center;
+}
+
 .col-25 {
     float: left;
-    width: 20%;
+    width: 25%;
     margin-top: 6px;
 }
 

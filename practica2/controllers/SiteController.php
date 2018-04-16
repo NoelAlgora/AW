@@ -15,6 +15,11 @@ class SiteController extends ControladorBase
     {
         $this->view("site/contacto.php");
     }
+    public function anadir()
+    {
+        $this->view("site/anadir.php");
+    }
+
 
 	public function rentCarView(){
 

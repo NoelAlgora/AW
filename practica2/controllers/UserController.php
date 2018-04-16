@@ -112,14 +112,14 @@ class UserController extends ControladorBase
                             $this->redirect("Site", "index");
                         }
                         else {
-                            return echo "<script type='text/javascript'>alert('Registro incorrecto!')</script>";
+                            echo "<script type='text/javascript'>alert('Registro incorrecto!')</script>";
                         }
                     }
                     else { 
-                        return echo "<script type='text/javascript'>alert('El Usuario ya Existe, Intentelo otra vez!')</script>";
+                         echo "<script type='text/javascript'>alert('El Usuario ya Existe, Intentelo otra vez!')</script>";
                     }
                 }
-                else return echo "<script type='text/javascript'>alert('Conseña incorrecta')</script>";
+                else  echo "<script type='text/javascript'>alert('Conseña incorrecta')</script>";
 
             }
         }
