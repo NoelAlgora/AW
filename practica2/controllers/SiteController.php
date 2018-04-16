@@ -8,7 +8,7 @@ class SiteController extends ControladorBase
     public function index()
     {
         $this->view(
-            "index.php",
+            "site/index.php",
             []
         );
     }
