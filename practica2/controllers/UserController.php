@@ -30,8 +30,7 @@ class UserController extends ControladorBase
     public function alquiler()
     {
         $this->view(
-            "vehiculos/all_alquiler.php",
-            []
+            "vehiculos/all_alquiler.php"
         );
     }
 
