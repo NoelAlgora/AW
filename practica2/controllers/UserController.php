@@ -9,7 +9,7 @@ class UserController extends ControladorBase
     {
         $this->view(
             "index.php",
-            []
+            [] 
         );
     }
 
