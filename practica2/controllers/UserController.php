@@ -8,8 +8,7 @@ class UserController extends ControladorBase
 	public function index()
     {
         $this->view(
-            "index.php",
-            []
+            "index.php"
         );
     }
 
@@ -24,8 +23,7 @@ class UserController extends ControladorBase
         $_SESSION["login"] = false;
 
         $this->view(
-            "user/logout.php",
-            []
+            "user/logout.php"
         );
     }
 
@@ -89,31 +87,41 @@ class UserController extends ControladorBase
         if($this->helper()->isUserLogged())
             return $this->redirect("Site", "index");
 
-        if (isset($_POST["username"]) && isset($_POST["password"])  && isset($_POST["email"]) && isset($_POST["apellido"])&&isset($_POST["telefono"])) {
+        if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["repassword"]) && 
+            isset($_POST["email"]) && isset($_POST["apellido"]) && isset($_POST["telefono"])) 
+        {
             $user_name = htmlspecialchars(trim(strip_tags($_POST["username"])));
-            $user_password = htmlspecialchars(trim(strip_tags($_POST["password"])));
+            $password = htmlspecialchars(trim(strip_tags($_POST["password"])));
+            $repassword = htmlspecialchars(trim(strip_tags($_POST["repassword"])));
             $email = htmlspecialchars(trim(strip_tags($_POST["email"])));
             $telefono = htmlspecialchars(trim(strip_tags($_POST["telefono"])));
             $apellido = htmlspecialchars(trim(strip_tags($_POST["apellido"])));
             $descripcion =  htmlspecialchars(trim(strip_tags($_POST["descripcion"])));
 
-            if (!empty($user_name) && !empty($user_password) && !empty($email) && !empty($telefono) && !empty($apellido) ) {
-                $dao = new DaoUsuario();
-                $user = $dao->searchUsuarioByName($user_name);
+            if (!empty($user_name) && !empty($password) && !empty($email) && !empty($telefono) && !empty($apellido) ) {
+                if($repassword == $password)
+                {
+                    $dao = new DaoUsuario();
+                    $user = $dao->searchUsuarioByName($user_name);
 
-                if (!$user) {
-                    $id = $dao->insertUsuario($user_name, $apellido, $email, $user_password, $telefono, $descripcion);
+                    if (!$user) {
+                        $id = $dao->insertUsuario($user_name, $apellido, $email, $password, $telefono, $descripcion);
 
-                    if($id){
-                        $_SESSION["login"] = true;
-                        $_SESSION["user_id"] = $id;
-                        $this->redirect("Site", "index");
+                        if($id){
+                            $_SESSION["login"] = true;
+                            $_SESSION["user_id"] = $id;
+                            $this->redirect("Site", "index");
+                        }
+                        else {
+                            return echo "<script type='text/javascript'>alert('Registro incorrecto!')</script>";
+                        }
                     }
-                    else {
-                        echo "<script type='text/javascript'>alert('Registro incorrecto!')</script>";
+                    else { 
+                        return echo "<script type='text/javascript'>alert('El Usuario ya Existe, Intentelo otra vez!')</script>";
                     }
                 }
-                else { echo "<script type='text/javascript'>alert('El Usuario ya Existe, Intentelo otra vez!')</script>";}
+                else return echo "<script type='text/javascript'>alert('Conseña incorrecta')</script>";
+
             }
         }
 
