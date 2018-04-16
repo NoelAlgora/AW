@@ -2,9 +2,8 @@
 <html lang="es">
 
 <head>
-  <?php $pageTitle = "Inicio"; ?>
   <title>
-    <?php echo $pageTitle; ?>
+    Inicio
   </title>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -12,7 +11,6 @@
 </head>
 
 <body>
-  
   <?php require('views/layout/header.php'); ?>
   <?php include('views/layout/nav.php'); ?>
   <div id="container">

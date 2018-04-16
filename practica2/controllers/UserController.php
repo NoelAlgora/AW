@@ -29,14 +29,6 @@ class UserController extends ControladorBase
         );
     }
 
-    public function alquiler()
-    {
-        $this->view(
-            "vehiculos/all_alquiler.php",
-            []
-        );
-    }
-
     public function login()
     {
         $formErrors = [];
@@ -46,6 +38,8 @@ class UserController extends ControladorBase
 
         $_SESSION["login"] = false;
 
+		//accede dos veces , una cuando se accede a la pagina de login con el link, y otra cuando
+		//se reciben los parametros del login del formulario
 
         if (isset($_POST["username"]) && isset($_POST["password"])) {
 
@@ -56,9 +50,9 @@ class UserController extends ControladorBase
                 //se crear el dao
                 $dao = new DaoUsuario();
                 $result = $dao->searchUsuarioByNamePass($user_name,$user_password);
-                var_dump($result);
+                // var_dump($result);
                 if ($result == null){
-                    echo "<script type='text/javascript'>alert('Usuario o contraseña incorrectos!')</script>";
+                    $formErrors[] = "Login incorrecto";
                 }
                 else {
                     $_SESSION["login"] = true;
@@ -107,16 +101,22 @@ class UserController extends ControladorBase
                     if($id){
                         $_SESSION["login"] = true;
                         $_SESSION["user_id"] = $id;
-                        $this->redirect("Site", "index");
+						$formErrors[] = 'Registro correcto';
+                        // $this->redirect("Site", "index");
                     }
                     else {
-                        echo "<script type='text/javascript'>alert('Registro incorrecto!')</script>";
+                        $formErrors[] = 'Registro incorrecto';
                     }
                 }
-                else { echo "<script type='text/javascript'>alert('El Usuario ya Existe, Intentelo otra vez!')</script>";}
+                else {
+                    $formErrors[] = 'Existe un usuario ya';
+                }
+            }
+            else
+            {
+                $formErrors[] = 'Campos vacios';
             }
         }
-
         $this->view(
             "user/register.php",
             [
