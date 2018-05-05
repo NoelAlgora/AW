@@ -75,7 +75,7 @@ class UserController extends ControladorBase
 		$this->view(
             "site/contacto.php",
             [
-                'formErrors' => $formErrors,
+              
             ]
         );
 	}
@@ -119,6 +119,40 @@ class UserController extends ControladorBase
             "user/register.php",
             [
                 'formErrors' => $formErrors,
+            ]
+        );
+    }
+
+		public function perfil(){
+				if(!$this->helper()->isUserLogged())
+							return $this->redirect("user", "login");
+
+			  $user = $this->helper()->getLoggedUser();
+
+				//Coches alquilados
+				$dao = new DaoRent();
+				$RentCars = $dao->rentalCarsOfTheUser($user['id']);
+
+				//Coches en leasing
+				$dao = new DaoLeasing();
+				$LeasingCars = $dao->leasingCarsOfTheUser($user['id']);
+
+				//Coches en propiedad
+				$dao = new DaoRentCar();
+				$ownedCarsRent = $dao->userOwnedCars($user['id']);
+				$dao = new DaoLeasingCar();
+				$ownedCarsLeasing = $dao->userOwnedCars($user['id']);
+
+				$ownedCars = array_merge($ownedCarsRent,$ownedCarsLeasing);
+				// var_dump($result);
+
+        $this->view(
+            "user/perfil.php",
+            [
+                'user' => $user,
+								'rentCars' => $RentCars,
+								'leasingCars' => $LeasingCars,
+								'ownedCars' => $ownedCars,
             ]
         );
     }

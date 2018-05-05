@@ -9,5 +9,10 @@ class DaoRentCar extends EntidadBase
 	public function getAllRentCarAvaliable(){
         return $this->dataSource->getAllData("SELECT * FROM $this->table  WHERE user_id IS NULL ORDER BY id DESC", array());
     }
+
+	public function userOwnedCars($id){
+	       return $this->dataSource->getAllData("SELECT * FROM $this->table  WHERE user_id = :id", array(':id' => $id));
+	   }
+
 }
 ?>

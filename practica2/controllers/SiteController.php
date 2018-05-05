@@ -26,5 +26,20 @@ class SiteController extends ControladorBase
 			]
 		);
 	}
+
+	public function leasingCarView(){
+
+		$dao = new DaoLeasingCar();
+		$result = $dao->getAllLeasingCarAvaliable();
+
+		// var_dump($result);
+		$this->view(
+			"site/leasingCarView.php",
+			[
+				'result' => $result,
+			]
+		);
+	}
+
 }
 ?>
