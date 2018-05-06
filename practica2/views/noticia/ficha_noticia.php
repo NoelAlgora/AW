@@ -10,34 +10,38 @@
 </head>
 
 <body>
+  <?php require('views/layout/header.php'); ?>
+  <?php include('views/layout/nav.php'); ?>
     <div id="container">
         <p class="noticias"> Noticia </p>
          <?php 
-         $ID = $_GET['id_noticia'];
-         //echo $var;
-            $db = mysqli_connect('localhost','root','','caralcarro');
-            $listaNoticia = mysqli_query($db, "SELECT titulo, autor, fecha, cuerpo_noticia FROM noticia WHERE id_noticia = $ID");
-            $noticia = mysqli_fetch_assoc($listaNoticia);
-            //$noticia = $db->query($listaNoticia);
+         $ID = $_GET['id_noticia']; // CON ESTA VARIABLE HABRIA QUE LLAMAR A LA FUNCION verUnaNoticia DEL CONTROLADOR DE NOTICIAS
+         //
+         
             echo "<table>";   
             
               echo "<tr>";
               echo "<td class = 'listado_noticias'>";
               echo "<br><b>";
-              echo $noticia['titulo'];
+              echo $datos['titulo'];
               echo "</b></br>";
               echo "<br>";
-              echo "Autor: ".$noticia['autor'];
+              echo "Autor: ".$datos['autor'];
               echo "<br>";
-              echo "Fecha: ".$noticia['fecha'];
+              echo "Fecha: ".$datos['fecha'];
               echo "</br>";
               echo "<br>";
-              echo $noticia['cuerpo_noticia'];
+              echo $ndatos['cuerpo_noticia'];
               echo "</td>";
               echo "</tr>";
 
             echo "</table>"; 
+            */
+
+
          ?>
     </div>
+    <?php include('views/layout/sidebar-right.php'); ?>
+    <?php require('views/layout/footer.php'); ?>
 </body>
 </html>

@@ -2,34 +2,39 @@
 <html lang="es">
 
 <head>
-  <?php $pageTitle = "Últimas noticias"; ?>
-  <title><?php echo $pageTitle; ?></title>
+  <title>
+    Coches de alquiler
+  </title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
   <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <div id="container">
-        <p class="noticias"> Ultimas noticias </p>
-         <?php 
-            $db = mysqli_connect('localhost','root','','caralcarro');
-            $listaNoticias = mysqli_query($db, "SELECT id_noticia, titulo, cuerpo_noticia FROM noticia");
+  <?php require('views/layout/header.php'); ?>
+  <?php include('views/layout/nav.php'); ?>
+  <div id="container">
+    <div id="contenido">
+			<p class="noticias"> Ultimas noticias </p>
+			<p> ESTA VISTA SUPONGO PODRIA IR EN UN SIDEBAR O ALGO A PARTE </P>
+			 <?php
+			echo "<table>";
 
-            echo "<table>";   
-            while ($noticia = mysqli_fetch_assoc($listaNoticias)){
-              $id_n = $noticia['id_noticia'];  // guardamos el id de la noticia 
-              echo "<tr>";
-              echo "<td class = 'listado_noticias'>";
-              echo "<br><b>";
-              echo "<a href='../noticia/ficha_noticia.php?id_noticia=$id_n'> $noticia[titulo] </a>";
-              echo "</b></br>";
-              echo $noticia['cuerpo_noticia'];
-              echo "</td>";
-              echo "</tr>";
-            }
-            echo "</table>"; 
-         ?>
+			foreach($datos['noticia'] as $value)
+				{
+				echo "<tr>";
+				echo "<td>" . $value['titulo'] . "</td>";
+				echo "<a href='../noticia/ficha_noticia.php?id_noticia=$value[noticia_id]'> $value[titulo] </a>";
+				echo "<td>" . $value['autor'] . "</td>";
+				echo "</tr>";
+				}
+
+			echo "</table>";
+			
+			 ?>
     </div>
+    <?php include('views/layout/sidebar-right.php'); ?>
+  </div>
+  <?php require('views/layout/footer.php'); ?>
 </body>
 </html>
