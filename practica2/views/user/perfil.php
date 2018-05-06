@@ -33,13 +33,13 @@
 			// var_dump($datos['leasingCars']);
 			// Coches alquilado
 
-			echo "<h4>Alquiler</h4>";
+			echo "<h4>Coches alquilados normal</h4>";
 			echo "<table>";
 
 			foreach($datos['rentCars'] as $value)
 				{
 				echo "<tr>";
-				echo "<td>" . $value['id'] . "</td>";
+				echo "<td><a href=" . $helper->url('alquiler','fichavehiculo') ."&id=" . urlencode($value['id']) . "> Ver vehiculo</a></td>";
 				echo "<td>" . $value['fecha_inicio'] . "</td>";
 				echo "<td>" . $value['fecha_fin'] . "</td>";
 				echo "</tr>";
@@ -49,13 +49,13 @@
 
 			// Coches leasing
 
-			echo "<h4>Leasing</h4>";
+			echo "<h4>Coches de leasing (renting)</h4>";
 			echo "<table>";
 
 			foreach($datos['leasingCars'] as $value)
 				{
 				echo "<tr>";
-				echo "<td>" . $value['id'] . "</td>";
+				echo "<td><a href=" . $helper->url('leasing','fichavehiculo') ."&id=" . urlencode($value['id']) . "> Ver vehiculo</a></td>";
 				echo "<td>" . $value['fecha_inicio'] . "</td>";
 				echo "<td>" . $value['fecha_fin'] . "</td>";
 				echo "</tr>";
@@ -65,18 +65,38 @@
 
 			// coches en propiedad cedidos
 
-			echo "<h4>Coches en propiedad</h4>";
+			echo "<h2>Coches en propiedad</h2>";
+			echo "<h4>Coches en propiedad destinados a alquiler</h4>";
 			echo "<table>";
 
-			foreach($datos['ownedCars'] as $value)
+			foreach($datos['ownedCarsToAlquiler'] as $value)
 				{
 				echo "<tr>";
 				echo "<td>" . $value['marca'] . "</td>";
 				echo "<td>" . $value['modelo'] . "</td>";
 				echo "<td>" . $value['motor'] . "</td>";
 				echo "<td>" . $value['combustible'] . "</td>";
+				echo "<td><a href=" . $helper->url('alquiler','fichavehiculo') ."&id=" . urlencode($value['id']) . "> Ver vehiculo</a></td>";
 				echo "</tr>";
 				}
+
+
+			echo "</table>";
+
+			echo "<h4>Coches en propiedad destinados a leasing</h4>";
+			echo "<table>";
+
+			foreach($datos['ownedCarsToLeasing'] as $value)
+				{
+				echo "<tr>";
+				echo "<td>" . $value['marca'] . "</td>";
+				echo "<td>" . $value['modelo'] . "</td>";
+				echo "<td>" . $value['motor'] . "</td>";
+				echo "<td>" . $value['combustible'] . "</td>";
+				echo "<td><a href=" . $helper->url('leasing','fichavehiculo') ."&id=" . urlencode($value['id']) . "> Ver vehiculo</a></td>";
+				echo "</tr>";
+				}
+
 
 			echo "</table>";
 ?>

@@ -75,7 +75,7 @@ class UserController extends ControladorBase
 		$this->view(
             "site/contacto.php",
             [
-              
+
             ]
         );
 	}
@@ -139,11 +139,10 @@ class UserController extends ControladorBase
 
 				//Coches en propiedad
 				$dao = new DaoRentCar();
-				$ownedCarsRent = $dao->userOwnedCars($user['id']);
+				$ownedCarsToAlquiler = $dao->userOwnedCars($user['id']);
+				
 				$dao = new DaoLeasingCar();
-				$ownedCarsLeasing = $dao->userOwnedCars($user['id']);
-
-				$ownedCars = array_merge($ownedCarsRent,$ownedCarsLeasing);
+				$ownedCarsToLeasing = $dao->userOwnedCars($user['id']);
 				// var_dump($result);
 
         $this->view(
@@ -152,7 +151,8 @@ class UserController extends ControladorBase
                 'user' => $user,
 								'rentCars' => $RentCars,
 								'leasingCars' => $LeasingCars,
-								'ownedCars' => $ownedCars,
+								'ownedCarsToLeasing' => $ownedCarsToLeasing,
+								'ownedCarsToAlquiler' => $ownedCarsToAlquiler,
             ]
         );
     }

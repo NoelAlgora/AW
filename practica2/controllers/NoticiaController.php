@@ -83,7 +83,7 @@ class NoticiaController extends ControladorBase{
         }
 
         $this->view(
-            "noticia/publicar_noticia.php",
+            "noticia/crearNoticia.php",
             [
                 'formErrors' => $formErrors,
             ]
