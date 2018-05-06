@@ -1,6 +1,6 @@
 <?php
 class Ayuda{
-     
+
     public function url($controlador=CONTROLADOR_DEFECTO,$accion=ACCION_DEFECTO){
         $urlString="index.php?controller=".$controlador."&action=".$accion;
         return $urlString;
@@ -19,5 +19,10 @@ class Ayuda{
     	else
     		return null;
     }
+
+		public function getCarListImage($img_name){
+				$path = "carvisuals/270x180/" . $img_name;
+				return "<img src=".$path." alt=".$img_name." />";
+		}
 }
 ?>

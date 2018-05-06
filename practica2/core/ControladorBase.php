@@ -44,6 +44,21 @@ class ControladorBase{
         header("Location:index.php?controller=".$controlador."&action=".$accion);
     }
 
+    public function refresh()
+    {
+        header("Refresh: 0");
+    }
+
+    public function goBack()
+    {
+        $previous = "javascript:history.go(-1)";
+        if(isset($_SERVER['HTTP_REFERER'])) {
+            $previous = $_SERVER['HTTP_REFERER'];
+        }
+
+        header("Location: " . $previous);
+    }
+
     public function helper()
     {
         return $this->helper;

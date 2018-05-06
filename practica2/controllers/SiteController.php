@@ -33,10 +33,22 @@ class SiteController extends ControladorBase
 	public function noticias(){
 		$this->view(
 			"site/noticias.php",
+			[]
+		);
+	}
+	public function leasingCarView(){
+
+		$dao = new DaoLeasingCar();
+		$result = $dao->getAllLeasingCarAvaliable();
+
+		// var_dump($result);
+		$this->view(
+			"site/leasingCarView.php",
 			[
 				'result' => $result,
 			]
 		);
 	}
+
 }
 ?>

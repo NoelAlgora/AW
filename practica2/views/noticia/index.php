@@ -2,14 +2,15 @@
 <html lang="es">
 
 <head>
-  <?php $pageTitle = "Últimas noticias"; ?>
-  <title><?php echo $pageTitle; ?></title>
+  <title>Últimas noticias</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" >
   <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 
 <body>
+    <?php require('views/layout/header.php'); ?>
+    <?php include('views/layout/nav.php'); ?>
     <div id="container">
         <p class="noticias"> Ultimas noticias </p>
           <table>
@@ -28,6 +29,8 @@
               </tr>
             <?php endforeach; ?>
           </table>
+        <?php include('views/layout/sidebar-right.php'); ?>
     </div>
+    <?php require('views/layout/footer.php'); ?>
 </body>
 </html>

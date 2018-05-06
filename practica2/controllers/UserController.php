@@ -7,15 +7,13 @@ class UserController extends ControladorBase
 
 	public function index()
     {
-        $this->view(
-            "index.php"
-        );
+        return $this->redirect("site", "index");
     }
 
     public function logout()
     {
         if(!$this->helper()->isUserLogged())
-            return $this->redirect("Site", "index");
+            return $this->redirect("site", "index");
 
         session_unset();
         session_destroy();
@@ -24,13 +22,6 @@ class UserController extends ControladorBase
 
         $this->view(
             "user/logout.php"
-        );
-    }
-
-    public function alquiler()
-    {
-        $this->view(
-            "vehiculos/all_alquiler.php"
         );
     }
 
@@ -78,6 +69,15 @@ class UserController extends ControladorBase
             ]
         );
     }
+
+	public function contacto(){
+		$this->view(
+            "site/contacto.php",
+            [
+              
+            ]
+        );
+	}
 
     public function register()
     {
@@ -144,6 +144,31 @@ class UserController extends ControladorBase
                 'descripcion' => $descripcion,
             ]
         );
+    }
+
+		public function perfil(){
+			if(!$this->helper()->isUserLogged())
+				return $this->redirect("user", "login");
+
+            $user = $this->helper()->getLoggedUser();
+
+			$RentCars = DaoRent::getInstance()->rentalCarsOfTheUser($user['id']);
+			$LeasingCars = DaoLeasing::getInstance()->leasingCarsOfTheUser($user['id']);
+			$ownedCarsRent = DaoRentCar::getInstance()->userOwnedCars($user['id']);
+			$ownedCarsLeasing = DaoLeasingCar::getInstance()->userOwnedCars($user['id']);
+
+			$ownedCars = array_merge($ownedCarsRent,$ownedCarsLeasing);
+
+            $this->view(
+                "user/perfil.php",
+                [
+                    'user' => $user,
+
+    				'rentCars' => $RentCars,
+    				'leasingCars' => $LeasingCars,
+    				'ownedCars' => $ownedCars,
+                ]
+            );
     }
 }
 ?>
