@@ -29,5 +29,14 @@ class SiteController extends ControladorBase
 			]
 		);
 	}
+
+	public function noticias(){
+		$this->view(
+			"site/noticias.php",
+			[
+				'result' => $result,
+			]
+		);
+	}
 }
 ?>
