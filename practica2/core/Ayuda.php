@@ -7,15 +7,14 @@ class Ayuda{
     }
 
     public function isUserLogged(){
-    	return isset($_SESSION["login"]) && $_SESSION["login"];
+    	return isset($_SESSION["login"]) && $_SESSION["login"] && isset($_SESSION["user_id"]);
     }
 
     public function getLoggedUser(){
+
     	if(isset($_SESSION["login"]) && $_SESSION["login"] && isset($_SESSION["user_id"]))
     	{
-    		$dao = new DaoUsuario;
-
-    		return $dao->getById($_SESSION["user_id"]);
+    		return DaoUsuario::getInstance()->getById($_SESSION["user_id"]);
     	}
     	else
     		return null;

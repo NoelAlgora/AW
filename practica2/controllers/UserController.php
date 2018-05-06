@@ -38,11 +38,11 @@ class UserController extends ControladorBase
     {
         $formErrors = [];
 
+        $user_name = "";
+        $user_password = "";
+
         if($this->helper()->isUserLogged())
             return $this->redirect("Site", "index");
-
-        $_SESSION["login"] = false;
-
 
         if (isset($_POST["username"]) && isset($_POST["password"])) {
 
@@ -51,15 +51,13 @@ class UserController extends ControladorBase
 
             if (!empty($user_name) && !empty($user_password)) {
                 //se crear el dao
-                $dao = new DaoUsuario();
-                $result = $dao->searchUsuarioByNamePass($user_name,$user_password);
-                var_dump($result);
-                if ($result == null){
-                    echo "<script type='text/javascript'>alert('Usuario o contraseña incorrectos!')</script>";
+                $user = DaoUsuario::getInstance()->searchUsuarioByNamePass($user_name,$user_password);
+                if ($user == null){
+                    $formErrors[] = "Usuario o contraseña incorrectos!";
                 }
                 else {
                     $_SESSION["login"] = true;
-                    $_SESSION["user_id"] = $result['id'];
+                    $_SESSION["user_id"] =  $user['id'];
 
                     $this->redirect("Site", "index");
                 }
@@ -75,6 +73,8 @@ class UserController extends ControladorBase
             "user/login.php",
             [
                 'formErrors' => $formErrors,
+                'user_name' => $user_name,
+                'user_password' => $user_password,
             ]
         );
     }
@@ -82,6 +82,14 @@ class UserController extends ControladorBase
     public function register()
     {
         $formErrors = [];
+
+        $user_name = "";
+        $password = "";
+        $repassword = "";
+        $email = "";
+        $telefono = "";
+        $apellido = "";
+        $descripcion =  "";
 
         if($this->helper()->isUserLogged())
             return $this->redirect("Site", "index");
@@ -100,8 +108,7 @@ class UserController extends ControladorBase
             if (!empty($user_name) && !empty($password) && !empty($email) && !empty($telefono) && !empty($apellido) ) {
                 if($repassword == $password)
                 {
-                    $dao = new DaoUsuario();
-                    $user = $dao->searchUsuarioByName($user_name);
+                    $user = DaoUsuario::getInstance()->searchUsuarioByName($user_name);
 
                     if (!$user) {
                         $id = $dao->insertUsuario($user_name, $apellido, $email, $password, $telefono, $descripcion);
@@ -120,8 +127,7 @@ class UserController extends ControladorBase
                     }
                 }
                 else 
-                    $formErrors[] = "Las Contraseñas no coinciden";
-
+                    $formErrors[] = "Las contraseñas no coinciden";
             }
         }
 
@@ -129,6 +135,13 @@ class UserController extends ControladorBase
             "user/register.php",
             [
                 'formErrors' => $formErrors,
+                'user_name' => $user_name,
+                'user_password' => $user_password,
+                'repassword' => $repassword,
+                'email' => $email,
+                'telefono' => $telefono,
+                'apellido' => $apellido,
+                'descripcion' => $descripcion,
             ]
         );
     }

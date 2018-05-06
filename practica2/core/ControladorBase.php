@@ -1,18 +1,23 @@
 <?php
 class ControladorBase{
 
-    private $helper;
+    public $helper;
 
     public function __construct() {
-        require_once 'EntidadBase.php';
+        require_once 'DataSource.php';
+        require_once 'DaoBase.php';
+
+
+        foreach(glob("daos/*.php") as $file){
+            require_once $file;
+        }
+
         require_once 'core/Ayuda.php';
         $this->helper=new Ayuda();
         //require_once 'ModeloBase.php';
 
         //Incluir todos los modelos
-        foreach(glob("models/*.php") as $file){
-            require_once $file;
-        }
+
 
         session_start();
     }

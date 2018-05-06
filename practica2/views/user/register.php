@@ -14,6 +14,11 @@
   <div class="container">
     <div class="container_register">
       <p class="font_log">Unete a Nostros!</p>
+      <span class="form_error_span">
+          <?php foreach ($formErrors as $formError): ?>
+          <p><?= $formError ?></p>
+          <?php endforeach; ?>
+      </span>
       <form id="register_form" action="<?= $helper->url('user','register');?>" method="post">
         <div class="row">
           <div class="col-25">
