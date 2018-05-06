@@ -5,12 +5,12 @@ class LeasingController extends ControladorBase{
     	parent::__construct();
 	}
 
-	public function leasingCarView(){
+	public function index(){
 		$result = DaoLeasingCar::getInstance()->getAllLeasingCarAvaliable();
 
 			// var_dump($result);
 		$this->view(
-				"site/leasingCarView.php",
+				"leasing/index.php",
 				[
 					'result' => $result,
 				]
@@ -25,7 +25,7 @@ class LeasingController extends ControladorBase{
 		$car = DaoLeasingCar::getInstance()->getById($idCoche);
 
 		$this->view(
-			"site/fichavehiculo.php",
+			"leasing/view.php",
 			[
 				 'coche' => $car,
 			]

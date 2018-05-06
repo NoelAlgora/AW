@@ -10,6 +10,10 @@ class Ayuda{
     	return isset($_SESSION["login"]) && $_SESSION["login"] && isset($_SESSION["user_id"]);
     }
 
+    public function isAdmin(){
+        return $this->isUserLogged() && $this->getLoggedUser()['user_type'] == 1;
+    }
+
     public function getLoggedUser(){
 
     	if(isset($_SESSION["login"]) && $_SESSION["login"] && isset($_SESSION["user_id"]))
@@ -20,12 +24,12 @@ class Ayuda{
     		return null;
     }
 
-		public function getCarListImage($img_name){
-				if(empty($img_name)){
-						$path = "carvisuals/270x180/not_found.png";
-				}
-				else {	$path = "carvisuals/270x180/" . $img_name;}
-				return "<img src=".$path." alt=".$img_name." />";
-		}
+	public function getCarListImage($img_name){
+			if(empty($img_name)){
+					$path = "carvisuals/270x180/not_found.png";
+			}
+			else {	$path = "carvisuals/270x180/" . $img_name;}
+			return "<img src=".$path." alt=".$img_name." />";
+	}
 }
 ?>

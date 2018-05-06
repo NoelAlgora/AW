@@ -37,7 +37,7 @@ class NoticiaController extends ControladorBase{
     public function CrearNoticia(){
         $formErrors = [];
 
-        if(!$this->helper()->isUserLogged())
+        if(!$this->helper()->isAdmin())
             return $this->redirect("Site", "login");
 
         // $_SESSION["login"] = false;
