@@ -7,9 +7,12 @@
   		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
   		<link rel="stylesheet" type="text/css" href="css/style.css" />
 	</head>
-	<body class="fondo">
+
+	<body>
+		<?php require('views/layout/header.php'); ?>
+		<?php include('views/layout/nav.php'); ?>
 		<div id="container">
-			<div class="container_login">
+			<div id="contenido">
 			<form method="post" action="<?= $helper->url('noticia','CrearNoticia');?>">
 				<!-- Aqui tendria qe sustiuir el action por algo -->
 
@@ -19,7 +22,9 @@
 				<!-- <label>Fecha<br/><input type="text" name="fecha" maxlength="255" /></label><br/><br/> -->
 				<button type="submit">Publicar noticia</button>
 			</form>
-			</div>
 		</div>
+		<?php include('views/layout/sidebar-right.php'); ?>
+	</div>
+	<?php require('views/layout/footer.php'); ?>
 	</body>
 </html>

@@ -14,15 +14,12 @@
     <div id="container">
         <p class="noticias"> Ultimas noticias </p>
           <table>
-         <?php 
-            //$db = mysqli_connect('localhost','root','','caralcarro');
-            //$listaNoticias = mysqli_query($db, "SELECT id_noticia, titulo, cuerpo_noticia FROM noticia");?>
 
             <?php foreach ($noticias as $key => $noticia): ?>
               <tr>
               <td class = 'listado_noticias'>
               <br><b>
-              <a href='../noticia/ficha_noticia.php?id_noticia=$id_n'> <?= $noticia['titulo'] ?></a>";
+              <a href="<?= $helper->url('noticia','fichaNoticia', $noticia['id']) ?>"> <?= $noticia['titulo'] ?></a>";
               </b></br>
               <?= $noticia['cuerpo_noticia']; ?>
               </td>

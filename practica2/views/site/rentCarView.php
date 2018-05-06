@@ -21,14 +21,14 @@
 			<h4>Coches disponibles:</h4>
 		<table>
 		<?php
-
 			foreach ($datos['result'] as $value) {
 				echo "<tr>";
+				echo "<td>".$helper->getCarListImage($value['list_img'])."</td>";
 				echo "<td>".$value['marca']."</td>";
 				echo "<td>".$value['modelo']."</td>";
 				echo "<td>".$value['motor']."</td>";
 				echo "<td>".$value['combustible']."</td>";
-				echo "<td>AQUI VA EL ENLACE A FICHA</td>";
+				echo "<td><a href=" . $helper->url('alquiler','fichavehiculo', $value['id']). "> MAS INFORMACION</a></td>";
 				echo "</tr>";
 			}
 		 ?>

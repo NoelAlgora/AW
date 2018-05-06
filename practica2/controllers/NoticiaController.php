@@ -22,23 +22,17 @@ class NoticiaController extends ControladorBase{
     }
 
 	public function fichaNoticia(){
+        $id = urldecode($_GET['id']);
+
+        $noticia = DaoNoticia::getInstance()->getById($id);
+
 		$this->view(
 			"noticia/ficha_noticia.php",
 			[
-				// 'result' => $result
+                 'noticia' => $noticia,
 			]
 		);
 	}
-
-
-
-	// public function index()
-  //   {
-  //       $this->view(
-  //           "noticia/publicar_noticia.php",
-  //           []
-  //       );
-  //   }
 
     public function CrearNoticia(){
         $formErrors = [];
@@ -60,8 +54,7 @@ class NoticiaController extends ControladorBase{
 
             if (!empty($titulo_n) && !empty($autor_n) && !empty($fecha_n) && !empty($cuerpo_n)) {
                 //se crear el dao
-                $dao = new DaoNoticia();
-                $result = $dao->insertNoticia($titulo_n, $autor_n, $fecha_n, $cuerpo_n);
+                $result = DaoNoticia::getInstance()->insertNoticia($titulo_n, $autor_n, $fecha_n, $cuerpo_n);
 
                 var_dump($result);
                 if ($result == null){
@@ -82,7 +75,7 @@ class NoticiaController extends ControladorBase{
         }
 
         $this->view(
-            "noticia/publicar_noticia.php",
+            "noticia/crearNoticia.php",
             [
                 'formErrors' => $formErrors,
             ]

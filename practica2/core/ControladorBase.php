@@ -40,8 +40,8 @@ class ControladorBase{
         require_once 'views/'.$vista;
     }
 
-    public function redirect($controlador=CONTROLADOR_DEFECTO,$accion=ACCION_DEFECTO){
-        header("Location:index.php?controller=".$controlador."&action=".$accion);
+    public function redirect($controlador=CONTROLADOR_DEFECTO,$accion=ACCION_DEFECTO,$id=0){
+        header("Location:index.php?controller=".$controlador."&action=".$accion."&id=".$id);
     }
 
     public function refresh()

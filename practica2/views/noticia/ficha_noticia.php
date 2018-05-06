@@ -12,31 +12,24 @@
 <body>
     <div id="container">
         <p class="noticias"> Noticia </p>
-         <?php 
-         $ID = $_GET['id_noticia'];
-         //echo $var;
-            $db = mysqli_connect('localhost','root','','caralcarro');
-            $listaNoticia = mysqli_query($db, "SELECT titulo, autor, fecha, cuerpo_noticia FROM noticia WHERE id_noticia = $ID");
-            $noticia = mysqli_fetch_assoc($listaNoticia);
-            //$noticia = $db->query($listaNoticia);
-            echo "<table>";   
+            <table> 
             
-              echo "<tr>";
-              echo "<td class = 'listado_noticias'>";
-              echo "<br><b>";
-              echo $noticia['titulo'];
-              echo "</b></br>";
-              echo "<br>";
-              echo "Autor: ".$noticia['autor'];
-              echo "<br>";
-              echo "Fecha: ".$noticia['fecha'];
-              echo "</br>";
-              echo "<br>";
-              echo $noticia['cuerpo_noticia'];
-              echo "</td>";
-              echo "</tr>";
+              <tr>
+              <td class = 'listado_noticias'>";
+              <br><b>
+              <?=$noticia['titulo']; ?>
+              </b></br>
+              <br>
+              Autor: <?=$noticia['autor']; ?>
+              <br>
+              Fecha: <?=$noticia['fecha']; ?>
+              </br>
+              <br>
+              $noticia['cuerpo_noticia'];  ?>
+              </td>
+              </tr>
 
-            echo "</table>"; 
+            </table>
          ?>
     </div>
 </body>

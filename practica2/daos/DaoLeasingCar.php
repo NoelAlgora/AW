@@ -8,6 +8,16 @@ class DaoLeasingCar extends DaoBase
         parent::__construct($table);
     }
 
+    public static function getInstance()
+    {
+        if (is_null( self::$instance ) )
+        {
+        self::$instance = new self();
+        }
+        return self::$instance;
+    }
+
+
 	public function getAllLeasingCarAvaliable(){
         return DataSource::getInstance()->getAllData("SELECT * FROM $this->table  WHERE user_id IS NULL ORDER BY id DESC", array());
     }

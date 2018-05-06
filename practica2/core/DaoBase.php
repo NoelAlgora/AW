@@ -8,7 +8,7 @@ class DaoBase {
     }
 
     public function getAll(){
-        return DataSource::getInstance()->getData("SELECT * FROM $this->table ORDER BY id DESC", array());
+        return DataSource::getInstance()->getAllData("SELECT * FROM $this->table ORDER BY id DESC", array());
     }
 
     public function getById($id){
@@ -16,7 +16,7 @@ class DaoBase {
     }
 
     public function getBy($column,$value){
-		return DataSource::getInstance()->getData("SELECT * FROM $this->table WHERE $column = :value", array(':value'=>$value));
+		return DataSource::getInstance()->getAllData("SELECT * FROM $this->table WHERE $column = :value", array(':value'=>$value));
     }
 
     public function deleteById($id){

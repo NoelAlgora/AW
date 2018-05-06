@@ -28,7 +28,7 @@
 				echo "<td>".$value['modelo']."</td>";
 				echo "<td>".$value['motor']."</td>";
 				echo "<td>".$value['combustible']."</td>";
-				echo "<td>AQUI VA EL ENLACE A FICHA</td>";
+				echo "<td><a href=" . $helper->url('leasing','fichavehiculo', $value['id'])."> MAS INFORMACION</a></td>";
 				echo "</tr>";
 			}
 		 ?>
