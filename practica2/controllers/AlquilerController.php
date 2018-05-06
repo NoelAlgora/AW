@@ -21,13 +21,19 @@ class AlquilerController extends ControladorBase{
 
 
 	public function fichaVehiculo(){
-		$this->view(
-			"site/fichavehiculo.php",
-			[
-				// 'result' => $result,
-			]
-		);
-	}
+
+				$idCoche = urldecode($_GET['id']);
+
+				$dao = new DaoRentCar();
+				$car = $dao->getById($idCoche);
+
+				$this->view(
+					"site/fichavehiculo.php",
+					[
+						 'coche' => $car,
+					]
+				);
+			}
 
 
 }

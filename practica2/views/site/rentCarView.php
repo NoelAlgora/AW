@@ -23,6 +23,7 @@
 		<?php
 			foreach ($datos['result'] as $value) {
 				echo "<tr>";
+				echo "<td>".$helper->getCarListImage($value['list_img'])."</td>";
 				echo "<td>".$value['marca']."</td>";
 				echo "<td>".$value['modelo']."</td>";
 				echo "<td>".$value['motor']."</td>";

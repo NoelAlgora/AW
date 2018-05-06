@@ -21,10 +21,16 @@ class LeasingController extends ControladorBase{
 
 
 	public function fichaVehiculo(){
+
+		$idCoche = urldecode($_GET['id']);
+
+		$dao = new DaoLeasingCar();
+		$car = $dao->getById($idCoche);
+
 		$this->view(
 			"site/fichavehiculo.php",
 			[
-				// 'result' => $result,
+				 'coche' => $car,
 			]
 		);
 	}

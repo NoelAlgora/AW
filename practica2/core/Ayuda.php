@@ -22,7 +22,10 @@ class Ayuda{
     }
 
 		public function getCarListImage($img_name){
-				$path = "carvisuals/270x180/" . $img_name;
+				if(empty($img_name)){
+						$path = "carvisuals/270x180/not_found.png";
+				}
+				else {	$path = "carvisuals/270x180/" . $img_name;}
 				return "<img src=".$path." alt=".$img_name." />";
 		}
 }
