@@ -67,7 +67,7 @@ class AlquilerController extends ControladorBase{
             $alquiler_id = htmlspecialchars(trim(strip_tags($_POST["alquiler_id"])));
 
             if (!empty($alquiler_id)) {
-                $id = DaoPrestamo::getInstance()->devolverPrestamo($alquiler_id);
+                $id = DaoRent::getInstance()->devolverAlquiler($alquiler_id);
             } 
         }
 

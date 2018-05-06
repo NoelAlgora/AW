@@ -18,7 +18,7 @@ class DaoRentCar extends DaoBase
     }
 
 	   public function getAllRentCarAvaliable(){
-        $result = DataSource::getInstance()->getAllData("SELECT *, c.id as vehiculo_id FROM $this->table c
+        $result = DataSource::getInstance()->getAllData("SELECT * FROM $this->table c
               LEFT JOIN (
                     SELECT    MAX(id) max_id, vehiculo_id 
                     FROM      alquiler 
