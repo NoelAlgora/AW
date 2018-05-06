@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-05-2018 a las 21:09:09
+-- Tiempo de generación: 06-05-2018 a las 23:14:56
 -- Versión del servidor: 10.1.16-MariaDB
 -- Versión de PHP: 5.6.24
 
@@ -31,16 +31,22 @@ CREATE TABLE `alquiler` (
   `user_id` int(11) UNSIGNED NOT NULL,
   `vehiculo_id` int(11) UNSIGNED NOT NULL,
   `fecha_inicio` datetime NOT NULL,
-  `fecha_fin` datetime NOT NULL
+  `fecha_fin` datetime NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `alquiler`
 --
 
-INSERT INTO `alquiler` (`id`, `user_id`, `vehiculo_id`, `fecha_inicio`, `fecha_fin`) VALUES
-(1, 3, 6, '2018-05-08 00:00:00', '2018-05-17 00:00:00'),
-(2, 3, 3, '2018-05-08 00:00:00', '2018-05-17 00:00:00');
+INSERT INTO `alquiler` (`id`, `user_id`, `vehiculo_id`, `fecha_inicio`, `fecha_fin`, `status`) VALUES
+(1, 3, 6, '2018-05-08 00:00:00', '2018-05-17 00:00:00', 0),
+(2, 3, 3, '2018-05-08 00:00:00', '2018-05-17 00:00:00', 0),
+(3, 2, 1, '2018-05-06 22:30:09', '2018-06-06 22:30:09', 0),
+(4, 2, 2, '2018-05-06 22:30:13', '2018-06-06 22:30:13', 0),
+(5, 2, 8, '2018-05-06 22:31:38', '2018-06-06 22:31:38', 0),
+(6, 2, 5, '2018-05-06 22:47:15', '2018-06-06 22:47:15', 0),
+(7, 2, 4, '2018-05-06 22:47:32', '2018-06-06 22:47:32', 0);
 
 -- --------------------------------------------------------
 
@@ -80,7 +86,8 @@ INSERT INTO `noticia` (`id`, `titulo`, `autor`, `fecha`, `cuerpo_noticia`) VALUE
 (15, 'Coche ultimo modelo', 'Paco', '0000-00-00 00:00:00', 'hjsd hfshdi fjjifÃ± eiwj jh   hvueowÂ´periutgireyt84ytvf j'),
 (16, 'Mega coche', 'Alonso', '0000-00-00 00:00:00', 'hjsd hfshdi fjjifÃ± eiwj jh   hvueowÂ´periutgireyt84ytvf j djsabf d uweh dcnsjcuhfluwhej  wseu wh'),
 (17, 'Ejemplo1', 'Marta Perez', '0000-00-00 00:00:00', 'qteb trucuh chwuhgqcuqhufhuhcgqhecgqherchqgiqchgirhcrighqcoghqcuhgrcuhgreqhcgrhchihqeichgierchghcighcqihcgi hcigrhcqiqghc q hg iqh i gh cqihc qh grh vqvn '),
-(18, 'hola', 'hola', '2018-05-05 14:46:04', 'hola');
+(18, 'hola', 'hola', '2018-05-05 14:46:04', 'hola'),
+(19, 'noel', 'noticia prueba', '2018-05-06 21:26:45', 'noel');
 
 -- --------------------------------------------------------
 
@@ -95,18 +102,19 @@ CREATE TABLE `usuario` (
   `email` varchar(255) COLLATE utf8_bin NOT NULL,
   `password` varchar(255) COLLATE utf8_bin NOT NULL,
   `telefono` int(9) NOT NULL,
-  `descripcion` varchar(200) COLLATE utf8_bin NOT NULL
+  `descripcion` varchar(200) COLLATE utf8_bin NOT NULL,
+  `user_type` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `username`, `apellido`, `email`, `password`, `telefono`, `descripcion`) VALUES
-(1, 'carlos', 'martin', 'carlos@hotmail.com', 'carlos', 679696231, 'Soy Carlos y me encantan los lambos!'),
-(2, 'paco', 'peña', 'pepe', 'pepe', 645789542, 'Me encantan los ferraris'),
-(3, 'hola', 'caracola', 'caracola@adfjkas.com', 'hola', 12345678, 'hola me llamo hola'),
-(4, 'hola', 'peña', 'pepe', 'hola', 645789542, 'Me encantan los ferraris');
+INSERT INTO `usuario` (`id`, `username`, `apellido`, `email`, `password`, `telefono`, `descripcion`, `user_type`) VALUES
+(1, 'carlos', 'martin', 'carlos@hotmail.com', 'carlos', 679696231, 'Soy Carlos y me encantan los lambos!', 0),
+(2, 'paco', 'peña', 'pepe', 'pepe', 645789542, 'Me encantan los ferraris', 1),
+(3, 'hola', 'caracola', 'caracola@adfjkas.com', 'hola', 12345678, 'hola me llamo hola', 0),
+(4, 'hola', 'peña', 'pepe', 'hola', 645789542, 'Me encantan los ferraris', 0);
 
 -- --------------------------------------------------------
 
@@ -124,22 +132,23 @@ CREATE TABLE `vehiculo_alquiler` (
   `cambio` varchar(255) COLLATE utf8_bin NOT NULL,
   `color` varchar(255) COLLATE utf8_bin NOT NULL,
   `combustible` varchar(255) COLLATE utf8_bin NOT NULL,
-  `list_img` varchar(255) COLLATE utf8_bin NOT NULL
+  `list_img` varchar(255) COLLATE utf8_bin NOT NULL,
+  `descripcion` text COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `vehiculo_alquiler`
 --
 
-INSERT INTO `vehiculo_alquiler` (`id`, `user_id`, `matricula`, `marca`, `modelo`, `motor`, `cambio`, `color`, `combustible`, `list_img`) VALUES
-(1, NULL, '5814hdp', 'seat', 'ibiza', 'v8', 'manual', 'blanco', 'gasolina', ''),
-(2, NULL, '8965xt', 'bmw', 'Serie 1', 'v6', 'manual', 'granate', 'diesel', ''),
-(3, 3, '7845gf', 'ford', 'focus', 'v4', 'automatico', 'azul', 'diesel', ''),
-(4, NULL, '1598rpy', 'citroen', 'cactus', 'v3', 'automatico', 'blanco', 'gasolina', ''),
-(5, NULL, '7480pt', 'volskwagen', 'golf', 'v6', 'manual', 'negro', 'gasolina', ''),
-(6, NULL, '1234xcv', 'porsche', 'panamera', 'v12', 'automatico', 'azul electrico', 'gasolina', ''),
-(7, NULL, '4536tp', 'ford', 'mustang', 'v8', 'automatico', 'rojo', 'gasolina', ''),
-(8, NULL, '8426bnp', 'ford', 'kuga', 'v4', 'manual', 'gris', 'diesel', '');
+INSERT INTO `vehiculo_alquiler` (`id`, `user_id`, `matricula`, `marca`, `modelo`, `motor`, `cambio`, `color`, `combustible`, `list_img`, `descripcion`) VALUES
+(1, NULL, '5814hdp', 'seat', 'ibiza', 'v8', 'manual', 'blanco', 'gasolina', '', ''),
+(2, NULL, '8965xt', 'bmw', 'Serie 1', 'v6', 'manual', 'granate', 'diesel', '', ''),
+(3, 3, '7845gf', 'ford', 'focus', 'v4', 'automatico', 'azul', 'diesel', '', ''),
+(4, NULL, '1598rpy', 'citroen', 'cactus', 'v3', 'automatico', 'blanco', 'gasolina', '', ''),
+(5, NULL, '7480pt', 'volskwagen', 'golf', 'v6', 'manual', 'negro', 'gasolina', '', ''),
+(6, NULL, '1234xcv', 'porsche', 'panamera', 'v12', 'automatico', 'azul electrico', 'gasolina', '', ''),
+(7, NULL, '4536tp', 'ford', 'mustang', 'v8', 'automatico', 'rojo', 'gasolina', '', ''),
+(8, NULL, '8426bnp', 'ford', 'kuga', 'v4', 'manual', 'gris', 'diesel', '', '');
 
 -- --------------------------------------------------------
 
@@ -227,7 +236,7 @@ ALTER TABLE `vehiculo_leasing`
 -- AUTO_INCREMENT de la tabla `alquiler`
 --
 ALTER TABLE `alquiler`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `leasing`
 --
@@ -237,7 +246,7 @@ ALTER TABLE `leasing`
 -- AUTO_INCREMENT de la tabla `noticia`
 --
 ALTER TABLE `noticia`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
