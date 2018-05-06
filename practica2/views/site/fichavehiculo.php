@@ -42,8 +42,12 @@
               </tr>
             </tbody>
         </table>
-        <?php echo $coche['descripcion']; ?>
-	</div>
-</div>
+				<div class="descripcion_ficha_vechiculo">
+    			<?php echo $coche['descripcion']; ?>
+			</div>
+			</div>
+			<!-- <?php include('views/layout/sidebar-right.php'); ?> -->
+		</div>
+		<?php require('views/layout/footer.php'); ?>
 </body>
 </html>

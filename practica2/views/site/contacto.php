@@ -3,74 +3,69 @@
 
 <head>
   <title>
-    Coches de alquiler
+    Contacto
   </title>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
-  <?php require('views/layout/header.php'); ?>
-  <?php include('views/layout/nav.php'); ?>
-  <div id="container">
-    <div id="contenido">
-			<h2 class="centrar">Contacto</h2>
-			<div class="form-wrapper">
-				 <form name="contacto" action="mailto:nalgora@ucm.es" method="post" enctype="multipart/form-data" autocomplete="on">
-						<span class="negrita"> Nombre: </span>
-						<input type="text" name="nombre" />
-						<br>
-						<br>
-						<span class="negrita"> Dirección de email de contacto: </span>
-						<input type="email" name="email" />
-						<br>
-						<br>
-						<span class="negrita"> Motivo de la consulta: </span>
-						<br>
-						<label><input type="radio" name="motivo" value="evaluacion"/> Evaluación</label>
-						<br>
-						<label><input type="radio" name="motivo" value="sugerencias"/> Sugerencias</label>
-						<br>
-						<label><input type="radio" name="motivo" value="criticas"/> Críticas</label>
-						<br>
-						<br>
-						<label><input class="negrita" type="checkbox" value="condiciones"/><span class="negrita">He leido y acepto los <a href="basesLegales.php"> terminos y condiciones del servicio </a></span></label>
-						<br>
-						<br>
-						<span class="negrita"> Consulta: </span>
-						<input type="text" name="consulta" value="" />
-						<br>
-						<br>
-						<button type="submit" value="enviar">Enviar Form</button>
-				 </form>
-				 <div class="AÑADIR CSS">
-						<h3> Contáctanos:</h3>
-						<table class="AÑADIR CSS">
-							 <tbody>
-									<tr>
-										 <td>Teléfono:</td>
-										 <td class=" AÑADIR CSS " > 918 487 550</td>
-									</tr>
-									<tr>
-										 <td> Email:</td>
-										 <td class="AÑADIR CSS"> contacto@caralcarro.es</td>
-									</tr>
-									<tr>
-										 <td>Estamos en :</td>
-										 <td class="AÑADIR CSS"> Calle Sierra de Atapuerca 44</td>
-									</tr>
-									<tr>
-										 <td>Horario:</td>
-										 <td class="AÑADIR CSS"> Lunes a viernes, 9:00 a 17:00</td>
-									</tr>
-							 </tbody>
-						</table>
-				 </div>
-			</div>
+
+<?php require('views/layout/header.php'); ?>
+<?php include('views/layout/nav.php'); ?>
+<div id="container_contact">
+	<div class="contacto_frase">
+      	<h2> Sobre Nosotros</h2>
+      	<p> Estamos aquí para contestar cualquier pregunta sobre tu experiencia en CaralCarro. Contactanos y responderemos lo antes posible.</p>
+      	<p>Si hay algo que siempre quisiste experimentar y no la puedes encontrar en nuestra web, no dudes en contarnosla y prometemos hacer todo lo que esté en nuestras manos para hacertelo llegar!</p><br><br>
     </div>
-    <?php include('views/layout/sidebar-right.php'); ?>
-  </div>
-  <?php require('views/layout/footer.php'); ?>
+	<div class ="content-bottom">
+	    <div class="container_contacto">
+	      <p class="font_log"> Contactanos</p>
+	      <form class="login_box" method="post" action="mailto:nalgora@ucm.es" method="post" enctype="multipart/form-data" autocomplete="on">
+	        <div class="row">
+	          <div class="col-25">
+	            <label class="font_log" for="nombre">Nombre *</label>
+	          </div>
+	          <div class="col-75">
+	            <input type="text" id="nombre" name="username" placeholder="Tu nombre..." required>
+	          </div>
+	        </div>
+	        <div class="row">
+	          <div class="col-25">
+	            <label class="font_log" for="nombre">Email *</label>
+	          </div>
+	          <div class="col-75">
+	            <input type="text" id="nombre" name="password" placeholder="Tu email..." required>
+	          </div>
+	        </div>
+	        <div class="row">
+	          <div class="col-25">
+	            <label  class="font_log" for="descripción">Consulta *</label>
+	          </div>
+	          <div class="col-75">
+	            <textarea  class="font_log" id="descripcion" name="descripción" placeholder="Escribemos tu consulta..."></textarea>
+	          </div>
+	        </div>
+	        <div class="row">
+	          <input type="checkbox" value="condiciones"/>He leido y acepto los <a href="basesLegales.php"> Terminos y condiciones</a>
+	        </div>
+	        <div class="row">
+	          <input type="submit" value="Enviar">
+	        </div>
+	       </form>
+	    </div>
+
+    	<div class="right_sidebar_contacto">
+			<p><span class="font_contacto"> Teléfono: </span><span class="contacto_letra">918 487 550</span></p>
+			<p><span class="font_contacto"> Fax: </span><span class="contacto_letra">918 501 988</span></p>
+			<p><span class="font_contacto"> Email: </span><span class="contacto_letra">contacto@caralcarro.es</span></p>
+			<p><span class="font_contacto"> Dirección: </span><span class="contacto_letra">C/ Sierra de atapuerca 59, Portal B 4ºC. Madrid</span></p>
+			<p><span class="font_contacto"> Código Postal: </span><span class="contacto_letra">28050</span></p>
+			<p><a href="http://www.twitter.com"><img class ="img_redes" src="img/twitter.jpg" /></a><a href="http://www.facebook.com"><img class ="img_redes" src="img/facebook.jpg" /></a></p>
+		</div>
+</div>
+</div>
+<?php require('views/layout/footer.php'); ?>
 </body>
 </html>

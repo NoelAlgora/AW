@@ -94,8 +94,8 @@ class UserController extends ControladorBase
         if($this->helper()->isUserLogged())
             return $this->redirect("Site", "index");
 
-        if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["repassword"]) && 
-            isset($_POST["email"]) && isset($_POST["apellido"]) && isset($_POST["telefono"])) 
+        if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["repassword"]) &&
+            isset($_POST["email"]) && isset($_POST["apellido"]) && isset($_POST["telefono"]))
         {
             $user_name = htmlspecialchars(trim(strip_tags($_POST["username"])));
             $password = htmlspecialchars(trim(strip_tags($_POST["password"])));
@@ -122,11 +122,11 @@ class UserController extends ControladorBase
                             $formErrors[] = "Registro incorrecto!";
                         }
                     }
-                    else { 
+                    else {
                         $formErrors[] = "El Usuario ya Existe, Intentelo otra vez!";
                     }
                 }
-                else 
+                else
                     $formErrors[] = "Las contraseñas no coinciden";
             }
         }
@@ -166,7 +166,8 @@ class UserController extends ControladorBase
 
 				'rentCars' => $RentCars,
 				'leasingCars' => $LeasingCars,
-				'ownedCars' => $ownedCars,
+				'ownedCarsToAlquiler' => $ownedCarsRent,
+				'ownedCarsToLeasing' => $ownedCarsLeasing,
             ]
         );
     }
