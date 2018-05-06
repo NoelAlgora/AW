@@ -13,35 +13,25 @@
   <?php require('views/layout/header.php'); ?>
   <?php include('views/layout/nav.php'); ?>
     <div id="container">
-        <p class="noticias"> Noticia </p>
-         <?php 
-         $ID = $_GET['id_noticia']; // CON ESTA VARIABLE HABRIA QUE LLAMAR A LA FUNCION verUnaNoticia DEL CONTROLADOR DE NOTICIAS
-         //
-         
-            echo "<table>";   
+        <p class="noticias"> </p>
+            <table> 
             
-              echo "<tr>";
-              echo "<td class = 'listado_noticias'>";
-              echo "<br><b>";
-              echo $datos['titulo'];
-              echo "</b></br>";
-              echo "<br>";
-              echo "Autor: ".$datos['autor'];
-              echo "<br>";
-              echo "Fecha: ".$datos['fecha'];
-              echo "</br>";
-              echo "<br>";
-              echo $ndatos['cuerpo_noticia'];
-              echo "</td>";
-              echo "</tr>";
+              <tr>
+              <td class = 'listado_noticias'>
+              <br><b><H1 align="center">
+              <?=$noticia['titulo']; ?>
+              </H1></b></br>
+              <br>
+              Autor: <?=$noticia['autor']; ?>
+              <br>
+              Fecha: <?=$noticia['fecha']; ?>
+              </br>
+              <br>
+              <?=$noticia['cuerpo_noticia'];?>
+              </td>
+              </tr>
 
-            echo "</table>"; 
-            */
-
-
-         ?>
+            </table>
     </div>
-    <?php include('views/layout/sidebar-right.php'); ?>
-    <?php require('views/layout/footer.php'); ?>
-</body>
+</body> 
 </html>
