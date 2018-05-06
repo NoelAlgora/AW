@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: May 06, 2018 at 08:22 PM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.11
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 06-05-2018 a las 21:09:09
+-- Versión del servidor: 10.1.16-MariaDB
+-- Versión de PHP: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `caralcarro`
+-- Base de datos: `caralcarro`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `alquiler`
+-- Estructura de tabla para la tabla `alquiler`
 --
 
 CREATE TABLE `alquiler` (
@@ -37,7 +35,7 @@ CREATE TABLE `alquiler` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `alquiler`
+-- Volcado de datos para la tabla `alquiler`
 --
 
 INSERT INTO `alquiler` (`id`, `user_id`, `vehiculo_id`, `fecha_inicio`, `fecha_fin`) VALUES
@@ -47,7 +45,7 @@ INSERT INTO `alquiler` (`id`, `user_id`, `vehiculo_id`, `fecha_inicio`, `fecha_f
 -- --------------------------------------------------------
 
 --
--- Table structure for table `leasing`
+-- Estructura de tabla para la tabla `leasing`
 --
 
 CREATE TABLE `leasing` (
@@ -61,11 +59,11 @@ CREATE TABLE `leasing` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `noticia`
+-- Estructura de tabla para la tabla `noticia`
 --
 
 CREATE TABLE `noticia` (
-  `id_noticia` int(11) UNSIGNED NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL,
   `titulo` varchar(255) COLLATE utf8_bin NOT NULL,
   `autor` varchar(255) COLLATE utf8_bin NOT NULL,
   `fecha` datetime NOT NULL,
@@ -73,10 +71,10 @@ CREATE TABLE `noticia` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `noticia`
+-- Volcado de datos para la tabla `noticia`
 --
 
-INSERT INTO `noticia` (`id_noticia`, `titulo`, `autor`, `fecha`, `cuerpo_noticia`) VALUES
+INSERT INTO `noticia` (`id`, `titulo`, `autor`, `fecha`, `cuerpo_noticia`) VALUES
 (11, 'Coche to flama', 'Miguel', '0000-00-00 00:00:00', 'qwwrw d d sdcsd hasdsabs bchjasb hcsbah dbahb dahsb d'),
 (13, 'Buga to guapo', 'Miguel', '0000-00-00 00:00:00', 'qwwrw d d sdcsd hasdsabs bchjasb hcsbah dbahb dahsb d aknfjsn sdnj njnvjdldnbdjbdnd  '),
 (15, 'Coche ultimo modelo', 'Paco', '0000-00-00 00:00:00', 'hjsd hfshdi fjjifÃ± eiwj jh   hvueowÂ´periutgireyt84ytvf j'),
@@ -87,7 +85,7 @@ INSERT INTO `noticia` (`id_noticia`, `titulo`, `autor`, `fecha`, `cuerpo_noticia
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estructura de tabla para la tabla `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -101,7 +99,7 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `usuario`
+-- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `username`, `apellido`, `email`, `password`, `telefono`, `descripcion`) VALUES
@@ -113,7 +111,7 @@ INSERT INTO `usuario` (`id`, `username`, `apellido`, `email`, `password`, `telef
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vehiculo_alquiler`
+-- Estructura de tabla para la tabla `vehiculo_alquiler`
 --
 
 CREATE TABLE `vehiculo_alquiler` (
@@ -130,7 +128,7 @@ CREATE TABLE `vehiculo_alquiler` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `vehiculo_alquiler`
+-- Volcado de datos para la tabla `vehiculo_alquiler`
 --
 
 INSERT INTO `vehiculo_alquiler` (`id`, `user_id`, `matricula`, `marca`, `modelo`, `motor`, `cambio`, `color`, `combustible`, `list_img`) VALUES
@@ -146,7 +144,7 @@ INSERT INTO `vehiculo_alquiler` (`id`, `user_id`, `matricula`, `marca`, `modelo`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vehiculo_leasing`
+-- Estructura de tabla para la tabla `vehiculo_leasing`
 --
 
 CREATE TABLE `vehiculo_leasing` (
@@ -164,7 +162,7 @@ CREATE TABLE `vehiculo_leasing` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `vehiculo_leasing`
+-- Volcado de datos para la tabla `vehiculo_leasing`
 --
 
 INSERT INTO `vehiculo_leasing` (`id`, `user_id`, `matricula`, `marca`, `modelo`, `motor`, `cambio`, `color`, `combustible`, `list_img`, `descripcion`) VALUES
@@ -176,11 +174,11 @@ INSERT INTO `vehiculo_leasing` (`id`, `user_id`, `matricula`, `marca`, `modelo`,
 (8, NULL, '1234ABC', 'Fiat', 'Siena', '1.6i 105Cv', 'Manual', 'Rojo', 'Gasolina', 'Siena1.png', 'Nulla quis lorem ut libero malesuada feugiat. Proin eget tortor risus. Vivamus suscipit tortor eget felis porttitor volutpat. Quisque velit nisi, pretium ut lacinia in, elementum id enim.');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `alquiler`
+-- Indices de la tabla `alquiler`
 --
 ALTER TABLE `alquiler`
   ADD PRIMARY KEY (`id`),
@@ -188,7 +186,7 @@ ALTER TABLE `alquiler`
   ADD KEY `vehiculo_id` (`vehiculo_id`);
 
 --
--- Indexes for table `leasing`
+-- Indices de la tabla `leasing`
 --
 ALTER TABLE `leasing`
   ADD PRIMARY KEY (`id`),
@@ -196,101 +194,94 @@ ALTER TABLE `leasing`
   ADD KEY `vehiculo_id` (`vehiculo_id`);
 
 --
--- Indexes for table `noticia`
+-- Indices de la tabla `noticia`
 --
 ALTER TABLE `noticia`
-  ADD PRIMARY KEY (`id_noticia`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `usuario`
+-- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `vehiculo_alquiler`
+-- Indices de la tabla `vehiculo_alquiler`
 --
 ALTER TABLE `vehiculo_alquiler`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `vehiculo_leasing`
+-- Indices de la tabla `vehiculo_leasing`
 --
 ALTER TABLE `vehiculo_leasing`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `alquiler`
+-- AUTO_INCREMENT de la tabla `alquiler`
 --
 ALTER TABLE `alquiler`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
--- AUTO_INCREMENT for table `leasing`
+-- AUTO_INCREMENT de la tabla `leasing`
 --
 ALTER TABLE `leasing`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT for table `noticia`
+-- AUTO_INCREMENT de la tabla `noticia`
 --
 ALTER TABLE `noticia`
-  MODIFY `id_noticia` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
--- AUTO_INCREMENT for table `usuario`
+-- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
--- AUTO_INCREMENT for table `vehiculo_alquiler`
+-- AUTO_INCREMENT de la tabla `vehiculo_alquiler`
 --
 ALTER TABLE `vehiculo_alquiler`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
--- AUTO_INCREMENT for table `vehiculo_leasing`
+-- AUTO_INCREMENT de la tabla `vehiculo_leasing`
 --
 ALTER TABLE `vehiculo_leasing`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- Restricciones para tablas volcadas
+--
 
 --
--- Constraints for dumped tables
---
-
---
--- Constraints for table `alquiler`
+-- Filtros para la tabla `alquiler`
 --
 ALTER TABLE `alquiler`
   ADD CONSTRAINT `alquiler_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `alquiler_ibfk_2` FOREIGN KEY (`vehiculo_id`) REFERENCES `vehiculo_alquiler` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `leasing`
+-- Filtros para la tabla `leasing`
 --
 ALTER TABLE `leasing`
   ADD CONSTRAINT `leasing_ibfk_1` FOREIGN KEY (`vehiculo_id`) REFERENCES `vehiculo_leasing` (`id`),
   ADD CONSTRAINT `leasing_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `usuario` (`id`);
 
 --
--- Constraints for table `vehiculo_alquiler`
+-- Filtros para la tabla `vehiculo_alquiler`
 --
 ALTER TABLE `vehiculo_alquiler`
   ADD CONSTRAINT `vehiculo_alquiler_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `vehiculo_leasing`
+-- Filtros para la tabla `vehiculo_leasing`
 --
 ALTER TABLE `vehiculo_leasing`
   ADD CONSTRAINT `vehiculo_leasing_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `usuario` (`id`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
