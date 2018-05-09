@@ -15,7 +15,6 @@
 			<div id="contenido">
 			<form method="post" action="<?= $helper->url('noticia','CrearNoticia');?>">
 				<!-- Aqui tendria qe sustiuir el action por algo -->
-
 				<label>Autor de la noticia<br/><input type="text" name="autor" maxlength="255" /></label><br/><br/>
 				<label>Título de la noticia<br/><input type="text" name="titulo" maxlength="255" /></label><br/><br/>
 				<label>Noticia<br/><textarea name="cuerpo_noticia"></textarea></label><br/><br/>

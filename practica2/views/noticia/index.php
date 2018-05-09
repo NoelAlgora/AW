@@ -14,7 +14,6 @@
     <div id="container">
         <p class="noticias"> Ultimas noticias </p>
           <table>
-
             <?php foreach ($noticias as $key => $noticia): ?>
               <tr>
               <td class = 'listado_noticias'>

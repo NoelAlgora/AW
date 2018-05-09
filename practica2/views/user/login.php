@@ -31,7 +31,7 @@
         </div>
         <div class="row">
           <div class="col-25">
-            <label class="font_log" for="nombre">Nombre *</label>
+            <label class="font_log" for="nombre">Password *</label>
           </div>
           <div class="col-75">
             <input type="text" id="nombre" name="password" placeholder="Contraseña" required>

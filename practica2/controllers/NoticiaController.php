@@ -6,24 +6,17 @@ class NoticiaController extends ControladorBase{
 	}
 
     public function index(){
-
-        //CREAMOS EL DAO DE LO QUE QUEREMOS BUSCAR EN BD -> DaoNoticia
-        //Y HACEMOS LA BUSQUEDA
         $noticias = DaoNoticia::getInstance()->getAll();
-
-        // aqui lo que estas haciendo es decir que la vista que quieres es index.php ,
-        // en la carpeta de noticia porque estamos en controlador noticia
         $this->view(
             "noticia/index.php",
             [
-                'noticias'   => $noticias // le pasamos a la vista los datos que sacamos de la bd para que esta quede aisla
+                'noticias'   => $noticias
             ]
         );
     }
 
 	public function fichaNoticia(){
         $id = urldecode($_GET['id']);
-
         $noticia = DaoNoticia::getInstance()->getById($id);
 
 		$this->view(

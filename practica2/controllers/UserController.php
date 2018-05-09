@@ -70,14 +70,14 @@ class UserController extends ControladorBase
         );
     }
 
-	public function contacto(){
-		$this->view(
-            "site/contacto.php",
-            [
-
-            ]
-        );
-	}
+	// public function contacto(){
+	// 	$this->view(
+  //           "site/contacto.php",
+  //           [
+	//
+  //           ]
+  //       );
+	// }
 
     public function register()
     {
@@ -111,7 +111,7 @@ class UserController extends ControladorBase
                     $user = DaoUsuario::getInstance()->searchUsuarioByName($user_name);
 
                     if (!$user) {
-                        $id = $dao->insertUsuario($user_name, $apellido, $email, $password, $telefono, $descripcion);
+                        $id = DaoUsuario::getInstance()->insertUsuario($user_name, $apellido, $email, $password, $telefono, $descripcion);
 
                         if($id){
                             $_SESSION["login"] = true;

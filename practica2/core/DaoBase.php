@@ -20,7 +20,7 @@ class DaoBase {
     }
 
     public function deleteById($id){
-        return DataSource::getInstance()->setData("DELETE FROM $this->table WHERE id=$id");
+        return DataSource::getInstance()->setData("DELETE FROM $this->table WHERE id=:id", array(':id'=>$id));
     }
 
     public function deleteBy($column,$value){

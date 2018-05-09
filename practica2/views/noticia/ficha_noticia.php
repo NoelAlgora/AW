@@ -13,7 +13,6 @@
     <div id="container">
         <p class="noticias"> Noticia </p>
             <table> 
-            
               <tr>
               <td class = 'listado_noticias'>";
               <br><b>

@@ -35,18 +35,13 @@ class DataSource {
   public function getData($sql,$values){
     $consulta = $this->conexion->prepare($sql);
     $consulta->execute($values);
-    // echo $consulta->queryString;
-    //PDO::FETCH_ASSOC: devuelve un array indexado por los nombres de las columnas del conjunto de resultados.
-    $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
-    // var_dump($resultado);
-    return $resultado;
+    return $consulta->fetch(PDO::FETCH_ASSOC);
   }
 
   public function getAllData($sql,$values){
-	$consulta = $this->conexion->prepare($sql);
-	$consulta->execute($values);
-	$resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
-	return $resultado;
+		$consulta = $this->conexion->prepare($sql);
+		$consulta->execute($values);
+		return $consulta->fetchAll(PDO::FETCH_ASSOC);
   }
 
   public function setData($sql,$values){
