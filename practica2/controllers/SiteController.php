@@ -5,35 +5,15 @@ class SiteController extends ControladorBase
     public function __construct() {
         parent::__construct();
     }
+
     public function index()
     {
-        $this->view(
-            "site/index.php",
-            []
-        );
+        $this->view("site/index.php");
     }
 
-	public function rentCarView(){
-
-		$dao = new DaoRentCar();
-		$result = $dao->getAllRentCarAvaliable();
-
-		// var_dump($result);
-		$this->view(
-			"site/rentCarView.php",
-			[
-				'result' => $result,
-			]
-		);
-	}
-
-	public function NoticiasView(){
-		$this->view(
-			"site/noticias.php",
-			[
-				'result' => $result,
-			]
-		);
-	}
+    public function contact()
+    {
+        $this->view("site/contacto.php");
+    }
 }
 ?>

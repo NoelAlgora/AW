@@ -11,6 +11,31 @@ header {
   height: 11%;
   background-color: black;
 }
+
+.img_ficha_vehiculo{
+  width: 33.33%;
+  float: left;
+}
+.descripcion_ficha_vechiculo{
+  text-align: center;
+  width: 33.33%;
+  float: left;
+}
+.info_ficha_vehiculo{
+  width: 33.33%;
+  text-align: center;
+  float: left;
+}
+
+#sidebar-right {
+  background-color: pink;
+  flex-basis: 20%;
+}
+
+.tablaPerfil{
+
+}
+
 .font_header{
   font-family: Impact;
   font-size: 23px;
@@ -22,6 +47,22 @@ header div.saludo {
   text-align: right;
   font-size: 15px;
   color: white;
+}
+.font_info{
+  font-family: Impact;
+}
+
+.right_sidebar_contacto{
+  float: right;
+}
+
+.font_contacto{
+  font-family: Impact;
+  color: red;
+}
+
+.contacto_letra{
+  font-weight: bold;
 }
 
 footer {
@@ -80,6 +121,10 @@ h3{
   font-family: Impact;
 }
 
+.contacto_frase{
+  text-align: center;
+}
+
 .login{
   margin: auto;
   margin-top: 10%;
@@ -95,6 +140,10 @@ h3{
   flex-basis: 80%;
 }
 
+#container_contact {
+	width: 80%;
+	margin:auto;
+}
 #container {
   display: flex;
   flex-flow: row;
@@ -210,6 +259,22 @@ textarea.descripcion{
   padding: 25px;
 }
 
+.img_redes{
+  padding: 2px;
+  max-width: 20px;
+  max-height: 20px;
+}
+
+.container_contacto{
+  margin: auto;
+  margin-bottom: 11%;
+  width: 50%;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 25px;
+  display: inline-block;
+}
+
 .col-25 {
     float: left;
     width: 20%;
@@ -229,3 +294,8 @@ textarea.descripcion{
     clear: both;
 }
 
+.form_error_span {
+    text-align: center;
+    font-weight: bold;
+    color: red;
+}

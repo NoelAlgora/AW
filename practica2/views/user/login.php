@@ -15,6 +15,11 @@
   <div id="container">
     <div class="container_login">
       <p class="font_log"> Log in </p>
+      <span class="form_error_span">
+          <?php foreach ($formErrors as $formError): ?>
+          <p><?= $formError ?></p>
+          <?php endforeach; ?>
+      </span>
       <form class="login_box" method="post" action="<?= $helper->url('user','login');?>" method="post">
         <div class="row">
           <div class="col-25">
@@ -26,7 +31,7 @@
         </div>
         <div class="row">
           <div class="col-25">
-            <label class="font_log" for="nombre">Nombre *</label>
+            <label class="font_log" for="nombre">Password *</label>
           </div>
           <div class="col-75">
             <input type="text" id="nombre" name="password" placeholder="Contraseña" required>

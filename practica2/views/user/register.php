@@ -14,21 +14,26 @@
   <div class="container">
     <div class="container_register">
       <p class="font_log">Unete a Nostros!</p>
-      <form action="<?= $helper->url('user','register');?>" method="post">
+      <span class="form_error_span">
+          <?php foreach ($formErrors as $formError): ?>
+          <p><?= $formError ?></p>
+          <?php endforeach; ?>
+      </span>
+      <form id="register_form" action="<?= $helper->url('user','register');?>" method="post">
         <div class="row">
           <div class="col-25">
             <label class="font_log" for="nombre">Nombre *</label>
           </div>
           <div class="col-75">
-            <input type="text" id="username" name="nombre" placeholder="Tu nombre..." required>
+            <input type="text" id="username" name="username" placeholder="Tu nombre..." required>
           </div>
         </div>
         <div class="row">
           <div class="col-25">
-            <label class="font_log" for="apellidos">Apellidos *</label>
+            <label class="font_log" for="apellido">Apellidos *</label>
           </div>
           <div class="col-75">
-            <input type="text" id="apellido" name="apellidos" placeholder="Tus apellidos..." required>
+            <input type="text" id="apellido" name="apellido" placeholder="Tus apellidos..." required>
           </div>
         </div>
          <div class="row">
@@ -36,7 +41,7 @@
             <label class="font_log" for="email">Email *</label>
           </div>
           <div class="col-75">
-            <input type="text" id="email" name="Email" placeholder="Tu Email..." required>
+            <input type="text" id="email" name="email" placeholder="Tu Email..." required>
           </div>
         </div>
         <div class="row">
@@ -49,18 +54,18 @@
         </div>
         <div class="row">
           <div class="col-25">
-            <label class="font_log" for="contraseña">Contraseña *</label>
+            <label class="font_log" for="password">Contraseña *</label>
           </div>
           <div class="col-75">
-            <input type="text" id="password" name="contraseña" placeholder="Contraseña..." required>
+            <input type="text" id="password" name="password" placeholder="Contraseña..." required>
           </div>
         </div>
         <div class="row">
           <div class="col-25">
-            <label class="font_log" for="contraseñar">Contraseña *</label>
+            <label class="font_log" for="repassword">Contraseña *</label>
           </div>
           <div class="col-75">
-            <input type="text" id="passwordr" name="contraseña" placeholder="Repite tu Contraseña..." required>
+            <input type="text" id="repassword" name="repassword" placeholder="Repite tu Contraseña..." required>
           </div>
         </div>
         <div class="row">
@@ -68,7 +73,7 @@
             <label  class="font_log" for="descripción">Descripción</label>
           </div>
           <div class="col-75">
-            <textarea  class="font_log" id="descripcion" name="descripción" placeholder="Escribe algo sobre tí..."></textarea>
+            <textarea  class="font_log" id="descripcion" name="descripcion" placeholder="Escribe algo sobre tí..."></textarea>
           </div>
         </div>
         <div class="row">

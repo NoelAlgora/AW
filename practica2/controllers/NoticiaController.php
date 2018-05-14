@@ -5,46 +5,32 @@ class NoticiaController extends ControladorBase{
     	parent::__construct();
 	}
 
+    public function index(){
+        $noticias = DaoNoticia::getInstance()->getAll();
+        $this->view(
+            "noticia/index.php",
+            [
+                'noticias'   => $noticias
+            ]
+        );
+    }
+
 	public function fichaNoticia(){
+        $id = urldecode($_GET['id']);
+        $noticia = DaoNoticia::getInstance()->getById($id);
+
 		$this->view(
-			"site/ficha_noticia.php",
+			"noticia/ficha_noticia.php",
 			[
-				// 'result' => $result
+                 'noticia' => $noticia,
 			]
 		);
 	}
-
-	public function noticias(){
-
-		//
-		// aqui lo que estas haciendo es decir que la vista que quieres es noticias.php ,
-		// y en esa vista estas conectandote a la base de datos.
-		//
-		// lo que tendria que ser es que aqui se llamase a la base de datos y se pasaran a las VISTA
-		// las noticias que tienen que mostrar. fijate en otras vistas como se pillan los datos devueltos
-
-		//en vez de tomar todo el cuerpo de la noticia, puedes tomar solo el titulo, y lluego en la vista dar la opcion de ver la ficha completa
-
-		$this->view(
-			"site/noticias.php",
-			[
-				// 'result' => $result ->> donde tienes que tener los datos que seran devueltos
-			]
-		);
-	}
-
-	// public function index()
-  //   {
-  //       $this->view(
-  //           "noticia/publicar_noticia.php",
-  //           []
-  //       );
-  //   }
 
     public function CrearNoticia(){
         $formErrors = [];
 
-        if(!$this->helper()->isUserLogged())
+        if(!$this->helper()->isAdmin())
             return $this->redirect("Site", "login");
 
         // $_SESSION["login"] = false;
@@ -61,15 +47,13 @@ class NoticiaController extends ControladorBase{
 
             if (!empty($titulo_n) && !empty($autor_n) && !empty($fecha_n) && !empty($cuerpo_n)) {
                 //se crear el dao
-                $dao = new DaoNoticia();
-                $result = $dao->insertNoticia($titulo_n, $autor_n, $fecha_n, $cuerpo_n);
+                $result = DaoNoticia::getInstance()->insertNoticia($titulo_n, $autor_n, $fecha_n, $cuerpo_n);
 
                 var_dump($result);
                 if ($result == null){
                     echo "<script type='text/javascript'>alert('Algún campo incorrecto de la noticia!')</script>";
                 }
                 else {
-                
                 	echo "<script type='text/javascript'>alert('La noticia se creo correctamente!')</script>";
                     $this->redirect("Site", "noticias");
                 }
@@ -82,37 +66,9 @@ class NoticiaController extends ControladorBase{
         }
 
         $this->view(
-            "noticia/publicar_noticia.php",
+            "noticia/crearNoticia.php",
             [
                 'formErrors' => $formErrors,
-            ]
-        );
-    }
-
-    public function verNoticias() {
-
-        //Noticias 
-        $dao = new DaoNoticia();
-        $Noticias = $dao->getAllNoticia();
-
-        $this->view(
-            "site/noticias.php",
-            [
-                'noticia' => $Noticias
-            ]
-        );
-    }
-
-    public function verUnaNoticia() {
-
-        //Noticias 
-        $dao = new DaoNoticia();
-        $Noticia = $dao->fichaNoticia($id);
-
-        $this->view(
-            "noticia/ficha_noticia.php",
-            [
-                'noticiaCompleta' => $Noticia
             ]
         );
     }

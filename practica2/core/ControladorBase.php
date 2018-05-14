@@ -1,18 +1,23 @@
 <?php
 class ControladorBase{
 
-    private $helper;
+    public $helper;
 
     public function __construct() {
-        require_once 'EntidadBase.php';
+        require_once 'DataSource.php';
+        require_once 'DaoBase.php';
+
+
+        foreach(glob("daos/*.php") as $file){
+            require_once $file;
+        }
+
         require_once 'core/Ayuda.php';
         $this->helper=new Ayuda();
         //require_once 'ModeloBase.php';
 
         //Incluir todos los modelos
-        foreach(glob("models/*.php") as $file){
-            require_once $file;
-        }
+
 
         session_start();
     }
@@ -26,7 +31,7 @@ class ControladorBase{
 * vistas y carga la vista que le llega como parámetro. En resumen un método para
 * renderizar vistas.
 */
-    public function view($vista,$datos){
+    public function view($vista,$datos = []){
         foreach ($datos as $id_assoc => $valor) {
             ${$id_assoc}=$valor;
         }
@@ -35,8 +40,23 @@ class ControladorBase{
         require_once 'views/'.$vista;
     }
 
-    public function redirect($controlador=CONTROLADOR_DEFECTO,$accion=ACCION_DEFECTO){
-        header("Location:index.php?controller=".$controlador."&action=".$accion);
+    public function redirect($controlador=CONTROLADOR_DEFECTO,$accion=ACCION_DEFECTO,$id=0){
+        header("Location:index.php?controller=".$controlador."&action=".$accion."&id=".$id);
+    }
+
+    public function refresh()
+    {
+        header("Refresh: 0");
+    }
+
+    public function goBack()
+    {
+        $previous = "javascript:history.go(-1)";
+        if(isset($_SERVER['HTTP_REFERER'])) {
+            $previous = $_SERVER['HTTP_REFERER'];
+        }
+
+        header("Location: " . $previous);
     }
 
     public function helper()

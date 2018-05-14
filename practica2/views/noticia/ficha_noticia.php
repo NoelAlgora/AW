@@ -13,14 +13,13 @@
   <?php require('views/layout/header.php'); ?>
   <?php include('views/layout/nav.php'); ?>
     <div id="container">
-        <p class="noticias"> </p>
+        <p class="noticias"> Noticia </p>
             <table> 
-            
               <tr>
-              <td class = 'listado_noticias'>
-              <br><b><H1 align="center">
+              <td class = 'listado_noticias'>";
+              <br><b>
               <?=$noticia['titulo']; ?>
-              </H1></b></br>
+              </b></br>
               <br>
               Autor: <?=$noticia['autor']; ?>
               <br>
@@ -33,5 +32,5 @@
 
             </table>
     </div>
-</body> 
+</body>
 </html>

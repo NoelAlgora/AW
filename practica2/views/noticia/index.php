@@ -11,24 +11,23 @@
 <body>
     <?php require('views/layout/header.php'); ?>
     <?php include('views/layout/nav.php'); ?>
-    <p class="noticias"> <b> Ultimas noticias </b></p>
     <div id="container">
-      <div id="contenido">
+        <p class="noticias"> Ultimas noticias </p>
           <table>
             <?php foreach ($noticias as $key => $noticia): ?>
               <tr>
               <td class = 'listado_noticias'>
               <br><b>
-              <a href="<?= $helper->url('noticia','fichaNoticia', $noticia['id']) ?>"> <?= $noticia['titulo'] ?></a>
+              <a href="<?= $helper->url('noticia','fichaNoticia', $noticia['id']) ?>"> <?= $noticia['titulo'] ?></a>";
               </b></br>
               <?= $noticia['cuerpo_noticia']; ?>
               </td>
               </tr>
             <?php endforeach; ?>
-          </table>
-        </div>
+          </table>d
         <?php include('views/layout/sidebar-right.php'); ?>
     </div>
+    <?php require('views/layout/footer.php'); ?>
 </body>
 </html>
- 
+>>>>>>> origin/develop
