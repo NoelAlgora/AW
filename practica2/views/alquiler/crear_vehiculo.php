@@ -18,13 +18,13 @@
           <p><?= $formError ?></p>
           <?php endforeach; ?>
       </span>
-      <form id="create_vehiculo_form" action="<?= $helper->url('alquiler','crear_vehiculo');?>" method="post">
+      <form id="create_vehiculo_form" action="<?= $helper->url('alquiler','crear_vehiculo');?>" enctype = "multipart/form-data" method="post">
         <div class="row">
           <div class="col-25">
             <label class="font_log" for="matricula">Matricula *</label>
           </div>
           <div class="col-75">
-            <input type="text" id="matricula" name="matricula" placeholder="Matricula del vehiculo..." required>
+            <input type="text" id="matricula" name="matricula" placeholder="Matricula del vehiculo..." value="<?= $formValues['matricula'] ?>" required>
           </div>
         </div>
         <div class="row">
@@ -32,7 +32,7 @@
             <label class="font_log" for="marca">Marca *</label>
           </div>
           <div class="col-75">
-            <input type="text" id="marca" name="marca" placeholder="Marca del vehiculo..." required>
+            <input type="text" id="marca" name="marca" placeholder="Marca del vehiculo..." value="<?= $formValues['marca'] ?>" required>
           </div>
         </div>
          <div class="row">
@@ -40,7 +40,7 @@
             <label class="font_log" for="modelo">Modelo *</label>
           </div>
           <div class="col-75">
-            <input type="text" id="modelo" name="modelo" placeholder="Modelo del vehiculo..." required>
+            <input type="text" id="modelo" name="modelo" placeholder="Modelo del vehiculo..." value="<?= $formValues['modelo'] ?>" required>
           </div>
         </div>
         <div class="row">
@@ -48,7 +48,7 @@
             <label class="font_log" for="motor">Motor *</label>
           </div>
           <div class="col-75">
-            <input type="text" id="motor" name="motor" placeholder="Motor del vehiculo..." required>
+            <input type="text" id="motor" name="motor" placeholder="Motor del vehiculo..." value="<?= $formValues['motor'] ?>" required>
           </div>
         </div>
         <div class="row">
@@ -56,7 +56,7 @@
             <label class="font_log" for="color">Color *</label>
           </div>
           <div class="col-75">
-            <input type="text" id="color" name="color" placeholder="Color del vehiculo..." required>
+            <input type="text" id="color" name="color" placeholder="Color del vehiculo..." value="<?= $formValues['color'] ?>" required>
           </div>
         </div>
         <div class="row">
@@ -64,7 +64,7 @@
             <label class="font_log" for="cambio">Cambio *</label>
           </div>
           <div class="col-75">
-            <input type="text" id="cambio" name="cambio" placeholder="Cambio del vehiculo..." required>
+            <input type="text" id="cambio" name="cambio" placeholder="Cambio del vehiculo..." value="<?= $formValues['cambio'] ?>" required>
           </div>
         </div>
         <div class="row">
@@ -72,7 +72,7 @@
             <label class="font_log" for="combustible">Combustible *</label>
           </div>
           <div class="col-75">
-            <input type="text" id="combustible" name="combustible" placeholder="Combustible del vehiculo..." required>
+            <input type="text" id="combustible" name="combustible" placeholder="Combustible del vehiculo..." value="<?= $formValues['combustible'] ?>" required>
           </div>
         </div>
         <div class="row">
@@ -88,7 +88,7 @@
             <label class="font_log" for="precio_dia">Precio *</label>
           </div>
           <div class="col-75">
-            <input type="text" id="precio_dia" name="precio_dia" placeholder="Precio por dia..." required> 
+            <input type="text" id="precio_dia" name="precio_dia" placeholder="Precio por dia..." value="<?= $formValues['precio_dia'] ?>" required> 
           </div>
         </div>
         <div class="row">
@@ -100,9 +100,8 @@
           </div>
         </div>
         <div class="row">
-          <input type="submit" value="Registrarse">
+          <input type="submit" value="Crear">
         </div>
-        <p class="font_log">Ya tienes cuenta? <a href="<?= $helper->url('user','login');?>"> Login!</a></p>
       </form>
     </div>
   </div>

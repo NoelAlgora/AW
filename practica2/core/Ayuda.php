@@ -24,12 +24,22 @@ class Ayuda{
     		return null;
     }
 
-		public function getCarListImage($img_name){
-				if(empty($img_name)){
-						$path = "carvisuals/270x180/not_found.png";
-				}
-				else {	$path = "carvisuals/270x180/" . $img_name;}
-				return "<img src=".$path." alt=".$img_name." />";
-		}
+	public function getCarListImage($img_name){
+			if(empty($img_name)){
+					$path = "carvisuals/270x180/not_found.png";
+			}
+			else {	$path = "carvisuals/270x180/" . $img_name;}
+			return "<img src=".$path." alt=".$img_name." />";
+	}
+
+    public function getAlquilerListImage($img_name){
+        if(empty($img_name)){
+            $path = "img/vehiculo_not_found.png";
+        }
+        else {  
+            $path = "uploads/alquiler/" . $img_name;
+        }
+        return "<img src=".$path." alt=".$img_name." />";
+    }
 }
 ?>

@@ -65,21 +65,29 @@ class DaoRentCar extends DaoBase
 	        return DataSource::getInstance()->getAllData("SELECT * FROM $this->table  WHERE 	owner_user_id = :owner_user_id", array(':owner_user_id' => $user_id));
 	   }
 
-	    public function insertUsuario($matricula,
+	    public function insertVehiculo($matricula,
                             		$marca,
                             		$modelo,
                                 	$motor,
                                 	$cambio,
                                 	$color,
                                 	$combustible,
+                                	$list_img,
                                 	$descripcion,
-                                	$list_img){
+                                	$precio_dia){
 
-			$result = DataSource::getInstance()->setData("INSERT INTO usuario (username, apellido, email, password, telefono, descripcion) VALUES (:nombre,:apellido,:email,:password,:telefono,:descripcion)",
-			array(':nombre'=>$user_name,':apellido'=>$apellido,':email'=>$email,':password'=>$user_password,':telefono'=>$telefono,':descripcion'=>$descripcion));
+			$result = DataSource::getInstance()->setData("INSERT INTO vehiculo_alquiler 
+						( matricula, marca, 
+						modelo, motor, cambio, color,combustible, 
+						list_img, descripcion, precio_dia) 
+					VALUES (:matricula,:marca,
+							:modelo,:motor,:cambio,:color,:combustible,
+							:list_img,:descripcion,:precio_dia)",
+					array(	':matricula'=>$matricula,':marca'=>$marca,
+							':modelo'=>$modelo,':motor'=>$motor, ':cambio'=>$cambio, ':color'=>$color, ':combustible'=>$combustible, 
+							':list_img'=>$list_img, ':descripcion'=>$descripcion,':precio_dia'=>$precio_dia));
 			//llega la id o 0 si error, no devolvemos TO
 			return $result;
 		}
-
 }
 ?>

@@ -20,18 +20,16 @@
 			<p>Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec sollicitudin molestie malesuada. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Sed porttitor lectus nibh. Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
 			<h4>Coches disponibles:</h4>
 		<table>
-		<?php
-			foreach ($datos['result'] as $value) {
-				echo "<tr>";
-				echo "<td>".$helper->getCarListImage($value['list_img'])."</td>";
-				echo "<td>".$value['marca']."</td>";
-				echo "<td>".$value['modelo']."</td>";
-				echo "<td>".$value['motor']."</td>";
-				echo "<td>".$value['combustible']."</td>";
-				echo "<td><a href=" . $helper->url('alquiler','fichavehiculo', $value['id']). "> MAS INFORMACION</a></td>";
-				echo "</tr>";
-			}
-		 ?>
+		<?php foreach ($datos['result'] as $value): ?>
+			<tr>
+				<td><?= $helper->getAlquilerListImage($value['list_img']) ?></td>
+				<td><?= $value['marca'] ?></td>
+				<td><?= $value['modelo'] ?></td>
+				<td><?= $value['motor'] ?></td>
+				<td><?= $value['combustible'] ?></td>
+				<td><a href="<?= $helper->url('alquiler','fichavehiculo', $value['id'])?>"> MAS INFORMACION</a></td>
+			</tr>
+		<?php endforeach; ?>
 	 	</table>
     </div>
     <?php include('views/layout/sidebar-right.php'); ?>
