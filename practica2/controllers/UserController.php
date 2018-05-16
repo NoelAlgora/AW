@@ -104,6 +104,7 @@ class UserController extends ControladorBase
             $telefono = htmlspecialchars(trim(strip_tags($_POST["telefono"])));
             $apellido = htmlspecialchars(trim(strip_tags($_POST["apellido"])));
             $descripcion =  htmlspecialchars(trim(strip_tags($_POST["descripcion"])));
+	    $pass_cifrado=password_hash($password, PASSWORD_DEFAULT);
 
             if (!empty($user_name) && !empty($password) && !empty($email) && !empty($telefono) && !empty($apellido) ) {
                 if($repassword == $password)
@@ -111,7 +112,7 @@ class UserController extends ControladorBase
                     $user = DaoUsuario::getInstance()->searchUsuarioByName($user_name);
 
                     if (!$user) {
-                        $id = DaoUsuario::getInstance()->insertUsuario($user_name, $apellido, $email, $password, $telefono, $descripcion);
+                        $id = DaoUsuario::getInstance()->insertUsuario($user_name, $apellido, $email, $pass_cifrado, $telefono, $descripcion);
 
                         if($id){
                             $_SESSION["login"] = true;
