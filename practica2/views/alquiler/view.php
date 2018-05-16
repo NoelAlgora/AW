@@ -16,7 +16,7 @@
 	<h2> FICHA TÉCNICA DEL VEHÍCULO </h2>
 	<div class="ficha_vehiculo">
 		<div class="img_ficha_vehiculo">
-			<?php echo $helper->getCarListImage($coche['list_img']); ?>
+			<?php echo $helper->getAlquilerListImage($coche['list_img']); ?>
 		</div>
 		<div class="info_ficha_vehiculo">
 			<table class="tabla_info_ficha_vehiculo">

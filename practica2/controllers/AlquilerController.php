@@ -95,6 +95,87 @@ class AlquilerController extends ControladorBase{
 			]
 		);
 	}
+<<<<<<< HEAD
+=======
+
+	public function crear_vehiculo()
+	{
+		$error = false;
+		$formErrors = [];
+		/*$formErrors = [ "matricula" => "", "marca" => "","modelo" => "", "motor" => "",
+						"cambio" => "", "color" => "", "combustible" => "", "descripcion" => "", "precio_dia" => ""];*/
+
+		$formValues = [ "matricula" => "", "marca" => "","modelo" => "", "motor" => "",
+						"cambio" => "", "color" => "", "combustible" => "", "descripcion" => "", "precio_dia" => 0];
+
+        if(!$this->helper()->isUserLogged())
+            return $this->redirect("Site", "index");
+
+
+        if (isset($_POST["matricula"]) && isset($_POST["marca"]) && isset($_POST["modelo"]) 
+        	&& isset($_POST["motor"]) && isset($_POST["cambio"]) && isset($_POST["color"]) 
+        	&& isset($_POST["combustible"]) && isset($_POST["descripcion"]) && isset($_POST["precio_dia"]))
+        {
+        	$formValues['matricula'] = htmlspecialchars(trim(strip_tags($_POST["matricula"])));
+        	$formValues["marca"] = htmlspecialchars(trim(strip_tags($_POST["marca"])));
+        	$formValues["modelo"] = htmlspecialchars(trim(strip_tags($_POST["modelo"])));
+        	$formValues["motor"] = htmlspecialchars(trim(strip_tags($_POST["motor"])));
+        	$formValues["cambio"] = htmlspecialchars(trim(strip_tags($_POST["cambio"])));
+        	$formValues["color"] = htmlspecialchars(trim(strip_tags($_POST["color"])));
+        	$formValues["combustible"] = htmlspecialchars(trim(strip_tags($_POST["combustible"])));
+        	$formValues["descripcion"] = htmlspecialchars(trim(strip_tags($_POST["descripcion"])));
+        	$formValues["precio_dia"] = htmlspecialchars(trim(strip_tags($_POST["precio_dia"])));
+
+        	foreach ($formValues as $clave => $valor)
+            {
+        		if(empty($valor))
+        		{
+    				$formErrors[$clave] = "El campo no puede estar vacio";
+        		}
+            }
+
+            if(!isset($_FILES['list_img']))
+                $formErrors['list_img'] = "Debes subir una imagen";
+            else
+                if(in_array(strtolower(end(explode('.',$_FILES['list_img']['name']))),array("jpeg","jpg","png"))=== false)
+                    $formErrors['list_img']="extension not allowed, please choose a JPEG or PNG file.";
+
+            if(empty($formErrors))
+            {
+                $coche = DaoRentCar::getInstance()->getBy("matricula", $formValues["matricula"]);
+
+                if (!$coche) {
+
+                    $list_img = uniqid() . "." . strtolower(end(explode('.',$_FILES['list_img']['name'])));
+
+                    move_uploaded_file($_FILES['list_img']['tmp_name'],"uploads/alquiler/".$list_img);
+
+                    $id = DaoRentCar::getInstance()->insertVehiculo($formValues["matricula"], $formValues["marca"], $formValues["modelo"],
+                    												$formValues["motor"],$formValues["cambio"], $formValues["color"],
+                    												$formValues["combustible"], $list_img, $formValues["descripcion"], $formValues["precio_dia"]);
+
+                    if($id){
+                        $this->redirect("alquiler", "fichaVehiculo", $id);
+                    }
+                    else {
+                        $formErrors["general"] = "Error al insertar en la base de datos!";
+                    }
+                }
+                else {
+                    $formErrors["matricula"] = "Ya existe un coche con esa matricula!";
+                }
+            }
+        }
+
+        $this->view(
+            "alquiler/crear_vehiculo.php",
+            [
+                'formErrors' => $formErrors,
+                'formValues' => $formValues,
+            ]
+        );
+	}
+>>>>>>> f1fe01f0bf740c0d31bdce63c139f7e4694e6df2
 }
 
 ?>

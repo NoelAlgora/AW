@@ -65,5 +65,32 @@ class DaoRentCar extends DaoBase
 	        return DataSource::getInstance()->getAllData("SELECT * FROM $this->table  WHERE 	owner_user_id = :owner_user_id", array(':owner_user_id' => $user_id));
 	   }
 
+<<<<<<< HEAD
+=======
+	    public function insertVehiculo($matricula,
+                            		$marca,
+                            		$modelo,
+                                	$motor,
+                                	$cambio,
+                                	$color,
+                                	$combustible,
+                                	$list_img,
+                                	$descripcion,
+                                	$precio_dia){
+
+			$result = DataSource::getInstance()->setData("INSERT INTO vehiculo_alquiler 
+						( matricula, marca, 
+						modelo, motor, cambio, color,combustible, 
+						list_img, descripcion, precio_dia) 
+					VALUES (:matricula,:marca,
+							:modelo,:motor,:cambio,:color,:combustible,
+							:list_img,:descripcion,:precio_dia)",
+					array(	':matricula'=>$matricula,':marca'=>$marca,
+							':modelo'=>$modelo,':motor'=>$motor, ':cambio'=>$cambio, ':color'=>$color, ':combustible'=>$combustible, 
+							':list_img'=>$list_img, ':descripcion'=>$descripcion,':precio_dia'=>$precio_dia));
+			//llega la id o 0 si error, no devolvemos TO
+			return $result;
+		}
+>>>>>>> f1fe01f0bf740c0d31bdce63c139f7e4694e6df2
 }
 ?>
