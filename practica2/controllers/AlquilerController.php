@@ -95,8 +95,6 @@ class AlquilerController extends ControladorBase{
 			]
 		);
 	}
-<<<<<<< HEAD
-=======
 
 	public function crear_vehiculo()
 	{
@@ -112,8 +110,8 @@ class AlquilerController extends ControladorBase{
             return $this->redirect("Site", "index");
 
 
-        if (isset($_POST["matricula"]) && isset($_POST["marca"]) && isset($_POST["modelo"]) 
-        	&& isset($_POST["motor"]) && isset($_POST["cambio"]) && isset($_POST["color"]) 
+        if (isset($_POST["matricula"]) && isset($_POST["marca"]) && isset($_POST["modelo"])
+        	&& isset($_POST["motor"]) && isset($_POST["cambio"]) && isset($_POST["color"])
         	&& isset($_POST["combustible"]) && isset($_POST["descripcion"]) && isset($_POST["precio_dia"]))
         {
         	$formValues['matricula'] = htmlspecialchars(trim(strip_tags($_POST["matricula"])));
@@ -175,7 +173,7 @@ class AlquilerController extends ControladorBase{
             ]
         );
 	}
->>>>>>> f1fe01f0bf740c0d31bdce63c139f7e4694e6df2
+
 }
 
 ?>

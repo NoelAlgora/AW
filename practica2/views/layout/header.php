@@ -1,5 +1,4 @@
 <header>
-  <h4>Cabecera con logo y cositas</h4>
   <div class="saludo">
     <?php if ( $helper->isUserLogged() ): ?>
       <p>Usuario: <?= $helper->getLoggedUser()['username']  ?></p>

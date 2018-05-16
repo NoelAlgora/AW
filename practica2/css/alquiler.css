@@ -3,33 +3,61 @@
   margin: 0 auto;
 }
 
+body {
+  background: #f0f0f0;
+}
+
 .cards {
   display: -webkit-flex;
   display: flex;
   -webkit-justify-content: center;
-  justify-content: center;
+   justify-content: center;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-top: 15px;
+  margin-top: 25px;
   padding: 1.5%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+	background: transparent url(../img/fondo_listcar.png) repeat-y 50% 0;
 }
+
+.symbol_list_car{
+	width: 10%;
+	display: inline-block;
+}
+
+.info_list_car{
+	/* display: inline-block;
+	margin: 0;
+	vertical-align: top; */
+
+	 height: 100%;
+
+}
+
+.info_list_car p {
+	display: inline-block;
+    vertical-align: top;
+    margin-top: 8px;
+		margin-left: 2px;
+}
+
 
 .card {
   position: relative;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  background: #fefff9;
+  /* background: #fefff9; */
   color: #363636;
   text-decoration: none;
-  -moz-box-shadow: rgba(0, 0, 0, 0.19) 0 0 8px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0 0 8px 0;
-  box-shadow: rgba(0, 0, 0, 0.19) 0 0 8px 0;
+  /* -moz-box-shadow: rgba(0, 0, 0, 0.19) 0 0 8px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0 0 8px 0; */
+  /* box-shadow: rgba(0, 0, 0, 0.19) 0 0 8px 0;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
-  border-radius: 4px;
+  border-radius: 4px; */
+
 }
 @media (max-width: 700px) {
   .card {
@@ -58,11 +86,19 @@
 .card span {
   display: block;
 }
-.card .card-summary {
-  padding: 5% 5% 3% 5%;
-  color: #666;
-  font-size: .78em;
+
+
+
+.card .card-summary  {
+	margin-left: 10px;
+margin-top: 10px;
+  /* padding: 5% 5% 3% 5%; */
+  font-size: 0.9em;
+	text-align: center;
+	padding: 10px 15px;
+    border-left: 1px solid #aaa;
 }
+
 .card .card-header {
   position: relative;
   height: 175px;
@@ -70,39 +106,67 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.10);
   background-blend-mode: overlay;
   -moz-border-radius: 4px 4px 0 0;
   -webkit-border-radius: 4px;
   border-radius: 4px 4px 0 0;
 }
-.card .card-header:hover, .card .card-header:focus {
+.card .card-header:hover, .card .card-header:focus  {
   background-color: rgba(255, 255, 255, 0);
+
 }
 .card .card-title {
-  background: rgba(157, 187, 63, 0.85);
-  padding: 3.5% 0 2.5% 0;
+  background: rgba(157, 187, 63, 0.65);
+  padding: 3% 0 2.5% 0;
   color: white;
-  font-family: 'Roboto Condensed', sans-serif;
-  text-transform: uppercase;
+  /* font-family: "futura-pt",Arial,Helvetica,Verdana,sans-serif; */
+  /* text-transform: uppercase; */
   position: absolute;
   bottom: 0;
   width: 100%;
 }
-.card .card-title h3 {
-  font-size: 1.2em;
-  line-height: 1.2;
-  padding: 0 3.5%;
-  margin: 0;
+
+.ctaFlat {
+    background-color: #e0ff00;
+    padding: 5px 15px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 0;
+    cursor: pointer;
+    font-family: "futura-pt",Arial,Helvetica,Verdana,sans-serif;
+    color: #333;
+    font-size: 20px;
+    font-weight: 800;
+		margin-top: 10px;
 }
+
+.card .card-title h3 {
+	font-size: 1.1em;
+line-height: 1.1;
+padding: 0 3.5%;
+margin: 0;
+padding-bottom: 6%;
+}
+
+.card:hover .ctaFlat {
+	color:green;
+}
+
 .card:hover, .card:focus {
   background: white;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 0;
   -moz-box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 20px 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 20px 0px;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 20px 0px;
 }
 .card:hover .card-title, .card:focus .card-title {
   background: rgba(157, 187, 63, 0.95);
+
 }
 .card:hover .card-meta, .card:focus .card-meta {
   max-height: 1em;
@@ -110,26 +174,4 @@
 
 img {
   max-width: 100%;
-}
-
-body {
-  background: #f0f0f0;
-  font-size: 17px;
-  line-height: 1.4;
-  font-family: 'Jaldi', sans-serif;
-}
-
-* {
-  -moz-transition-property: background-color, border-color, box-shadow, color, opacity, text-shadow, -moz-transform;
-  -o-transition-property: background-color, border-color, box-shadow, color, opacity, text-shadow, -o-transform;
-  -webkit-transition-property: background-color, border-color, box-shadow, color, opacity, text-shadow, -webkit-transform;
-  transition-property: background-color, border-color, box-shadow, color, opacity, text-shadow, transform;
-  -moz-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -moz-transition-timing-function: linear;
-  -o-transition-timing-function: linear;
-  -webkit-transition-timing-function: linear;
-  transition-timing-function: linear;
 }

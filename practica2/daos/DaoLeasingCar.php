@@ -28,7 +28,7 @@ class DaoLeasingCar extends DaoBase
 							WHERE
 								l.vehiculo_id IS NULL",array());
 
-				 // var_dump($result);
+				  // var_dump($result);
 				return $result;
 		}
 

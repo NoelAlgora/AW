@@ -24,41 +24,23 @@ class Ayuda{
     		return null;
     }
 
-<<<<<<< HEAD
-		public function getCarListImage($img_name){
-				if(empty($img_name)){
-						$path = "carvisuals/270x180/not_found.png";
-				}
-				else {	$path = "carvisuals/270x180/" . $img_name;}
-				return "<img src=".$path." alt=".$img_name." />";
-		}
 
-
-        public function getCarListImageCSS($img_name){
-                if(empty($img_name)){
-                        $path = "carvisuals/270x180/not_found.png";
-                }
-                else {  $path = "carvisuals/270x180/" . $img_name;}
-                return $path;
-        }
-=======
-	public function getCarListImage($img_name){
-			if(empty($img_name)){
-					$path = "carvisuals/270x180/not_found.png";
-			}
-			else {	$path = "carvisuals/270x180/" . $img_name;}
-			return "<img src=".$path." alt=".$img_name." />";
-	}
+    public function getCarListImageCSS($img_name){
+            if(empty($img_name)){
+                    $path = "carvisuals/270x180/not_found.png";
+            }
+            else {  $path = "carvisuals/270x180/" . $img_name;}
+            return $path;
+    }
 
     public function getAlquilerListImage($img_name){
         if(empty($img_name)){
             $path = "img/vehiculo_not_found.png";
         }
-        else {  
+        else {
             $path = "uploads/alquiler/" . $img_name;
         }
         return "<img src=".$path." alt=".$img_name." />";
     }
->>>>>>> f1fe01f0bf740c0d31bdce63c139f7e4694e6df2
 }
 ?>
