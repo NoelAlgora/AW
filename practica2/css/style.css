@@ -82,7 +82,7 @@ header div.saludo {
 }
 
 footer {
-  background-color: lightgreen;
+  background-color: black;
   /* position: fixed; */
   /* bottom:0; */
   /* height: 5%; */
@@ -160,6 +160,14 @@ h3{
 	margin:auto;
 }
 
+#contenido_index {
+  flex-basis: 100%;
+	margin:0 auto;
+}
+#contenido_index .text_index {
+	padding: 15px;
+}
+
 #container {
   display: flex;
   flex-flow: row;
@@ -188,9 +196,15 @@ meter mas elementos en el container*/
 
 .navi-logo-item{
   padding: 5px;
+	padding-left: 35px;
   height: 100%;
   float: left;
 }
+
+.navi-logo-item a{
+  padding-top: 0px;
+}
+
 .navi-menu-item{
   float: right;
   padding: 15px;

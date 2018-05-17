@@ -18,7 +18,6 @@
 		<!-- <div id="contenido"> -->
 		<div class="container_cards">
 			<div class="cards">
-				<!-- <?php  var_dump($datos['result']); ?>	 -->
 				<?php foreach ($datos['result'] as $value): ?>
 				<div class="card">
 					<a href=<?php echo $helper->url('leasing','fichavehiculo', $value['id'])?> >
@@ -44,7 +43,7 @@
 				</div>
 				<div class="info_list_car">
 					<img class="symbol_list_car" src="img/price.png" alt="price">
-					<p><?php echo $value['base_price_day']; ?> € </p>
+					<p><?php echo $value['base_price_day']; ?> €/día </p>
 				</div>
 					<a href=<?php echo $helper->url('leasing','fichavehiculo', $value['id'])?> ><input class="ctaFlat" type="button" value="Reservar"></a>
 			</span>

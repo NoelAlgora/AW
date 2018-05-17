@@ -107,7 +107,7 @@ margin-top: 10px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-color: rgba(255, 255, 255, 0.10);
+  background-color: rgba(255, 255, 255, 0.05);
   background-blend-mode: overlay;
   -moz-border-radius: 4px 4px 0 0;
   -webkit-border-radius: 4px;
@@ -118,7 +118,7 @@ margin-top: 10px;
 
 }
 .card .card-title {
-  background: rgba(157, 187, 63, 0.50);
+  background: rgba(0, 0, 0, 0.60);
   padding: 3% 0 2.5% 0;
   color: white;
   /* font-family: "futura-pt",Arial,Helvetica,Verdana,sans-serif; */
@@ -166,7 +166,7 @@ padding-bottom: 6%;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 20px 0px;
 }
 .card:hover .card-title, .card:focus .card-title {
-  background: rgba(157, 187, 63, 0.95);
+  background: rgba(76, 175, 80, 0.95);
 
 }
 .card:hover .card-meta, .card:focus .card-meta {
