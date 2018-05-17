@@ -13,7 +13,6 @@
 </head>
 
 <body>
-	<?php require('views/layout/header.php'); ?>
 	<?php include('views/layout/nav.php'); ?>
 	<div class="container_cards">
 		<div class="cards">

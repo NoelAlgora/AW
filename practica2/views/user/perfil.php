@@ -10,7 +10,6 @@
 </head>
 
 <body>
-	<?php require('views/layout/header.php'); ?>
 	<?php require('views/layout/nav.php'); ?>
 	<div id="container">
 		<div id="contenido">
@@ -31,25 +30,25 @@
 
 				<!--Table body-->
 				<tbody>
-				<tr class="<?= ($libro['status'] == 0) ? 'danger' : 'success'?>">
-					<td>
-						<?= $datos['user']['username']?>
-					</td>
-					<td>
-						<?= $datos['user']['apellido']?>
-					</td>
-					<td>
-						<?= $datos['user']['email']?>
-					</td>
-					<td>
-						<?= $datos['user']['telefono']?>
-					</td>
-					<td>
-						<?= $datos['user']['descripcion']?>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+					<tr class="<?= ($libro['status'] == 0) ? 'danger' : 'success'?>">
+						<td>
+							<?= $datos['user']['username']?>
+						</td>
+						<td>
+							<?= $datos['user']['apellido']?>
+						</td>
+						<td>
+							<?= $datos['user']['email']?>
+						</td>
+						<td>
+							<?= $datos['user']['telefono']?>
+						</td>
+						<td>
+							<?= $datos['user']['descripcion']?>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 
 			<h4>Coches Alquiler</h4>
 			<table class="table table-bordered">
@@ -251,7 +250,7 @@
 				</tbody>
 			</table>
 		</div>
-		<?php require('views/layout/footer.php'); ?>
+	</div>
+	<?php require('views/layout/footer.php'); ?>
 </body>
-
 </html>

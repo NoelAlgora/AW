@@ -13,7 +13,6 @@
 </head>
 
 <body>
-	<?php require('views/layout/header.php'); ?>
 	<?php include('views/layout/nav.php'); ?>
 	<div id="container">
 		<!-- <div id="contenido"> -->
@@ -22,10 +21,13 @@
 				<!-- <?php  var_dump($datos['result']); ?>	 -->
 				<?php foreach ($datos['result'] as $value): ?>
 				<div class="card">
+					<a href=<?php echo $helper->url('leasing','fichavehiculo', $value['id'])?> >
 					<span class="card-header" style="<?php echo " background-image: url( " . $helper->getCarListImageCSS($value['list_img']) ."); "?>">
+
 				<span class="card-title">
 					<h3><?php echo $value['marca'] ." ". $value['modelo']; ?></h3>
 				</span>
+					</a>
 					</span>
 				<span class="card-summary">
 				<div class="info_list_car">
@@ -37,8 +39,12 @@
 				<div class="info_list_car">
 					<img class="symbol_list_car" src="img/gear.png" alt="cambio">
 					<p><?php echo $value['cambio']; ?></p>
+					<img class="symbol_list_car" src="img/passenger.png" alt="cambio">
+					<p><?php echo $value['plazas']; ?></p>
+				</div>
+				<div class="info_list_car">
 					<img class="symbol_list_car" src="img/price.png" alt="price">
-					<p>100€/dia</p>
+					<p><?php echo $value['base_price_day']; ?> € </p>
 				</div>
 					<a href=<?php echo $helper->url('leasing','fichavehiculo', $value['id'])?> ><input class="ctaFlat" type="button" value="Reservar"></a>
 			</span>
@@ -47,7 +53,6 @@
 			</div>
 		</div>
 		<!-- </div> -->
-		<!-- <?php require('views/layout/sidebar-right.php'); ?> -->
 	</div>
 	<?php require('views/layout/footer.php'); ?>
 </body>

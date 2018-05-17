@@ -5,19 +5,67 @@
 	<title>
 		<?php echo $coche['marca'] . " " . $coche['modelo']; ?>
 	</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/slideCarPhotos.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-	<?php require('views/layout/header.php'); ?>
 	<?php include('views/layout/nav.php'); ?>
-	<h2> FICHA TÉCNICA DEL VEHÍCULO </h2>
-	<div class="ficha_vehiculo">
-		<div class="img_ficha_vehiculo">
-			<?php echo $helper->getAlquilerListImage($coche['list_img']); ?>
-		</div>
-		<div class="info_ficha_vehiculo">
+	<div id="container">
+		<div id="contenido_view">
+		<h2> FICHA TÉCNICA DEL VEHÍCULO </h2>
+		<div class="img_ficha_vehiculo ">
+			<div class="slideshow-container">
+				<?php
+				$images = $helper->getImagesCarOfFolder($coche['img_folder_name']);
+				foreach ($images as $value=>$image): ?>
+				<!-- Full-width images with number and caption text -->
+				<div class="mySlides fade">
+					<!-- <div class="numbertext">1 / 3</div> -->
+					<img src="<?php echo $image ?>" style="width:100%">
+					<!-- <div class="text">Caption Text</div> -->
+				</div>
+				<?php endforeach; ?>
+
+				<!-- Next and previous buttons -->
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			</div>
+			<br>
+			<!-- The dots/circles -->
+			<div style="text-align:center">
+				<span class="dot" onclick="currentSlide(1)"></span>
+				<span class="dot" onclick="currentSlide(2)"></span>
+				<span class="dot" onclick="currentSlide(3)"></span>
+			</div>
+	</div>
+	<div class="info_ficha_vehiculo">
+		<form method="POST" action="<?= $helper->url('leasing','alquilar');?>">
+			<div>
+				<div>
+					<label>Fecha de recogida:</label>
+				</div>
+				<div>
+					<input required type="date" name="fecha_recogida" step="1" min="<?php echo date(" Y-m-d ");?>">
+				</div>
+			</div>
+			<div>
+				<div>
+					<label>Fecha de devolución:</label>
+				</div>
+				<div>
+					<input required type="date" name="fecha_devolucion" step="1" min="<?php echo date(" Y-m-d ");?>">
+				</div>
+			</div>
+			<div>
+				<input type="hidden" name="vehiculo_id" value="<?= $coche['id'] ?>">
+				<button class="btn btn-success" type="submit">Alquilar</button>
+			</div>
+		</form>
+	</div>
+	<div class="info_ficha_vehiculo">
 			<table class="tabla_info_ficha_vehiculo">
 				<tbody>
 					<tr>
@@ -51,33 +99,25 @@
 						</td>
 					</tr>
 					<tr>
-							<?php echo $coche['descripcion']; ?>
+						<td class="font_log">Plazas: </td>
+						<td>
+							<?php echo $coche['plazas']; ?>
+						</td>
+						<td class="font_log">Precio base por dia: </td>
+						<td>
+							<?php echo $coche['base_price_day'];?>
+						</td>
+					</tr>
+					<tr>
+						<?php echo $coche['descripcion']; ?>
 					</tr>
 				</tbody>
 			</table>
-			<form method="POST" action="<?= $helper->url('leasing','alquilar');?>">
-				<div>
-					<div>
-						<label>Fecha de recogida:</label>
-					</div>
-					<div>
-						<input required type="date" name="fecha_recogida" step="1" min="<?php echo date("Y-m-d");?>">
-					</div>
-				</div>
-				<div >
-					<div>
-						<label>Fecha de devolución:</label>
-					</div>
-					<div>
-						<input required type="date" name="fecha_devolucion" step="1" min="<?php echo date("Y-m-d");?>">
-					</div>
-				</div>
-				<div >
-					<input type="hidden" name="vehiculo_id" value="<?= $coche['id'] ?>">
-					<button class="btn btn-success" type="submit">Alquilar</button>
-				</div>
-			</form>
+
 		</div>
 	</div>
+</div>
+<?php require('views/layout/footer.php'); ?>
 </body>
+<script src="js/slideCarPhotos.js"></script>
 </html>

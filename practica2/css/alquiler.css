@@ -1,5 +1,6 @@
 .container_cards {
-  max-width: 1100px;
+  /* max-width: 1100px; */
+	flex-basis: 100%;
   margin: 0 auto;
 }
 
@@ -39,8 +40,8 @@ body {
 .info_list_car p {
 	display: inline-block;
     vertical-align: top;
-    margin-top: 8px;
-		margin-left: 2px;
+    margin-top: 5px;
+		/* margin-left: 2px; */
 }
 
 
@@ -101,7 +102,7 @@ margin-top: 10px;
 
 .card .card-header {
   position: relative;
-  height: 175px;
+  height: 185px;
   overflow: hidden;
   background-repeat: no-repeat;
   background-size: cover;
@@ -117,7 +118,7 @@ margin-top: 10px;
 
 }
 .card .card-title {
-  background: rgba(157, 187, 63, 0.65);
+  background: rgba(157, 187, 63, 0.50);
   padding: 3% 0 2.5% 0;
   color: white;
   /* font-family: "futura-pt",Arial,Helvetica,Verdana,sans-serif; */
@@ -139,7 +140,7 @@ margin-top: 10px;
     color: #333;
     font-size: 20px;
     font-weight: 800;
-		margin-top: 10px;
+		margin-top: 6px;
 }
 
 .card .card-title h3 {

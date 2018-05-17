@@ -11,7 +11,6 @@
 </head>
 
 <body>
-    <?php require('views/layout/header.php'); ?>
     <?php require('views/layout/nav.php'); ?>
     <div id="container">
       <div id="contenido">

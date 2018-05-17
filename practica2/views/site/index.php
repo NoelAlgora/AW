@@ -11,7 +11,6 @@
 </head>
 
 <body>
-  <?php require('views/layout/header.php'); ?>
   <?php include('views/layout/nav.php'); ?>
   <div id="container">
     <div id="contenido">
@@ -20,6 +19,6 @@
     </div>
 	<?php include('views/layout/sidebar-right.php'); ?>
 </div>
-<?php require('views/layout/footer.php'); ?>
+	<?php require('views/layout/footer.php'); ?>
 </body>
 </html>

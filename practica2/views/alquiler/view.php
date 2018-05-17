@@ -11,7 +11,6 @@
 </head>
 
 <body>
-	<?php require('views/layout/header.php'); ?>
 	<?php include('views/layout/nav.php'); ?>
 	<h2> FICHA TÉCNICA DEL VEHÍCULO </h2>
 	<div class="ficha_vehiculo">
