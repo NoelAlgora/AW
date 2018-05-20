@@ -172,5 +172,73 @@ class UserController extends ControladorBase
             ]
         );
     }
+    public function cambiardatos() {
+        $formErrors = [];
+
+        $user_name = "";
+        $password = "";
+        $repassword = "";
+        $email = "";
+        $telefono = "";
+        $apellido = "";
+        $descripcion =  "";
+
+        if($this->helper()->isUserLogged()){
+            
+
+        if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["repassword"]) &&
+            isset($_POST["email"]) && isset($_POST["apellido"]) && isset($_POST["telefono"]))
+        {
+            $user_name = htmlspecialchars(trim(strip_tags($_POST["username"])));
+            $password = htmlspecialchars(trim(strip_tags($_POST["password"])));
+            $repassword = htmlspecialchars(trim(strip_tags($_POST["repassword"])));
+            $email = htmlspecialchars(trim(strip_tags($_POST["email"])));
+            $telefono = htmlspecialchars(trim(strip_tags($_POST["telefono"])));
+            $apellido = htmlspecialchars(trim(strip_tags($_POST["apellido"])));
+            $descripcion =  htmlspecialchars(trim(strip_tags($_POST["descripcion"])));
+        $pass_cifrado=password_hash($password, PASSWORD_DEFAULT);
+
+            if (!empty($user_name) && !empty($password) && !empty($email) && !empty($telefono) && !empty($apellido) ) {
+                if($repassword == $password)
+                {
+                    $user = DaoUsuario::getInstance()->searchUsuarioByName($user_name);
+
+                    if ($user) {
+                        $id = DaoUsuario::getInstance()->cambiaDatosUsuario($user_name, $apellido, $email, $pass_cifrado, $telefono, $descripcion);
+
+                        if($id){
+                            $_SESSION["login"] = true;
+                            $_SESSION["user_id"] = $id;
+                            $this->redirect("Site", "index");
+                        }
+                        else {
+                            $formErrors[] = "Cambio datos incorrecto!";
+                        }
+                    }
+                    
+                }
+                else
+                    $formErrors[] = "Las contraseñas no coinciden";
+            }
+        }
+
+        $this->view(
+            "user/cambiardatos.php",
+            [
+                'formErrors' => $formErrors,
+                'user_name' => $user_name,
+                'user_password' => $user_password,
+                'repassword' => $repassword,
+                'email' => $email,
+                'telefono' => $telefono,
+                'apellido' => $apellido,
+                'descripcion' => $descripcion,
+            ]
+        );
+    }
+    
 }
+}
+
+
 ?>
