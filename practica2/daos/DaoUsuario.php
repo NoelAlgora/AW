@@ -42,5 +42,18 @@ class DaoUsuario extends DaoBase
       //llega la id o 0 si error, no devolvemos TO
       return $result;
   }
+
+  public function cambiaDatosUsuario($user_name,
+                                $apellido,$email,
+                                $user_password,
+                                $telefono,
+                                $descripcion){
+    $result = DataSource::getInstance()->setData("INSERT INTO usuario (username, apellido, email, password, telefono, descripcion) VALUES (:nombre,:apellido,:email,:password,:telefono,:descripcion)",
+        array(':nombre'=>$user_name,':apellido'=>$apellido,':email'=>$email,':password'=>$user_password,':telefono'=>$telefono,':descripcion'=>$descripcion));
+      //llega la id o 0 si error, no devolvemos TO
+      return $result;
+
+
+  }
 }
 ?>
