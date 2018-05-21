@@ -435,3 +435,40 @@ textarea.descripcion{
     text-decoration: none;
     cursor: pointer;
 }
+
+.resumen_noticia{
+    display: block;
+    float: left;
+    padding: 10px;
+    border-bottom: 5px solid #d7d7d7;
+    margin-right: 0;
+}
+
+.campos_resumen_noticia {
+    float: right;
+    width: 1000px;
+    text-align: left;
+}
+
+h1 {
+  font-family: Merriweather, Times, serif;
+  font-weight: 700;
+  
+}
+
+figure {
+  margin: 0;
+  float: right; 
+}
+
+#id_autor {
+  font-weight:900;
+  color: red;
+  text-transform: uppercase;
+}
+
+article {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
