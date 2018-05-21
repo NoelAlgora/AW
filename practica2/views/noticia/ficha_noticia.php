@@ -10,7 +10,6 @@
 </head>
 
 <body>
-  <?php require('views/layout/header.php'); ?>
   <?php include('views/layout/nav.php'); ?>
     <article>
       <figure>
