@@ -34,6 +34,19 @@ class DaoLeasing extends DaoBase
 		return $result;
 	}
 
+	public function leasingOfCar($vehiculo_id){
+		$result = DataSource::getInstance()->getAllData(
+					"SELECT * FROM
+						 $this->table
+					WHERE
+						vehiculo_id = :vehiculo_id
+					ORDER BY fecha_fin DESC"
+						,array(':vehiculo_id'=>$vehiculo_id));
+
+		 // var_dump($result);
+		return $result;
+	}
+
 	public function devolverAlquiler($leasing_id)
 	{
 		return DataSource::getInstance()->setData("UPDATE $this->table SET status = 1 WHERE id = :id",
