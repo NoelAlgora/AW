@@ -6,9 +6,14 @@
 		<?php echo $coche['marca'] . " " . $coche['modelo']; ?>
 	</title>
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/ficha_vehiculo.css" />
 	<link rel="stylesheet" type="text/css" href="css/slideCarPhotos.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  	<script src="./js/alquilar.js"></script>
 </head>
 
 <body>
@@ -41,29 +46,24 @@
 				<span class="dot" onclick="currentSlide(3)"></span>
 			</div>
 	</div>
-	<div class="info_ficha_vehiculo">
-		<form method="POST" action="<?= $helper->url('leasing','alquilar');?>">
-			<div>
-				<div>
-					<label>Fecha de recogida:</label>
-				</div>
-				<div>
-					<input required type="date" name="fecha_recogida" step="1" min="<?php echo date(" Y-m-d ");?>">
-				</div>
-			</div>
-			<div>
-				<div>
-					<label>Fecha de devolución:</label>
-				</div>
-				<div>
-					<input required type="date" name="fecha_devolucion" step="1" min="<?php echo date(" Y-m-d ");?>">
-				</div>
-			</div>
-			<div>
+	<div class="alquilar-wrapper">
+		<div class="fecha_recogida">
+			<label>Fecha de recogida:</label>
+			<div class="datepicker_fecha_recogida"></div>
+		</div>
+		<div class="fecha_devolucion">
+			<label>Fecha de devolución:</label>
+			<div class="datepicker_fecha_devolucion"></div>
+		</div>
+		<button id="limpiar-fechas" class="btn btn-success">Limpiar fechas</button>
+		<div class="alquilar-form-wrapper" data-alquileres="<?= $alquiler_str ?>">
+			<form method="POST" action="<?= $helper->url('leasing','alquilar');?>">
+				<input class="input-datepicker" type="hidden" id="fecha_recogida" name="fecha_recogida">
+				<input class="input-datepicker" type="hidden" id="fecha_devolucion" name="fecha_devolucion">
 				<input type="hidden" name="vehiculo_id" value="<?= $coche['id'] ?>">
-				<button class="btn btn-success" type="submit">Alquilar</button>
-			</div>
-		</form>
+				<button id="submit-alquilar" class="btn btn-success" type="submit">Alquilar</button>
+			</form>
+		</div>
 	</div>
 	<div class="info_ficha_vehiculo">
 			<table class="tabla_info_ficha_vehiculo">

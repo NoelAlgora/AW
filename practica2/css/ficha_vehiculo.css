@@ -1,0 +1,30 @@
+.ui-state-highlight.ui-state-default {
+    border: 1px solid #c5c5c5;
+    background: #f6f6f6;
+    font-weight: normal;
+    color: #454545;
+}
+
+.ui-state-highlight.ui-state-active {
+	border: 1px solid #003eff;
+    background: #007fff;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+.fecha-ocupada .ui-state-default {
+    background-color: #c81010;
+}
+
+.fecha-seleccionada .ui-state-default {
+    border: 1px solid #dad55e;
+    background: #fffa90;
+    color: #777620;
+}
+
+.fecha-rango-seleccion .ui-state-default {
+    border: 1px solid #003eff;
+    background: #75b6f8;
+    font-weight: normal;
+    color: #ffffff;
+}

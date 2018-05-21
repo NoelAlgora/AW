@@ -69,11 +69,18 @@ class LeasingController extends ControladorBase{
 		$idCoche = urldecode($_GET['id']);
 
 		$car = DaoLeasingCar::getInstance()->getById($idCoche);
+		$alquileres = DaoLeasing::getInstance()->leasingOfCar($idCoche);
+		$alquiler_str = '';
+
+		foreach ($alquileres as $key => $alquiler) {
+			$alquiler_str .= $alquiler["fecha_inicio"].';'.$alquiler["fecha_fin"].';';
+		}
 
 		$this->view(
 			"leasing/view.php",
 			[
 				 'coche' => $car,
+				 'alquiler_str' => $alquiler_str,
 			]
 		);
 	}
