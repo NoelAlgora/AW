@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/alquiler.css" />
+	<link rel="stylesheet" type="text/css" href="css/filter.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -16,6 +17,7 @@
 	<?php include('views/layout/nav.php'); ?>
 	<div id="container">
 		<!-- <div id="contenido"> -->
+		<?php require('views/layout/sidebar-filter.php'); ?>
 		<div class="container_cards">
 			<div class="cards">
 				<?php foreach ($datos['result'] as $value): ?>
@@ -52,6 +54,7 @@
 			</div>
 		</div>
 		<!-- </div> -->
+		
 	</div>
 	<?php require('views/layout/footer.php'); ?>
 </body>

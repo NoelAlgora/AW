@@ -1,0 +1,206 @@
+.filtros {
+ flex-basis: 15%;
+ width: 100%;
+ background-color:#fff;
+ /* position:fixed!important;
+ z-index:1; */
+ overflow-y:auto;
+ padding-left: 1%;
+}
+
+.filtro_marca_contendor{
+  height: 140px;
+}
+
+.filtro_cambio{
+  margin-left: 15px;
+  border: 1px solid #ccc;
+  border-width: 0 1px 1px 0;
+  padding: 0 5px 5px 0;
+  width: 150px;
+  height: 95px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.filtro_marca {
+  margin-left: 15px;
+  border: 1px solid #ccc;
+  border-width: 0 1px 1px 0;
+  padding: 0 5px 5px 0;
+  width: 150px;
+  height: 133px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.filtro_combustible{
+
+  margin-left: 15px;
+  border: 1px solid #ccc;
+  border-width: 0 1px 1px 0;
+  padding: 0 5px 5px 0;
+  width: 150px;
+  height: 95px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin-left: 15px;
+}
+
+.filtro_color{
+  margin-left: 15px;
+  border: 1px solid #ccc;
+  border-width: 0 1px 1px 0;
+  padding: 0 5px 5px 0;
+  width: 150px;
+  height: 60px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.filtro_color em {
+  display: block;
+  height: 17px;
+  width: 17px;
+}
+
+.filtro_marca_buscador input{
+  width: 125px;
+  color: #333;
+  font-size: 12px;
+  height: 18px;
+  line-height: 18px;
+  padding: 1px 25px 1px 5px;
+  border: 1px solid #ccc;
+  border-width: 1px 1px 1px 1px;
+  background: transparent;
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
+/*para el icono del buscador */
+.filtro_marca_buscador i{
+    position: absolute;
+    right: 5px;
+    top: 3px;
+}
+
+
+li.azul em{
+  background-color: #0a68f5;
+}
+li.rojo em{
+  background-color: #FF0000;
+}
+li.verde em{
+  background-color: #009900;
+}
+li.negro em{
+  background-color: #000000;
+}
+li.gris em{
+  background-color: #A0A0A0;
+}li.blanco em{
+  background-color: #FFFFFF;
+}
+li.amarillo em{
+  background-color: #FFFF00;
+}
+li.rosa em{
+  background-color: #FF007F;
+}
+li.marron em{
+  background-color: #663300;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.filtro_color ul {
+    margin: 0;
+    padding: 0;
+    font-size: 11px;
+    list-style: none;
+}
+
+.filtro_color ul a {
+    display: block;
+    height: auto;
+    padding: 1px;
+    line-height: 15px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+.filtro_color ul li {
+    float: left;
+    width: 21px;
+    height: 21px;
+    margin: 0 5px 5px 0;
+    border: 1px solid #fff;
+}
+
+.container_filtros {
+    display: block;
+    padding-top: 0px;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container_filtros input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 23px;
+    background-color: #827f7f;
+}
+
+/* On mouse-over, add a grey background color */
+.container_filtros:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container_filtros input:checked ~ .checkmark {
+    background-color: #228B22;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container_filtros input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container_filtros .checkmark:after {
+    left: 8px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}

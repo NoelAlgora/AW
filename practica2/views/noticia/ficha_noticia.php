@@ -10,15 +10,26 @@
 </head>
 
 <body>
-  <?php include('views/layout/nav.php'); ?>
-    <article>
-      <figure>
-        <?= $helper->getNoticiasListImage($noticia['list_img']); ?>
-      </figure>
-      <h1 class= "titulo_ficha_noticia"> <?=$noticia['titulo']; ?> </h1> 
-      <p id="id_autor">Escrito por: <?=$noticia['autor']; ?></p>
-      <p> <?=$noticia['fecha'];  ?> </p>
-      <p> <?=$noticia['cuerpo_noticia'];  ?> </p>
-    </article>
+    <div id="container">
+        <p class="noticias"> Noticia </p>
+            <table> 
+              <tr>
+              <td class = 'listado_noticias'>";
+              <br><b>
+              <?=$noticia['titulo']; ?>
+              </b></br>
+              <br>
+              Autor: <?=$noticia['autor']; ?>
+              <br>
+              Fecha: <?=$noticia['fecha']; ?>
+              </br>
+              <br>
+              $noticia['cuerpo_noticia'];  ?>
+              </td>
+              </tr>
+
+            </table>
+         ?>
+    </div>
 </body>
 </html>
