@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 17, 2018 at 02:29 PM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.11
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 21-05-2018 a las 12:06:50
+-- Versión del servidor: 10.1.30-MariaDB
+-- Versión de PHP: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `caralcarro`
+-- Base de datos: `caralcarro`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `alquiler`
+-- Estructura de tabla para la tabla `alquiler`
 --
 
 CREATE TABLE `alquiler` (
@@ -39,7 +39,7 @@ CREATE TABLE `alquiler` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `leasing`
+-- Estructura de tabla para la tabla `leasing`
 --
 
 CREATE TABLE `leasing` (
@@ -53,7 +53,7 @@ CREATE TABLE `leasing` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `noticia`
+-- Estructura de tabla para la tabla `noticia`
 --
 
 CREATE TABLE `noticia` (
@@ -61,26 +61,27 @@ CREATE TABLE `noticia` (
   `titulo` varchar(255) COLLATE utf8_bin NOT NULL,
   `autor` varchar(255) COLLATE utf8_bin NOT NULL,
   `fecha` datetime NOT NULL,
-  `cuerpo_noticia` varchar(255) COLLATE utf8_bin NOT NULL
+  `cuerpo_noticia` varchar(10000) COLLATE utf8_bin NOT NULL,
+  `list_img` varchar(255) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `noticia`
+-- Volcado de datos para la tabla `noticia`
 --
 
-INSERT INTO `noticia` (`id`, `titulo`, `autor`, `fecha`, `cuerpo_noticia`) VALUES
-(11, 'Coche to flama', 'Miguel', '0000-00-00 00:00:00', 'qwwrw d d sdcsd hasdsabs bchjasb hcsbah dbahb dahsb d'),
-(13, 'Buga to guapo', 'Miguel', '0000-00-00 00:00:00', 'qwwrw d d sdcsd hasdsabs bchjasb hcsbah dbahb dahsb d aknfjsn sdnj njnvjdldnbdjbdnd  '),
-(15, 'Coche ultimo modelo', 'Paco', '0000-00-00 00:00:00', 'hjsd hfshdi fjjifÃ± eiwj jh   hvueowÂ´periutgireyt84ytvf j'),
-(16, 'Mega coche', 'Alonso', '0000-00-00 00:00:00', 'hjsd hfshdi fjjifÃ± eiwj jh   hvueowÂ´periutgireyt84ytvf j djsabf d uweh dcnsjcuhfluwhej  wseu wh'),
-(17, 'Ejemplo1', 'Marta Perez', '0000-00-00 00:00:00', 'qteb trucuh chwuhgqcuqhufhuhcgqhecgqherchqgiqchgirhcrighqcoghqcuhgrcuhgreqhcgrhchihqeichgierchghcighcqihcgi hcigrhcqiqghc q hg iqh i gh cqihc qh grh vqvn '),
-(18, 'hola', 'hola', '2018-05-05 14:46:04', 'hola'),
-(19, 'noel', 'noticia prueba', '2018-05-06 21:26:45', 'noel');
+INSERT INTO `noticia` (`id`, `titulo`, `autor`, `fecha`, `cuerpo_noticia`, `list_img`) VALUES
+(11, 'Coche to flama', 'Miguel', '0000-00-00 00:00:00', 'qwwrw d d sdcsd hasdsabs bchjasb hcsbah dbahb dahsb d', ''),
+(13, 'Buga to guapo', 'Miguel', '0000-00-00 00:00:00', 'qwwrw d d sdcsd hasdsabs bchjasb hcsbah dbahb dahsb d aknfjsn sdnj njnvjdldnbdjbdnd  ', ''),
+(15, 'Coche ultimo modelo', 'Paco', '0000-00-00 00:00:00', 'hjsd hfshdi fjjifÃ± eiwj jh   hvueowÂ´periutgireyt84ytvf j', ''),
+(16, 'Mega coche', 'Alonso', '0000-00-00 00:00:00', 'hjsd hfshdi fjjifÃ± eiwj jh   hvueowÂ´periutgireyt84ytvf j djsabf d uweh dcnsjcuhfluwhej  wseu wh', ''),
+(17, 'Ejemplo1', 'Marta Perez', '0000-00-00 00:00:00', 'qteb trucuh chwuhgqcuqhufhuhcgqhecgqherchqgiqchgirhcrighqcoghqcuhgrcuhgreqhcgrhchihqeichgierchghcighcqihcgi hcigrhcqiqghc q hg iqh i gh cqihc qh grh vqvn ', ''),
+(18, 'hola', 'hola', '2018-05-05 14:46:04', 'hola', ''),
+(19, 'Así podría ser un renacido Audi A2', 'Noel', '2018-05-06 21:26:45', 'Ahora que, en plena fiebre SUV -cuyo éxito seguimos sin entender muy bien-, hay algunos fabricantes empeñados en rescatar modelos antiguos -como el glorioso Alpine A110 2017-, podría ser el momento perfecto para el regreso del Audi A2. ¿No te suena de nada? Es normal... porque pasó sin pena ni gloria por el mercado y supuso uno de los golpes más duros a la moral de la marca al no entender el público su producto. Ni su precio, claro. \\r\\n\\r\\nPuede que creas que todos los modelo que Audi -aquí tienes los mejores de la Historia- ha lanzado al mercado han sido siempre éxitos rotundos... y no vas demasiado desencaminado o desencaminada. Pero en toda trayectoria brillante siempre existen algunos borrones... y el Audi A2 es, sin duda alguna, uno de los más grandes del fabricante de Ingolstadt. Apareció en el año 2000 bajo la forma de un pequeño monovolumen que, fabricado en aluminio y con una riquísima dotación en materia de seguridad, no resultaba nada barato en comparación con sus rivales. Como siempre suele suceder con este tipo de apuestas... el mercado respondió con el peor de sus castigos: la indiferencia. \\r\\n\\r\\nAhora un artista gráfico ha imaginado cómo podría ser el regreso del Audi A2... y lo ha hecho a través de unos cuantos renders -los mejores de 2016-. El autor se llama Pino Cazetta y, según sus estimaciones, el modelo creado sólo sería unos cuatro centímetros más largo que el original, por lo que sus medidas quedarían en unos escuetos 3,86 metros por 1,67 de ancho y 1,55 de alto. ¿Sabes lo mejor? Que se ha animado a hacerlo tras saber que en el año 2011 la propia marca quiso jugar con la posibilidad de traerlo de nuevo entre nosotros a través del A2 Concept presentado en el Salón de Frankfurt. Como te habrás imaginado al no verle el aspecto SUV por ninguna parte, la idea no pasó del papel. \\r\\n\\r\\n¿Te ha gustado? Por lo menos este regreso del Audi A2 no lo ha convertido en un todocamino como los que inundan los centros comerciales de media Europa. Queremos coches distintos, señores fabricantes. Como, por ejemplo, familiares -que siguen sin triunfar en España a pesar de ser más prácticos que muchos todocaminos-. Ah, el mercado... tan sabio en ocasiones. Y tan estúpido en otras tantas. ', 'AudiA2Nuevo.png');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estructura de tabla para la tabla `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -95,7 +96,7 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `usuario`
+-- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `username`, `apellido`, `email`, `password`, `telefono`, `descripcion`, `user_type`) VALUES
@@ -105,7 +106,7 @@ INSERT INTO `usuario` (`id`, `username`, `apellido`, `email`, `password`, `telef
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vehiculo_alquiler`
+-- Estructura de tabla para la tabla `vehiculo_alquiler`
 --
 
 CREATE TABLE `vehiculo_alquiler` (
@@ -126,7 +127,7 @@ CREATE TABLE `vehiculo_alquiler` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `vehiculo_alquiler`
+-- Volcado de datos para la tabla `vehiculo_alquiler`
 --
 
 INSERT INTO `vehiculo_alquiler` (`id`, `owner_user_id`, `matricula`, `marca`, `modelo`, `motor`, `cambio`, `color`, `combustible`, `plazas`, `base_price_day`, `list_img`, `descripcion`, `img_folder_name`) VALUES
@@ -137,7 +138,7 @@ INSERT INTO `vehiculo_alquiler` (`id`, `owner_user_id`, `matricula`, `marca`, `m
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vehiculo_leasing`
+-- Estructura de tabla para la tabla `vehiculo_leasing`
 --
 
 CREATE TABLE `vehiculo_leasing` (
@@ -158,7 +159,7 @@ CREATE TABLE `vehiculo_leasing` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `vehiculo_leasing`
+-- Volcado de datos para la tabla `vehiculo_leasing`
 --
 
 INSERT INTO `vehiculo_leasing` (`id`, `owner_user_id`, `matricula`, `marca`, `modelo`, `motor`, `cambio`, `color`, `combustible`, `plazas`, `base_price_day`, `list_img`, `descripcion`, `img_folder_name`) VALUES
@@ -171,11 +172,11 @@ INSERT INTO `vehiculo_leasing` (`id`, `owner_user_id`, `matricula`, `marca`, `mo
 (13, NULL, '4985AHD', 'Ferrari', 'Testarossa', 'V12 4943cc 390CV', 'Manual', 'Rojo Ferrari', 'Gasolina', 2, '289.99', 'ferrari_testa1.png', 'Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor volutpat. Nulla quis lorem ut libero malesuada feugiat.', 'fer_testa');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `alquiler`
+-- Indices de la tabla `alquiler`
 --
 ALTER TABLE `alquiler`
   ADD PRIMARY KEY (`id`),
@@ -183,7 +184,7 @@ ALTER TABLE `alquiler`
   ADD KEY `vehiculo_id` (`vehiculo_id`);
 
 --
--- Indexes for table `leasing`
+-- Indices de la tabla `leasing`
 --
 ALTER TABLE `leasing`
   ADD PRIMARY KEY (`id`),
@@ -191,97 +192,97 @@ ALTER TABLE `leasing`
   ADD KEY `vehiculo_id` (`vehiculo_id`);
 
 --
--- Indexes for table `noticia`
+-- Indices de la tabla `noticia`
 --
 ALTER TABLE `noticia`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `usuario`
+-- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `vehiculo_alquiler`
+-- Indices de la tabla `vehiculo_alquiler`
 --
 ALTER TABLE `vehiculo_alquiler`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`owner_user_id`);
 
 --
--- Indexes for table `vehiculo_leasing`
+-- Indices de la tabla `vehiculo_leasing`
 --
 ALTER TABLE `vehiculo_leasing`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`owner_user_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `alquiler`
+-- AUTO_INCREMENT de la tabla `alquiler`
 --
 ALTER TABLE `alquiler`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `leasing`
+-- AUTO_INCREMENT de la tabla `leasing`
 --
 ALTER TABLE `leasing`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `noticia`
+-- AUTO_INCREMENT de la tabla `noticia`
 --
 ALTER TABLE `noticia`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `usuario`
+-- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `vehiculo_alquiler`
+-- AUTO_INCREMENT de la tabla `vehiculo_alquiler`
 --
 ALTER TABLE `vehiculo_alquiler`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `vehiculo_leasing`
+-- AUTO_INCREMENT de la tabla `vehiculo_leasing`
 --
 ALTER TABLE `vehiculo_leasing`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `alquiler`
+-- Filtros para la tabla `alquiler`
 --
 ALTER TABLE `alquiler`
   ADD CONSTRAINT `alquiler_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `alquiler_ibfk_2` FOREIGN KEY (`vehiculo_id`) REFERENCES `vehiculo_alquiler` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `leasing`
+-- Filtros para la tabla `leasing`
 --
 ALTER TABLE `leasing`
   ADD CONSTRAINT `leasing_ibfk_1` FOREIGN KEY (`vehiculo_id`) REFERENCES `vehiculo_leasing` (`id`),
   ADD CONSTRAINT `leasing_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `usuario` (`id`);
 
 --
--- Constraints for table `vehiculo_alquiler`
+-- Filtros para la tabla `vehiculo_alquiler`
 --
 ALTER TABLE `vehiculo_alquiler`
   ADD CONSTRAINT `vehiculo_alquiler_ibfk_1` FOREIGN KEY (`owner_user_id`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `vehiculo_leasing`
+-- Filtros para la tabla `vehiculo_leasing`
 --
 ALTER TABLE `vehiculo_leasing`
   ADD CONSTRAINT `vehiculo_leasing_ibfk_1` FOREIGN KEY (`owner_user_id`) REFERENCES `usuario` (`id`);
