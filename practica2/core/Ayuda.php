@@ -52,5 +52,14 @@ class Ayuda{
         }
         return "<img src=".$path." alt=".$img_name." />";
     }
+	
+	public function getNoticiasListImage($img_name){
+            if(empty($img_name)){
+                    $path = "newsvisuals/270x180/not_found.png";
+            }
+            else {  $path = "newsvisuals/270x180/" . $img_name;}
+            return "<img src=".$path." alt=".$img_name." />";
+        }
+	
 }
 ?>
