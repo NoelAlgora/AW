@@ -9,12 +9,28 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/alquiler.css" />
+	 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/filter.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+	  $( function() {
+	    $( "#datepickerAlquiler" ).datepicker();
+	     $( "#datepickerDevolucion" ).datepicker();
+	  } );
+  	</script>
+
 </head>
 
 <body>
 	<?php include('views/layout/nav.php'); ?>
+	<div>
+		¡Alquila rápido!
+		<p>Fecha de Alquiler: <input type="text" id="datepickerAlquiler"></p>
+		<p>Fecha de devolución: <input type="text" id="datepickerDevolucion"></p>
+		<button type="button" onclick="">Buscar</button>
+	</div>
 	<div id="container">
 		<!-- <div id="contenido"> -->
 		<?php require('views/layout/sidebar-filter.php'); ?>

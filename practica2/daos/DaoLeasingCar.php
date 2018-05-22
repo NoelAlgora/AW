@@ -17,6 +17,46 @@ class DaoLeasingCar extends DaoBase
         return self::$instance;
     }
 
+    public function carFilter($filter){
+	
+		$stringPDO = "SELECT * FROM $this->table WHERE ";
+		$arrayPDO = array();
+
+		$j = count($filter);
+
+		foreach ($filter as $key => $values){
+			for ($i = 0; $i < count($filter[$key]); $i++){
+					
+					//key =
+					$stringPDO .= $key . " = ";
+
+					// :key$i
+					$aux = ":" . $key . $i;
+
+					//:key$i => valor
+					$arrayPDO[$aux] = $filter[$key][$i];
+
+					//key = :key$i
+					$stringPDO .= $aux;
+
+					if ($i < count($filter[$key]) - 1){
+						$stringPDO .= " OR ";
+					}
+				
+			}
+			$j--;
+
+			if($j){
+				$stringPDO .= " AND ";
+			}
+		}
+
+		// echo $stringPDO;
+		// var_dump($arrayPDO);
+
+		return DataSource::getInstance()->getAllData($stringPDO,$arrayPDO);
+    }
+
 	 public function getAllLeasingCarAvaliable(){
 		$result = DataSource::getInstance()->getAllData(
 					"SELECT r.* FROM

@@ -1,6 +1,7 @@
 .filtros {
  flex-basis: 15%;
  width: 100%;
+ font-size: 16px;
  background-color:#fff;
  /* position:fixed!important;
  z-index:1; */
@@ -18,7 +19,7 @@
   border-width: 0 1px 1px 0;
   padding: 0 5px 5px 0;
   width: 150px;
-  height: 95px;
+/*  height: 95px;*/
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -41,7 +42,7 @@
   border-width: 0 1px 1px 0;
   padding: 0 5px 5px 0;
   width: 150px;
-  height: 95px;
+  /*height: 95px;*/
   overflow-x: hidden;
   overflow-y: hidden;
   margin-left: 15px;
@@ -53,7 +54,7 @@
   border-width: 0 1px 1px 0;
   padding: 0 5px 5px 0;
   width: 150px;
-  height: 60px;
+  /*height: 60px;*/
   overflow-x: hidden;
   overflow-y: auto;
 }

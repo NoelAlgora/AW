@@ -6,8 +6,25 @@
 		Inicio
 	</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" 
+	
+	/>
 	<link rel="stylesheet" type="text/css" href="css/slideshowIndex.css" />
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepickerAlquiler" ).datepicker();
+     $( "#datepickerDevolucion" ).datepicker();
+  } );
+  </script>
+
+
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -15,11 +32,18 @@
 	<?php include('views/layout/nav.php'); ?>
 	<div id="container">
 		<div id="contenido_index">
-			<h4>Pagina principal blbalbalablb</h4>
+			<h2>Bienvenido a Caralcarro</h2>
 			<div class="text_index">
-				<p> Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Pellentesque in
-					ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in ipsum id orci porta dapibus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vestibulum
-					ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. </p>
+				
+				<p align="center"> Somos una empresa dedicada al alquiler y renting de vehículos con más de 20 años de antigüedad, con sede en Madrid, C/Atapuerca. 
+
+				Encuentra tu coche fácilmente entre todos nuestros anuncios de coches publicados por nuestros anunciantes profesionales y particulares. Estamos convencidos de que con nuestras herramientas de búsqueda encontrarás tu coche ideal de forma sencilla y rápida.</p>
+¡Alquila rápido!
+<p>Fecha de Alquiler: <input type="text" id="datepickerAlquiler"></p>
+<p>Fecha de devolución: <input type="text" id="datepickerDevolucion"></p>
+<button type="button" onclick="">Buscar</button>
+
+
 
 			</div>
 			<div class="slideshow-container">
@@ -32,6 +56,12 @@
 				<div class="mySlides fade">
 					<img class="img-main" src="img/varios2.jpg" style="width:100%">
 				</div>
+
+				<!-- FORMULARIO NUEVO -->
+	
+
+
+          <!-- FIN del nuevo buscador-->
 			</div>
 			<br>
 
@@ -66,9 +96,7 @@
 			}
 		</script>
 		<div class="text_index">
-			<p> Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Pellentesque in
-				ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in ipsum id orci porta dapibus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vestibulum
-				ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. </p>
+			<p align="center"> La misión de Caralcarro es poner al alcance de todos un mecanismo de alquiler y renting de vehículos de y segunda mano de particulares y empresas en un par de clicks. Puedes consultar tu coche deseado en pocos segundos y desde cualquier lugar. Nuestro objetivo es ofrecer el buscador de coches de alquiler y renting más completo   </p>
 
 		</div>
 
