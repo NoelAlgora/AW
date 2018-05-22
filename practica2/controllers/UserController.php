@@ -172,6 +172,8 @@ class UserController extends ControladorBase
             ]
         );
     }
+
+
     public function cambiardatos() {
         $formErrors = [];
 
@@ -196,7 +198,7 @@ class UserController extends ControladorBase
             $telefono = htmlspecialchars(trim(strip_tags($_POST["telefono"])));
             $apellido = htmlspecialchars(trim(strip_tags($_POST["apellido"])));
             $descripcion =  htmlspecialchars(trim(strip_tags($_POST["descripcion"])));
-        $pass_cifrado=password_hash($password, PASSWORD_DEFAULT);
+            $pass_cifrado=password_hash($password, PASSWORD_DEFAULT);
 
             if (!empty($user_name) && !empty($password) && !empty($email) && !empty($telefono) && !empty($apellido) ) {
                 if($repassword == $password)
