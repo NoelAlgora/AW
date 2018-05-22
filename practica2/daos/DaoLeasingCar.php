@@ -51,8 +51,8 @@ class DaoLeasingCar extends DaoBase
 			}
 		}
 
-		// echo $stringPDO;
-		// var_dump($arrayPDO);
+		echo $stringPDO;
+		var_dump($arrayPDO);
 
 		return DataSource::getInstance()->getAllData($stringPDO,$arrayPDO);
     }

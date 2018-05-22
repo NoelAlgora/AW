@@ -1,7 +1,7 @@
 .filtros {
  flex-basis: 15%;
  width: 100%;
- font-size: 16px;
+ font-size: 15.5px;
  background-color:#fff;
  /* position:fixed!important;
  z-index:1; */
@@ -163,6 +163,10 @@ li {
 
 /* Create a custom checkbox */
 .checkmark {
+    border-radius: 5px 5px 5px 5px;
+-moz-border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px 5px 5px 5px;
+border: 0px solid #000000;
     position: absolute;
     top: 0;
     left: 0;

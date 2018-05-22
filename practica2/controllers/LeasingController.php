@@ -101,6 +101,13 @@ class LeasingController extends ControladorBase{
 					$filter = array_merge($combustible,$filter);
 				}
 			}
+
+			if (isset($_POST["color"])) {
+				$color = array ("color" => $_POST["color"]);
+				if(!empty($color)){
+					$filter = array_merge($color,$filter);
+				}
+			}
 			if (isset($_POST["marca"])) {
 				$marca = array ("marca" => $_POST["marca"]);
 				if(!empty($marca)){

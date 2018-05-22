@@ -20,7 +20,7 @@
 		  <span class="checkmark"></span>
 		</label>
 	</div>
-	<!-- <h4 style="margin-left: 15px;">Color</h4>
+	<h4 style="margin-left: 15px;">Color</h4>
 	<div class="filtro_color">
 		<ul>
 			<li class="azul">
@@ -71,14 +71,16 @@
 					<em></em>
 				</a>
 			</li>
-			<li class="amarillo">
-				<a href="     " title="amarillo">
-					<i class="icon-check checked"></i>
-					<em></em>
-				</a>
-			</li>
+			
+			<label class="amarillo">Amarillo
+				<input type="checkbox" name="color[]" value="Amarillo" class="amarillo">
+				<span class="checkmark"></span>
+			</label>
+				
+			
+
 		</ul>
-	</div> -->
+	</div>
 	<h4 style="margin-left: 15px;">Marca</h4>
 	<div class="filtro_marca_contendor">
 		<!-- <div class="filtro_marca_buscador">
