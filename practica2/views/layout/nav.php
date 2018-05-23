@@ -24,12 +24,21 @@
 			<div class="dropdown">
 			  <button class="dropbtn">MENU</button>
 			  <div class="dropdown-content">
-			    <a href="<?= $helper->url('user','index');?>">INICIO</a>
+			    <a href="<?= $helper->url('site','index');?>">INICIO</a>
 				<a href="<?= $helper->url('alquiler','rentCarView');?>">ALQUILER</a>
   				<a href="<?= $helper->url('leasing','leasingCarView');?>">RENTING</a>
 				<a href="<?= $helper->url('noticia','noticias');?>">NOTICIAS (provisional)</a>
-				<a href="<?= $helper->url('noticia','CrearNoticia');?>">CREA_NOTICIAS (provisional)</a>
 				<a href="<?= $helper->url('site','contact');?>">CONTACTO</a>
+			  </div>
+			</div>
+		</li>
+		<li class="navi-menu-item">
+			<div class="dropdown">
+			  <button class="dropbtn">ADMIN</button>
+			  <div class="dropdown-content">
+				<a href="<?= $helper->url('noticia','CrearNoticia');?>">CREA NOTICIAS</a>
+				<a href="<?= $helper->url('alquiler','crear_vehiculo');?>">CREAR VEHICULO ALQUILER</a>
+				<a href="<?= $helper->url('leasing','crear_vehiculo');?>">CREAR VEHICULO LEASING</a>
 			  </div>
 			</div>
 		</li>

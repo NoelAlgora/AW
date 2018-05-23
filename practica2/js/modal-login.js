@@ -1,4 +1,4 @@
-$(document).ready(function () {
+
 	// Get the modal
 	var modal = document.getElementById('myModal');
 
@@ -24,4 +24,3 @@ $(document).ready(function () {
 	        modal.style.display = "none";
 	    }
 	}
-});

@@ -78,7 +78,7 @@ class DaoRentCar extends DaoBase
 			$result = DataSource::getInstance()->setData("INSERT INTO vehiculo_alquiler
 						( matricula, marca,
 						modelo, motor, cambio, color,combustible,
-						list_img, descripcion, precio_dia)
+						list_img, descripcion, base_price_day)
 					VALUES (:matricula,:marca,
 							:modelo,:motor,:cambio,:color,:combustible,
 							:list_img,:descripcion,:precio_dia)",

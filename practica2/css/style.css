@@ -360,6 +360,10 @@ textarea.descripcion{
     margin-top: 6px;
 }
 
+.col-25 label {
+  float: right;
+}
+
 .col-75 {
     float: left;
     width: 75%;

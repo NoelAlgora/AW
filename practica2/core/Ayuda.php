@@ -33,15 +33,15 @@ class Ayuda{
             return $path;
     }
 
-		public function getImagesCarOfFolder($dirname){
-			$images = glob("uploads/".$dirname."/*.jpg");
-			$allImage = array();
+	public function getImagesCarOfFolder($dirname){
+		$images = glob("uploads/".$dirname."/*.jpg");
+		$allImage = array();
 
-			foreach($images as $image) {
-			    $allImage[] = $image;
-			}
-			return $allImage;
+		foreach($images as $image) {
+		    $allImage[] = $image;
 		}
+		return $allImage;
+	}
 
     public function getAlquilerListImage($img_name){
         if(empty($img_name)){
