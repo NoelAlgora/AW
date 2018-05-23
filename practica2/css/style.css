@@ -103,7 +103,7 @@ h3{
 }
 
 .font_log{
-  font-family: Impact;
+  font-family: Arial Black;
   color: #000000;
   text-align: center;
 }
@@ -212,6 +212,13 @@ meter mas elementos en el container*/
   float: right;
   padding: 15px;
   height: 100%;
+}
+
+.navi-menu-item-last{
+  float: right;
+  padding: 15px;
+  height: 100%;
+  padding-right: 6%;
 }
 
 .navi-login-item{
@@ -428,7 +435,7 @@ ol, ul {
 
 
 /* FOOTER AND SOCAIL BAR STYLES */
- .social_email_wrapper {display:inline-block; float:left;}
+ .social_email_wrapper {text-align: center; width: 100%;padding-top: 2%;}
  #resource_wrapper{background: none;}
  #footer_wrapper{background: none;background-color:#333;}
 
@@ -447,11 +454,11 @@ ol, ul {
     width: 320px;
 }
 
-.social_list{float:left;padding:21px 5px 22px 11px;margin: 0;width:585px;}
+.social_list{float:left;padding:21px 5px 22px 11px;margin: 0;}
 
 
  .social_list li{float:left;padding:0 19px 0 0;height:23px;width:auto;}
- .social_list li.social_heading{color: #4977A5;font-size: 16px;margin-top: 10px;min-width: 210px;}
+ .social_list li.social_heading{color: #4977A5;font-size: 16px;margin-top: 10px;}
  .social_copy{float:left;padding-top:4px;font-size:14px;}
  .social_list a div{float: left;height: 32px;margin-right: 8px;background-image: url('../img/ic_social32.png');}
  .social_twitterIcon{background-position: 0px 0;width:32px;}
@@ -505,13 +512,13 @@ ol, ul {
  #cred_box a:hover{color: #3295DA;}
  
 #cred_box {
-    width: 960px;
+    width:100%;
     margin: 0 auto;
     padding: 0 10px;
 }
 
 #social_box {
-    width: 960px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -531,13 +538,13 @@ ol, ul {
 
 
 #footer_content {
-    float: left;
-    width: 960px;
-    background: transparent url('../img/bg_footerSitemap.jpg') repeat-x left top;
+    text-align: center;
+    width: 100%;
 }
 #legal_content {
-     float: left;
-    width: 960px;
+     display: inline-block;
+     margin:0 auto;
+   
     padding: 20px 0;
     min-height: 50px;
 }
@@ -548,12 +555,17 @@ ol, ul {
 }
 
 .social_emailWrapper {
-    float: left;
-    width: 337px;
+        display: inline-block;
     padding: 10px 0 10px 20px;
+        padding-top: 5px;
+    padding-bottom: 25px;
     border-left: 1px solid #CCC;
 }
 
+.icons {
+      display: inline-block;
+    margin: 0 auto;
+}
 .social_emailWrapper label {
     float: left;
     color: #4977A5;
@@ -563,10 +575,11 @@ ol, ul {
 
 .email_btn {
     float: left;
-    width: 67px;
+    width: 74px;
     margin: 2px 0px 0px 10px;
     padding: 6px 7px;
-	color: #FFF;
+    color: #FFF;
+    background-color: #4CAF50;
     -webkit-border-radius: 5px;
     -khtml-border-radius: 5px;
     border-radius: 5px;

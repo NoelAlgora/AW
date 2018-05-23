@@ -6,7 +6,7 @@
 }
 
 .ui-state-highlight.ui-state-active {
-	border: 1px solid #003eff;
+    border: 1px solid #003eff;
     background: #007fff;
     font-weight: normal;
     color: #ffffff;
@@ -27,4 +27,53 @@
     background: #75b6f8;
     font-weight: normal;
     color: #ffffff;
+}
+
+.alquilar-wrapper{
+    padding-left: 150px;
+    width: 65%;
+    float: right;
+}
+
+.fecha_recogida label{
+    color: #000;
+    font-family: Arial Black;
+}
+
+.fecha_devolucion label{
+    font-family: Arial Black;
+    color: #000;
+}
+
+.boton_limpiar{
+    float: right;
+    width: 74px;
+    margin: 2px 0px 0px 10px;
+    padding: 6px 7px;
+    color: #FFF;
+    background-color: #4CAF50;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+    overflow: visible;
+}
+
+.boton_alquilar{
+    float: left;
+    width: 74px;
+    margin: 2px 0px 0px 10px;
+    padding: 6px 7px;
+    color: #FFF;
+    background-color: #4CAF50;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+    overflow: visible;
+
 }

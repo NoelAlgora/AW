@@ -17,6 +17,11 @@ class LeasingController extends ControladorBase{
 		);
 	}
 
+	public function carFilter(){
+		DaoLeasingCar::getInstance()->carsDateFilter();
+		
+	}
+
 	public function alquilar()
 	{
 		$formErrors = [];

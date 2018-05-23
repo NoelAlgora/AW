@@ -67,18 +67,16 @@
 			</li>
 			<li class="blanco">
 				<a href="     " title="blanco">
-					<i class="icon-check checked"></i>
+					<input type="checkbox" name="color[]" value="Blanco" class="blanco">
 					<em></em>
 				</a>
 			</li>
-			
-			<label class="amarillo">Amarillo
-				<input type="checkbox" name="color[]" value="Amarillo" class="amarillo">
-				<span class="checkmark"></span>
-			</label>
-				
-			
-
+			<li class="amarillo">
+				<label class="container_filtros">
+					<input type="checkbox" name="color[]" value="Amarillo" class="amarillo">
+					<em class="checked_color"></em>
+				</label>
+			</li>
 		</ul>
 	</div>
 	<h4 style="margin-left: 15px;">Marca</h4>

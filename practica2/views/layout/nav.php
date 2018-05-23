@@ -3,22 +3,19 @@
 		<li class="navi-logo-item">
 			<a href="<?= $helper->url('user','index');?>"><img src="img/logo.png"></a>
 		</li>
-		<li class="navi-login-item">
-			<?php
-		      if ( $helper->isUserLogged() ){
-		        echo "<div class='dropdown'>
-						  <button class='dropbtn'>".$helper->getLoggedUser()['username']."</button>
-						  <div class='dropdown-content'>
-							  <a href='".$helper->url('user','perfil')."'>MI PERFIL</a>
-				 			  <a href='".$helper->url('user','logout')."'>LOG OUT</a>
-					  	  </div>
-					  </div>";
-		      }
-		      else { echo "<div class='dropdown'>
-		      				<a id='myBtn' class='dropbtn'>LOG IN</a>
-		      			   </div>";
-		      		}
-		    ?>
+		<li class="navi-menu-item-last">
+			<div class="dropdown">
+			<?php if($helper->isUserLogged()): ?>
+		        <button class="dropbtn"> <?php echo $helper->getLoggedUser()['username'] ?>
+		        </button>
+				  <div class="dropdown-content">
+					  <a href="<?= $helper->url('user','perfil');?>">MI PERFIL</a>
+		 			  <a href="<?= $helper->url('user','logout');?>">LOG OUT</a>
+			  	  </div>
+		    <?php else: ?>
+		    	<button id="myBtn" class="dropbtn">LOG IN</button>
+		    <?php endif; ?>
+		    </div>
 		</li>
 		<li class="navi-menu-item">
 			<div class="dropdown">
@@ -32,6 +29,7 @@
 			  </div>
 			</div>
 		</li>
+		<?php if($helper->isAdmin()): ?>
 		<li class="navi-menu-item">
 			<div class="dropdown">
 			  <button class="dropbtn">ADMIN</button>
@@ -42,6 +40,7 @@
 			  </div>
 			</div>
 		</li>
+		<?php endif; ?>
 	</ul>
 </div>
 <?php if(!$helper->isUserLogged()): ?>
@@ -60,7 +59,7 @@
 		        </div>
 		        <div class="row">
 		          <div class="col-25">
-		            <label class="font_log" for="nombre">Nombre *</label>
+		            <label class="font_log" for="nombre">Contraseña *</label>
 		          </div>
 		          <div class="col-75">
 		            <input type="text" id="nombre" name="password" placeholder="Contraseña" required>

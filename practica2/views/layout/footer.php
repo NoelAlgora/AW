@@ -11,10 +11,10 @@
             <div id="footer_content">
 
                 <div class="social_email_wrapper">
-
+                    <div class="icons">
                     <ul class="social_list">
 
-                        <li class="social_heading">Conecte con nosotros online</li>
+                        <li class="social_heading">Siguenos!</li>
                         <li class="">
                             <a href="https://twitter.com" target="_blank">
                                 <div class="social_twitterIcon"></div>
@@ -36,9 +36,9 @@
                             </a>
                         </li>
                     </ul>
-
+                </div>
                     <div class="social_emailWrapper">
-                        <form name="newsletter_signup_post" action="/newsletter_handler.cfm" data-err="Dirección electrónica incorrecta">
+                        <form name="newsletter_signup_post" action="">
                             <input type="hidden" id="requestingPage" name="requestingPage" value="FTR"> <input type="hidden" id="thanksMsg" name="thanksMsg" value="¡Gracias por suscribirse!">
                             <label for="email">
 								Regístrese para recibir nuestras ofertas actuales
@@ -106,10 +106,10 @@
                         <span style="width:130px;">
 						
 						<!-- GLOBALSIGN SEAL -->
-						<table width="125" border="0" cellspacing="0" cellpadding="0" title="CLICK TO VERIFY: This site uses a GlobalSign SSL Certificate to secure your personal information."><tbody><tr><td><script src="//ssif1.globalsign.com/"></script><span> <a id="aa" href="javascript:ss_open_sub()"><img name="ss_imgTag" border="0" src="//ssif1.globalsign.com/SiteSeal/siteSeal/siteSeal/siteSealImage.do?p1=www.autoeurope.es&amp;p2=SZ100-40&amp;p3=image&amp;p4=en&amp;p5=V0023&amp;p6=S001&amp;p7=http&amp;deterDn=" alt="Por favor haga clic para ver el perfil." oncontextmenu="return false;" galleryimg="no" style="width:100px"></a></span>
+						<table width="125" border="0" cellspacing="0" cellpadding="0" title="CLICK TO VERIFY: This site uses a GlobalSign SSL Certificate to secure your personal information."><tbody><tr><td><span> <a id="aa"><img name="ss_imgTag" border="0" src="//ssif1.globalsign.com/SiteSeal/siteSeal/siteSeal/siteSealImage.do?p1=www.autoeurope.es&amp;p2=SZ100-40&amp;p3=image&amp;p4=en&amp;p5=V0023&amp;p6=S001&amp;p7=http&amp;deterDn=" alt="Por favor haga clic para ver el perfil." oncontextmenu="return false;" galleryimg="no" style="width:100px"></a></span>
                         <span
                             id="ss_siteSeal_fin_SZ100-40_image_en_V0023_S001"></span>
-                            <script type="text/javascript" src="//seal.globalsign.com/SiteSeal/gmogs_image_100-40_en_dblue.js" async="" defer=""></script>
+                            
                             </td>
                             </tr>
                             </tbody>

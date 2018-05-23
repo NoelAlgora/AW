@@ -65,7 +65,7 @@
   width: 17px;
 }
 
-.filtro_marca_buscador input{
+.filtro_color input{
   width: 125px;
   color: #333;
   font-size: 12px;
@@ -77,15 +77,8 @@
   background: transparent;
   margin-left: 10px;
   margin-bottom: 15px;
+  display: none;
 }
-
-/*para el icono del buscador */
-.filtro_marca_buscador i{
-    position: absolute;
-    right: 5px;
-    top: 3px;
-}
-
 
 li.azul em{
   background-color: #0a68f5;
@@ -195,6 +188,14 @@ border: 0px solid #000000;
 /* Show the checkmark when checked */
 .container_filtros input:checked ~ .checkmark:after {
     display: block;
+}
+
+.checked_color input:checked ~ .checked_color:after{
+    background-color:#ccc;
+}
+
+.checked_color:after{
+   background-color:#ccc;
 }
 
 /* Style the checkmark/indicator */

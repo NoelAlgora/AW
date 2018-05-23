@@ -45,26 +45,26 @@
 				<span class="dot" onclick="currentSlide(2)"></span>
 				<span class="dot" onclick="currentSlide(3)"></span>
 			</div>
-	</div>
-	<div class="alquilar-wrapper">
-		<div class="fecha_recogida">
-			<label>Fecha de recogida:</label>
-			<div class="datepicker_fecha_recogida"></div>
 		</div>
-		<div class="fecha_devolucion">
-			<label>Fecha de devolución:</label>
-			<div class="datepicker_fecha_devolucion"></div>
+		<div class="alquilar-wrapper">
+			<div class="fecha_recogida">
+				<label>Fecha de recogida:</label>
+				<div class="datepicker_fecha_recogida"></div>
+			</div>
+			<div class="fecha_devolucion">
+				<label>Fecha de devolución:</label>
+				<div class="datepicker_fecha_devolucion"></div>
+			</div>
+			<button id="limpiar-fechas" class="boton_limpiar">Limpiar fechas</button>
+			<div class="alquilar-form-wrapper" data-alquileres="<?= $alquiler_str ?>">
+				<form method="POST" action="<?= $helper->url('leasing','alquilar');?>">
+					<input class="input-datepicker" type="hidden" id="fecha_recogida" name="fecha_recogida">
+					<input class="input-datepicker" type="hidden" id="fecha_devolucion" name="fecha_devolucion">
+					<input type="hidden" name="vehiculo_id" value="<?= $coche['id'] ?>">
+					<button id="submit-alquilar" class="boton_alquilar" type="submit">Alquilar</button>
+				</form>
+			</div>
 		</div>
-		<button id="limpiar-fechas" class="btn btn-success">Limpiar fechas</button>
-		<div class="alquilar-form-wrapper" data-alquileres="<?= $alquiler_str ?>">
-			<form method="POST" action="<?= $helper->url('leasing','alquilar');?>">
-				<input class="input-datepicker" type="hidden" id="fecha_recogida" name="fecha_recogida">
-				<input class="input-datepicker" type="hidden" id="fecha_devolucion" name="fecha_devolucion">
-				<input type="hidden" name="vehiculo_id" value="<?= $coche['id'] ?>">
-				<button id="submit-alquilar" class="btn btn-success" type="submit">Alquilar</button>
-			</form>
-		</div>
-	</div>
 	<div class="info_ficha_vehiculo">
 			<table class="tabla_info_ficha_vehiculo">
 				<tbody>

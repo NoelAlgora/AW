@@ -44,6 +44,7 @@ class DaoLeasingCar extends DaoBase
 					}
 				
 			}
+
 			$j--;
 
 			if($j){
@@ -57,19 +58,27 @@ class DaoLeasingCar extends DaoBase
 		return DataSource::getInstance()->getAllData($stringPDO,$arrayPDO);
     }
 
-	 public function getAllLeasingCarAvaliable(){
-		$result = DataSource::getInstance()->getAllData(
-					"SELECT r.* FROM
-						 $this->table r
-					LEFT JOIN
-						leasing l
-					ON
-						r.id = l.vehiculo_id
-					WHERE
-						l.vehiculo_id IS NULL",array());
+	public function getAllLeasingCarAvaliable(){
+		return DataSource::getInstance()->getAllData("SELECT * FROM $this->table",array());
 
 		  // var_dump($result);
-		return $result;
+	}
+
+	public function carsDateFilter($init_date,$end_date){
+		$result =  DataSource::getInstance()->getAllData("
+			SELECT r.* FROM 
+				$this->table
+			LEFT JOIN 
+				leasing l
+			ON 
+				l.vehiculo_id = r.id
+			WHERE
+				l.fecha_inicio < :init_date
+			AND
+				l.fecha_fin > :end_date",
+				 array(':init_date' => $init_date, ':end_date' => $end_date));
+			
+			return $result;
 	}
 
 	public function userOwnedCars($user_id){
