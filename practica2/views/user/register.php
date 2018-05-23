@@ -57,7 +57,7 @@
             <label class="font_log" for="password">Contraseña *</label>
           </div>
           <div class="col-75">
-            <input type="text" id="password" name="password" placeholder="Contraseña..." required>
+            <input type="password" id="password" name="password" placeholder="Contraseña..." required>
           </div>
         </div>
         <div class="row">
@@ -65,7 +65,7 @@
             <label class="font_log" for="repassword">Contraseña *</label>
           </div>
           <div class="col-75">
-            <input type="text" id="repassword" name="repassword" placeholder="Repite tu Contraseña..." required>
+            <input type="password" id="repassword" name="repassword" placeholder="Repite tu Contraseña..." required>
           </div>
         </div>
         <div class="row">
