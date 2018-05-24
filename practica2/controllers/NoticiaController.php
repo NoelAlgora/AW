@@ -42,12 +42,12 @@ class NoticiaController extends ControladorBase{
 
             $titulo_n = htmlspecialchars(trim(strip_tags($_POST["titulo"])));
             $autor_n = htmlspecialchars(trim(strip_tags($_POST["autor"])));
-            // $fecha_n = htmlspecialchars(trim(strip_tags($_POST["fecha"])));
             $cuerpo_n = htmlspecialchars(trim(strip_tags($_POST["cuerpo_noticia"])));
+            $list_img_n = htmlspecialchars(trim(strip_tags($_POST["list_img"])));
 
             if (!empty($titulo_n) && !empty($autor_n) && !empty($fecha_n) && !empty($cuerpo_n)) {
                 //se crear el dao
-                $result = DaoNoticia::getInstance()->insertNoticia($titulo_n, $autor_n, $fecha_n, $cuerpo_n);
+                $result = DaoNoticia::getInstance()->insertNoticia($titulo_n, $autor_n, $fecha_n, $cuerpo_n, $list_img_n);
 
                 var_dump($result);
                 if ($result == null){
