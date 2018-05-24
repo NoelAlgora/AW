@@ -92,18 +92,17 @@
 
         <div id="cred_wrapper">
             <div id="cred_box">
-                <p class="cred_icons">
-                </p>
+                
                 <ul class="cred_list">
 
                     <li><a href="http://www.spain.info" title="Spain Info" rel="nofollow" target="_blank"><img src="img/spinfo-seal.jpg" alt="Spain Info" border="0"></a></li>
 
 
-                    <li class="trustWave_V3">
+                    <li>
                         <a href="https://sealserver.trustkeeper.net" target="hATW"><img src="http://www.autoeurope.es/img/ui/trustwave-seal.png" alt="Trusted Commerce" width="101" height="51"></a>
                     </li>
-                    <li style="display:inline-block;width:130px">
-                        <span style="width:130px;">
+                    <li>
+                        <span>
 						
 						<!-- GLOBALSIGN SEAL -->
 						<table width="125" border="0" cellspacing="0" cellpadding="0" title="CLICK TO VERIFY: This site uses a GlobalSign SSL Certificate to secure your personal information."><tbody><tr><td><span> <a id="aa"><img name="ss_imgTag" border="0" src="//ssif1.globalsign.com/SiteSeal/siteSeal/siteSeal/siteSealImage.do?p1=www.autoeurope.es&amp;p2=SZ100-40&amp;p3=image&amp;p4=en&amp;p5=V0023&amp;p6=S001&amp;p7=http&amp;deterDn=" alt="Por favor haga clic para ver el perfil." oncontextmenu="return false;" galleryimg="no" style="width:100px"></a></span>

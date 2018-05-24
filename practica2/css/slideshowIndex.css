@@ -1,16 +1,18 @@
 /* 
 .mySlides {
-	display: none;
-	margin: 0 auto;
+  display: none;
+  margin: 0 auto;
 } */
 
-/* .slideshow-container {
-	max-width: 1000px;
-  position: relative;
-} */
+ .slideshow-container {
+  padding-top: 5%;
+} 
 
 .img-main{
-  width: 100%;
+  max-height: 500px;
+  width: 80%;
+  /*margin-left: 78px;
+  margin-right: 100px;*/
 }
 
 /* The dots/bullets/indicators */

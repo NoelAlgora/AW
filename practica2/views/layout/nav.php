@@ -1,9 +1,23 @@
 <div class="top-bar">
-	<ul class="navi-items">
-		<li class="navi-logo-item">
-			<a href="<?= $helper->url('user','index');?>"><img src="img/logo.png"></a>
+	<div class="nav-bar">
+		<div class="navi-logo">
+		<a href="<?= $helper->url('user','index');?>"><img class="img_logo" src="img/logo.png"></a>
+	</div>
+	<div class="navi-items-div">
+		<ul class="navi-items">
+				<li class="navi-menu-item">
+			<div class="dropdown">
+			  <button class="dropbtn">MENU</button>
+			  <div class="dropdown-content">
+			    <a href="<?= $helper->url('site','index');?>">INICIO</a>
+				<a href="<?= $helper->url('alquiler','rentCarView');?>">ALQUILER</a>
+  				<a href="<?= $helper->url('leasing','leasingCarView');?>">RENTING</a>
+				<a href="<?= $helper->url('noticia','noticias');?>">NOTICIAS (provisional)</a>
+				<a href="<?= $helper->url('site','contact');?>">CONTACTO</a>
+			  </div>
+			</div>
 		</li>
-		<li class="navi-menu-item-last">
+		<li class="navi-menu-item">
 			<div class="dropdown">
 			<?php if($helper->isUserLogged()): ?>
 		        <button class="dropbtn"> <?php echo $helper->getLoggedUser()['username'] ?>
@@ -17,18 +31,7 @@
 		    <?php endif; ?>
 		    </div>
 		</li>
-		<li class="navi-menu-item">
-			<div class="dropdown">
-			  <button class="dropbtn">MENU</button>
-			  <div class="dropdown-content">
-			    <a href="<?= $helper->url('site','index');?>">INICIO</a>
-				<a href="<?= $helper->url('alquiler','rentCarView');?>">ALQUILER</a>
-  				<a href="<?= $helper->url('leasing','leasingCarView');?>">RENTING</a>
-				<a href="<?= $helper->url('noticia','noticias');?>">NOTICIAS (provisional)</a>
-				<a href="<?= $helper->url('site','contact');?>">CONTACTO</a>
-			  </div>
-			</div>
-		</li>
+	
 		<?php if($helper->isAdmin()): ?>
 		<li class="navi-menu-item">
 			<div class="dropdown">
@@ -41,7 +44,10 @@
 			</div>
 		</li>
 		<?php endif; ?>
-	</ul>
+	</ul></div>
+	</div>
+	
+	
 </div>
 <?php if(!$helper->isUserLogged()): ?>
 	<div id="myModal" class="modal">
