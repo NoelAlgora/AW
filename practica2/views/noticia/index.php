@@ -9,27 +9,28 @@
 </head>
 
 <body>
-	<?php include('views/layout/nav.php'); ?>
-	<div id="container">
-		<div id="contenido">
-			<p class="noticias"> Ultimas noticias </p>
-			<table>
-				<?php foreach ($noticias as $key => $noticia): ?>
-				<tr>
-					<td class='listado_noticias'>
-						<br><b>
-              <a href="<?= $helper->url('noticia','fichaNoticia', $noticia['id']) ?>"> <?= $noticia['titulo'] ?></a>";
-              </b></br>
-						<?= $noticia['cuerpo_noticia']; ?>
-					</td>
-				</tr>
-				<?php endforeach; ?>
-			</table>
-
-		</div>
-			<?php include('views/layout/sidebar-right.php'); ?>
-	</div>
-	<?php require('views/layout/footer.php'); ?>
+ <?php include('views/layout/nav.php'); ?>
+    <div class = "container_crear_noticia">
+      <p class="font_log"> Últimas noticias </p>
+      <?php foreach ($noticias as $key => $noticia): ?>
+        <div class = "row">
+          <div class="col-30">
+            <div class="row">
+              <?= $helper->getNoticiasListImage($noticia['list_img']); ?> 
+            </div>
+          </div>
+          <div class ="col-65">
+            <div class ="row">
+              <a href="<?= $helper->url('noticia','fichaNoticia', $noticia['id']) ?>"> <H1><?= $noticia['titulo'] ?> </H1></a>
+              <?= $noticia['autor'] ?> 
+            </div>
+          </div>
+          <div class = "row_lg">
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
+    <?php require('views/layout/footer.php'); ?>
 </body>
 
 </html>

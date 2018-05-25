@@ -11,18 +11,49 @@
 	<body>
 		<?php include('views/layout/nav.php'); ?>
 		<div id="container">
-			<div id="contenido">
-			<form method="post" action="<?= $helper->url('noticia','CrearNoticia');?>">
-				<!-- Aqui tendria qe sustiuir el action por algo -->
-				<label>Autor de la noticia<br/><input type="text" name="autor" maxlength="255" /></label><br/><br/>
-				<label>Título de la noticia<br/><input type="text" name="titulo" maxlength="255" /></label><br/><br/>
-				<label>Noticia<br/><textarea name="cuerpo_noticia"></textarea></label><br/><br/>
-				<!-- <label>Fecha<br/><input type="text" name="fecha" maxlength="255" /></label><br/><br/> -->
-				<button type="submit">Publicar noticia</button>
-			</form>
+			<div class ="container_crear_noticia">
+				<p class="font_log"> Publicar noticia </p>
+				<form class = "crear_noticia_box" method="post" action="<?= $helper->url('noticia','crearNoticia');?>">
+					<div class = "col-50">
+						<div class = "row">
+							<div>
+								<label>Autor de la noticia<label/>
+							</div>
+							<div>
+								<input type="text" name="autor" maxlength="255" />
+							</div>
+						</div>
+						<div class = "row">
+							<div>
+								<label>Título de la noticia<label/>
+							</div>
+							<div>
+								<input type="text" name="titulo" maxlength="255" />
+							</div>
+						</div>
+						<div class = "row">
+							<div>
+								<label>Noticia<label/>
+							</div>
+							<div>
+								<textarea name="cuerpo_noticia" rows="10" cols="40"></textarea>
+							</div>
+						</div>
+						<div class = "row">
+							<button class="boton crear_noticiaB" type="submit">Publicar noticia</button>
+						</div>
+					</div>
+					<div class = "col-40">
+						<div class = "row">
+							<label>Imagen<label/>
+						</div>
+						<div class = "row">
+							<input type="file" name="list_img" id="list_img" accept=".jpg,.jpeg,.png," required>
+						</div>
+					</div>
+				</form>
+			</div>
 		</div>
-		<?php include('views/layout/sidebar-right.php'); ?>
-	</div>
-	<?php require('views/layout/footer.php'); ?>
+		<?php require('views/layout/footer.php'); ?>
 	</body>
 </html>

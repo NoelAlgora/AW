@@ -43,8 +43,13 @@ class UserController extends ControladorBase
             if (!empty($user_name) && !empty($user_password)) {
                 //se crear el dao
                 $user = DaoUsuario::getInstance()->searchUsuarioByNamePass($user_name,$user_password);
-                if ($user == null){
-                    $formErrors[] = "Usuario o contraseña incorrectos!";
+                $contra=DaoUsuario::getInstance()->searchUsuarioByPass($user_name);
+                $contraCifrada=$contra["password"];
+
+                
+
+                if (!password_verify($user_password,$contraCifrada)){
+                    $formErrors[] = "¡Usuario o contraseña incorrecto!";
                 }
                 else {
                     $_SESSION["login"] = true;

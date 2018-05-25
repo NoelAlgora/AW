@@ -12,7 +12,7 @@
 			    <a href="<?= $helper->url('site','index');?>">INICIO</a>
 				<a href="<?= $helper->url('alquiler','rentCarView');?>">ALQUILER</a>
   				<a href="<?= $helper->url('leasing','leasingCarView');?>">RENTING</a>
-				<a href="<?= $helper->url('noticia','noticias');?>">NOTICIAS (provisional)</a>
+				<a href="<?= $helper->url('noticia','noticias');?>">NOTICIAS</a>
 				<a href="<?= $helper->url('site','contact');?>">CONTACTO</a>
 			  </div>
 			</div>
@@ -68,7 +68,7 @@
 		            <label class="font_log" for="nombre">Contraseña *</label>
 		          </div>
 		          <div class="col-75">
-		            <input type="text" id="nombre" name="password" placeholder="Contraseña" required>
+		            <input type="password" id="nombre" name="password" placeholder="Contraseña" required>
 		          </div>
 		        </div>
 		        <div class="row">

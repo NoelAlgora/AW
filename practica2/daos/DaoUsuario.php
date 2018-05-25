@@ -30,6 +30,12 @@ class DaoUsuario extends DaoBase
 
     return $result;
   }
+   public function searchUsuarioByPass($nombre) {
+    $result = DataSource::getInstance()->getData("SELECT password FROM usuario WHERE username = :nombre",
+      array(':nombre'=>$nombre));
+
+    return $result;
+  }
 
   //Inserta el Usuario en la base de datos y nos devuelve la id o 0 si error
   public function insertUsuario($user_name,
