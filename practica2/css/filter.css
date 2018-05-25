@@ -1,10 +1,9 @@
 .filtros {
  -ms-flex-preferred-size: 22%;
-     flex-basis: 22%;
     font-size: 14.5px;
  /* position:fixed!important;
- z-index:1; */
- overflow-y:auto;
+ z-index:1; */flex-basis: auto;
+ margin: 1%;
 }
 
 .filtro_marca_contendor{
@@ -17,13 +16,27 @@
   border-width: 0 1px 1px 0;
   padding: 0 5px 5px 0;
       width: 100%;
-/*  height: 95px;*/
+   height: 132px;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 .form_filtro{
+    background-color: #ffffff;
+    border-radius: 5px 0px 0px 5px;
+    -moz-border-radius: 5px 0px 0px 5px;
+    -webkit-border-radius: 5px 0px 0px 5px;
+    border: 0px solid #000000
+}
 
+
+.form_date_filtro{
+    background-color: #ffffff;
+  border-radius: 5px 5px 5px 5px;
+-moz-border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px 5px 5px 5px;
+border: 0px solid #000000;
+    
 }
 
 .filtro_marca {
@@ -54,6 +67,7 @@
   border: 1px solid #ccc;
   border-width: 0 1px 1px 0;
   padding: 0 5px 5px 0;
+  padding-bottom: 10px;
   width: 100%;  
   /*height: 60px;*/
   overflow-x: hidden;
@@ -62,8 +76,9 @@
 
 .filtro_color em {
   display: block;
-  height: 17px;
-  width: 17px;
+      height: 20px;
+    width: 23px;
+ 
 }
 
 .filtro_color input{
@@ -108,10 +123,14 @@ li.marron em{
   background-color: #663300;
 }
 
+li em {border-radius: 4px;
+
+}
+/*
 li {
     display: list-item;
     text-align: -webkit-match-parent;
-}
+}*/
 .filtro_color ul {
     margin: 0;
     padding: 0;
@@ -131,10 +150,9 @@ li {
 
 .filtro_color ul li {
     float: left;
-    width: 21px;
-    height: 21px;
+    /*width: 21px;
+    height: 21px;*/
     margin: 0 5px 5px 0;
-    border: 1px solid #fff;
 }
 
 .container_filtros {
@@ -171,15 +189,38 @@ border: 0px solid #000000;
     background-color: #827f7f;
 }
 
+.checkmark_color {
+border-radius: 3px 3px 3px 3px;
+-moz-border-radius: 3px 3px 3px 3px;
+-webkit-border-radius: 3px 3px 3px 3px;
+border: 0px solid #000000;
+    position: absolute;
+    top: 0;
+    left: -2px;
+    height: 20px;
+    width: 23px;
+}
+
 /* On mouse-over, add a grey background color */
 .container_filtros:hover input ~ .checkmark {
     background-color: #ccc;
 }
 
+.container_filtros:hover input ~ .checkmark_color {
+    background-color: #ccc;
+}
+
+
 /* When the checkbox is checked, add a blue background */
 .container_filtros input:checked ~ .checkmark {
     background-color: #228B22;
 }
+
+/* When the checkbox is checked, add a blue background */
+.container_filtros input:checked ~ .checkmark_color {
+    background-color: #228B22;
+}
+
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
@@ -188,10 +229,26 @@ border: 0px solid #000000;
     display: none;
 }
 
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark_color:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+
 /* Show the checkmark when checked */
 .container_filtros input:checked ~ .checkmark:after {
     display: block;
 }
+
+
+/* Show the checkmark when checked */
+.container_filtros input:checked ~ .checkmark_color:after {
+    display: block;
+}
+
 
 .checked_color input:checked ~ .checked_color:after{
     background-color:#ccc;
@@ -203,6 +260,20 @@ border: 0px solid #000000;
 
 /* Style the checkmark/indicator */
 .container_filtros .checkmark:after {
+    left: 8px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+/* Style the checkmark/indicator */
+.container_filtros .checkmark_color:after {
     left: 8px;
     top: 3px;
     width: 5px;

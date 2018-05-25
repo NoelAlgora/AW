@@ -17,8 +17,37 @@ class LeasingController extends ControladorBase{
 		);
 	}
 
-	public function carFilter(){
-		DaoLeasingCar::getInstance()->carsDateFilter();
+	public function dateCarFilter(){
+
+		if (isset($_POST["inicio"]) && isset($_POST["fin"]))
+		{
+			$fecha_recogida = htmlspecialchars(trim(strip_tags($_POST["inicio"])));
+			$fecha_devolucion = htmlspecialchars(trim(strip_tags($_POST["fin"])));
+
+
+			if (!empty($fecha_recogida) && !empty($fecha_devolucion)) {
+				
+				$result = DaoLeasingCar::getInstance()->carsDateFilter($fecha_recogida,$fecha_devolucion);
+
+				}	
+			else {
+			$result = DaoLeasingCar::getInstance()->getAllLeasingCarAvaliable();
+		}
+
+				
+		}
+		else {
+			$result = DaoLeasingCar::getInstance()->getAllLeasingCarAvaliable();
+		}
+
+		$this->view(
+			"leasing/index.php",
+			[
+				'result' => $result,
+			]
+		);
+
+		
 		
 	}
 
@@ -98,8 +127,6 @@ class LeasingController extends ControladorBase{
 
 			$filter = array();
 		
-			//Como estamos utilizando PDO con prepared statements, no es necesario sanizitar la entrada, en el DAO y DataSource la entrada sera sanitizada automaticamente
-			//es un array no podemos hacer -> htmlspecialchars(trim(strip_tags(...)));
 			if (isset($_POST["combustible"])){
 				$combustible = array ("combustible" => $_POST["combustible"]);
 				if(!empty($combustible)){

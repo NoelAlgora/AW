@@ -14,13 +14,29 @@
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   	<script src="./js/calendarFilter.js"></script>
-
+  		<script>
+		$( function() {
+			$( "#datepickerAlquiler" ).datepicker();
+			$( "#datepickerDevolucion" ).datepicker();
+		} );
+	</script>
 </head>
 
 <body>
 	<?php include('views/layout/nav.php'); ?>
 	<div id="container">
 		<div class="filtros"> 
+			<form class="form_date_filtro" method="POST" action="<?= $helper->url('leasing','dateCarFilter');?>">
+				
+				<h4 style="padding-left: 5%;"> Fecha de recogida</h4>
+				<input class="input_fechas_index" type="text" id="datepickerAlquiler" placeholder="Fecha de recogida" name="inicio">
+				<h4 style="padding-left: 5%;"> Fecha de devolucion</h4>
+				<input class="input_fechas_index" type="text" id="datepickerDevolucion" placeholder="Fecha de devolución" name="fin">
+				
+			
+			<input class="button-filter" type="submit" name="aplicar" value="Buscar Vehiculos">
+			</form>
+
 			<form class="form_filtro" method="POST" action="<?= $helper->url('leasing','filter');?>">
 			<div class="filtro_combustible">
 				<h4 style="padding-left: 5%;"> Combustible</h4>
@@ -42,69 +58,89 @@
 				<h4 style="padding-left: 5%;">Color</h4>
 				<ul>
 					<li class="azul">
-						<a href="     " title="azul">
-							<i class="icon-check checked"></i>
-							<em></em>
-						</a>
+						<em class="checked_color">
+						<label class="container_filtros">
+							<input type="checkbox" name="color[]" value="Azul">
+							<span class="checkmark_color"></span>
+							</label>
+						</em>
 					</li>
 					<li class="rojo">
-						<a href="     " title="rojo">
-							<i class="icon-check checked"></i>
-							<em></em>
-						</a>
+						<em class="checked_color">
+						<label class="container_filtros">
+
+							<input type="checkbox" name="color[]" value="Rojo">
+							<span class="checkmark_color"></span>
+							</label>
+						</em>
 					</li>
 					<li class="verde">
-						<a href="     " title="verde">
-							<i class="icon-check checked"></i>
-							<em></em>
-						</a>
+						<em class="checked_color">
+						<label class="container_filtros">
+
+							<input type="checkbox" name="color[]" value="Verde">
+							<span class="checkmark_color"></span>
+							</label>
+						</em>
 					</li>
 					<li class="marron">
-						<a href="     " title="marron">
-							<i class="icon-check checked"></i>
-							<em></em>
-						</a>
+						<em class="checked_color">
+						<label class="container_filtros">
+
+							<input type="checkbox" name="color[]" value="Marron">
+							<span class="checkmark_color"></span>
+							</label>
+						</em>
 					</li>
 					<li class="rosa">
-						<a href="     " title="rosa">
-							<i class="icon-check checked"></i>
-							<em></em>
-						</a>
+						<em class="checked_color">
+						<label class="container_filtros">
+
+							<input type="checkbox" name="color[]" value="Rosa">
+							<span class="checkmark_color"></span>
+							</label>
+						</em>
 					</li>
 					<li class="negro">
-						<a href="     " title="negro">
-							<i class="icon-check checked"></i>
-							<em></em>
-						</a>
+						<em class="checked_color">
+						<label class="container_filtros">
+
+							<input type="checkbox" name="color[]" value="Negro">
+							<span class="checkmark_color"></span>
+							</label>
+						</em>
 					</li>
 					<li class="gris">
-						<a href="     " title="gris">
-							<i class="icon-check checked"></i>
-							<em></em>
-						</a>
+						<em class="checked_color">
+						<label class="container_filtros">
+
+							<input type="checkbox" name="color[]" value="Gris">
+							<span class="checkmark_color"></span>
+							</label>
+						</em>
 					</li>
 					<li class="blanco">
-						<a href="     " title="blanco">
-							<input type="checkbox" name="color[]" value="Blanco" class="blanco">
-							<em></em>
-						</a>
+						<em class="checked_color">
+						<label class="container_filtros">
+
+							<input type="checkbox" name="color[]" value="Blanco" >
+							<span class="checkmark_color"></span>
+							</label>
+						</em>
 					</li>
 					<li class="amarillo">
+						<em class="checked_color">
 						<label class="container_filtros">
-							<input type="checkbox" name="color[]" value="Amarillo" class="amarillo">
-							<em class="checked_color"></em>
+
+							<input type="checkbox" name="color[]" value="Amarillo">
+							<span class="checkmark_color"></span>
 						</label>
+						</em>
 					</li>
 				</ul>
 			</div>
 
 			<div class="filtro_marca_contendor">
-				<!-- <div class="filtro_marca_buscador">
-					<input type="text" id="FilterSearchBrand"/>
-					<i class="icon-search"></i>
-					<i class="icon-remove-sign"></i>
-					<i class="icon-spinner"></i>
-				</div> -->
 				<div class="filtro_marca">
 					<h4 style="padding-left: 5%;">Marca</h4>
 					<label class="container_filtros">Audi

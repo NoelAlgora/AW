@@ -36,6 +36,11 @@
   
 }
 
+.buscador_fechas_index p input {
+  width: auto;
+}
+
+
 #datepickeralquiler{
   width: 30%;
   height: 38px;
@@ -270,16 +275,22 @@ meter mas elementos en el container*/
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
+             -webkit-order: 1;
+
   }
   #sidebar-right {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
+              -webkit-order: 2;
+
   }
   #sidebar-filter {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
+              -webkit-order: 2;
+
   }
   .col-25, .col-75, input[type=submit] {
         width: 100%;
@@ -414,6 +425,15 @@ input[type=text], select, textarea {
     border-radius: 4px;
     resize: vertical;
 }
+
+input[type=password], select, textarea {
+    width:100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
 
 label {
     padding: 12px 12px 12px 0;
@@ -640,7 +660,7 @@ ol, ul {
 .cred_copy h4{font-size:14px;padding:0 0 5px 0;}
 .cred_list{text-align: center; padding: 20px 0;}
 .cred_list li{display: inline-block;     padding-left: 8%;
-    padding-right: 8%;}
+    padding-right: 3%;}
 .cred_list_ssl{float:left;padding:20px 0 0px 120px;}
 .cred_list_ssl li{float:left;padding:0 80px 20px 0;}
 
@@ -887,11 +907,7 @@ img {
 
 .date_filter{
   
-<<<<<<< HEAD
-} 
-=======
 }
-
 /* Css noticias*/
 
 h1 {
@@ -975,4 +991,4 @@ h1 {
 .row_lw {
     border-bottom: 20px solid #f0f0f0;
 }
->>>>>>> f2f3b3b4aaf57e49cc546ff2d073f89b58df7464
+

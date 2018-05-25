@@ -52,9 +52,7 @@ class DaoLeasingCar extends DaoBase
 			}
 		}
 
-		// echo $stringPDO;
-		// var_dump($arrayPDO);
-
+		
 		return DataSource::getInstance()->getAllData($stringPDO,$arrayPDO);
     }
 
@@ -73,11 +71,13 @@ class DaoLeasingCar extends DaoBase
 			ON 
 				l.vehiculo_id = r.id
 			WHERE
-				l.fecha_inicio < :init_date
+				l.fecha_inicio > :init_date
 			AND
-				l.fecha_fin > :end_date",
+				l.fecha_fin < :end_date",
 				 array(':init_date' => $init_date, ':end_date' => $end_date));
 			
+	
+
 			return $result;
 	}
 
