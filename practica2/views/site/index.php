@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 	<script>
 		$( function() {
 			$( "#datepickerAlquiler" ).datepicker();
@@ -28,7 +29,7 @@
 			<h2>Bienvenido a Caralcarro</h2>
 			<div class="text_index">
 				
-				<p> Somos una empresa dedicada al alquiler y renting de vehículos con más de 20 años de antigüedad, con sede en Madrid, C/Atapuerca. 
+				<p> Somos una empresa dedicada al alquiler y renting de vehículos con más de 20 años de antigüedad, con sede en Madrid, c/Atapuerca. 
 
 				Encuentra tu coche fácilmente entre todos nuestros anuncios de coches publicados por nuestros anunciantes profesionales y particulares. Estamos convencidos de que con nuestras herramientas de búsqueda encontrarás tu coche ideal de forma sencilla y rápida.</p>
 			</div>
@@ -51,9 +52,9 @@
 					<img class="img-main" src="img/varios2.jpg" style="width:100%">
 				</div>
 			</div>
-			<br>
 
-			<div style="text-align:center">
+			
+			<div style="display: none;">
 				<span class="dot"></span>
 				<span class="dot"></span>
 				<span class="dot"></span>
@@ -70,4 +71,4 @@
 	<script src="js/slideCarIndex.js"></script>
 </body>
 
-</html>
+</html> 

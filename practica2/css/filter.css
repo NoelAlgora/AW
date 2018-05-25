@@ -1,6 +1,6 @@
 .filtros {
- flex-basis: 22%;
- width: 100%;
+ -ms-flex-preferred-size: 22%;
+     flex-basis: 22%;
     font-size: 14.5px;
  /* position:fixed!important;
  z-index:1; */

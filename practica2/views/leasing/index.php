@@ -196,7 +196,7 @@
 				<img class="symbol_list_car" src="img/price.png" alt="price">
 				<p><?php echo $value['base_price_day']; ?> €/día </p>
 			</div>
-				<a href=<?php echo $helper->url('leasing','fichavehiculo', $value['id'])?> ><input class="ctaFlat" type="button" value="Reservar"></a>
+				<a href=<?php echo $helper->url('leasing','fichavehiculo', $value['id'])?> ><input class="ctaflat" type="button" value="Reservar"></a>
 		</span>
 			</div>
 			<?php endforeach; ?>
