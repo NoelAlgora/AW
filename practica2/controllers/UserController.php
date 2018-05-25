@@ -42,7 +42,7 @@ class UserController extends ControladorBase
 
             if (!empty($user_name) && !empty($user_password)) {
                 //se crear el dao
-                $user = DaoUsuario::getInstance()->searchUsuarioByNamePass($user_name,$user_password);
+                
                 $contra=DaoUsuario::getInstance()->searchUsuarioByPass($user_name);
                 $contraCifrada=$contra["password"];
 
@@ -52,6 +52,7 @@ class UserController extends ControladorBase
                     $formErrors[] = "¡Usuario o contraseña incorrecto!";
                 }
                 else {
+                    $user = DaoUsuario::getInstance()->searchUsuarioByNamePass($user_name);
                     $_SESSION["login"] = true;
                     $_SESSION["user_id"] =  $user['id'];
 
@@ -210,8 +211,8 @@ class UserController extends ControladorBase
                 {
                     $user = DaoUsuario::getInstance()->searchUsuarioByName($user_name);
 
-                    if ($user) {
-                        $id = DaoUsuario::getInstance()->cambiaDatosUsuario($user_name, $apellido, $email, $pass_cifrado, $telefono, $descripcion);
+                    if (!$user) {
+                        $id = DaoUsuario::getInstance()->insertUsuario($user_name, $apellido, $email, $pass_cifrado, $telefono, $descripcion);
 
                         if($id){
                             $_SESSION["login"] = true;
@@ -219,10 +220,12 @@ class UserController extends ControladorBase
                             $this->redirect("Site", "index");
                         }
                         else {
-                            $formErrors[] = "Cambio datos incorrecto!";
+                            $formErrors[] = "Registro incorrecto!";
                         }
                     }
-                    
+                    else {
+                        $formErrors[] = "El Usuario ya Existe, Intentelo otra vez!";
+                    }
                 }
                 else
                     $formErrors[] = "Las contraseñas no coinciden";
@@ -230,20 +233,12 @@ class UserController extends ControladorBase
         }
 
         $this->view(
-            "user/cambiardatos.php",
+            "user/cambiadatos.php",
             [
-                'formErrors' => $formErrors,
-                'user_name' => $user_name,
-                'user_password' => $user_password,
-                'repassword' => $repassword,
-                'email' => $email,
-                'telefono' => $telefono,
-                'apellido' => $apellido,
-                'descripcion' => $descripcion,
+                'user' => $user
             ]
         );
     }
-    
 }
 }
 

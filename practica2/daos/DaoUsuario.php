@@ -16,10 +16,10 @@ class DaoUsuario extends DaoBase
       return self::$instance;
     }
 
-  //Nos trae un registro que buscamos nombre y contraseña
-  public function searchUsuarioByNamePass($username,$password){
-    return DataSource::getInstance()->getData("SELECT * FROM $this->table WHERE username = :username AND password = :password",
-      array(':username'=>$username,':password'=>$password));
+  //Nos trae un registro que buscamos nombre
+  public function searchUsuarioByNameP($username){
+    return DataSource::getInstance()->getData("SELECT * FROM $this->table WHERE username = :username",
+      array(':username'=>$username));
   }
 
   /*Busca usuario por nombre, si existe devuelve $result con el id, sino es un false.
