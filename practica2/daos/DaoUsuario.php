@@ -17,7 +17,7 @@ class DaoUsuario extends DaoBase
     }
 
   //Nos trae un registro que buscamos nombre
-  public function searchUsuarioByNameP($username){
+  public function searchUsuarioByNamePass($username){
     return DataSource::getInstance()->getData("SELECT * FROM $this->table WHERE username = :username",
       array(':username'=>$username));
   }
