@@ -1,38 +1,11 @@
-.ui-state-highlight.ui-state-default {
-    border: 1px solid #c5c5c5;
-    background: #f6f6f6;
-    font-weight: normal;
-    color: #454545;
-}
-
-.ui-state-highlight.ui-state-active {
-    border: 1px solid #003eff;
-    background: #007fff;
-    font-weight: normal;
-    color: #ffffff;
-}
-
-.fecha-ocupada .ui-state-default {
-    background-color: #c81010;
-}
-
-.fecha-seleccionada .ui-state-default {
-    border: 1px solid #dad55e;
-    background: #fffa90;
-    color: #777620;
-}
-
-.fecha-rango-seleccion .ui-state-default {
-    border: 1px solid #003eff;
-    background: #75b6f8;
-    font-weight: normal;
-    color: #ffffff;
-}
-
 .alquilar-wrapper{
-    padding-left: 150px;
-    width: 65%;
+    padding-left: 50px;
+    width: 50%;
     float: right;
+    text-align: center
+}
+.alquilar-form-wrapper{
+    margin-top: 50px;
 }
 
 .fecha_recogida label{
@@ -44,32 +17,38 @@
     font-family: Arial Black;
     color: #000;
 }
-
-.boton_limpiar{
-    float: right;
-    width: 74px;
-    margin: 2px 0px 0px 10px;
-    padding: 6px 7px;
-    color: #FFF;
-    background-color: #4CAF50;
-    border-radius: 5px;
-    border: none;
-    font-size: 12px;
-    cursor: pointer;
-    overflow: visible;
+.img_ficha_vehiculo{
+  width: 50%;
+  float: left;
+}
+.descripcion_ficha_vechiculo{
+  text-align: center;
+  width: 33.33%;
+  float: left;
+}
+.info_ficha_vehiculo{
+  width: 50%;
+  margin-top: 50px;
+  text-align: center;
+  float: left;
 }
 
-.boton_alquilar{
-    float: left;
-    width: 74px;
-    margin: 2px 0px 0px 10px;
-    padding: 6px 7px;
-    color: #FFF;
-    background-color: #4CAF50;
-    border-radius: 5px;
-    border: none;
-    font-size: 12px;
-    cursor: pointer;
-    overflow: visible;
+#submit-alquilar{
+    letter-spacing: 2px;
+    font-size: 20px;
+}
 
+#limpiar-fechas {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    margin-right: 50px;
+    font-size: 16px;
+}
+
+.tabla_info_ficha_vehiculo {
+    margin-top: 30px;
+
+    width: 100%;
+
+    margin-bottom: 30px;
 }
