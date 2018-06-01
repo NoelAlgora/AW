@@ -5,263 +5,242 @@
 	<title>
 		Perfil </title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<link rel="stylesheet" type="text/css" src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css" />
-	<link rel="stylesheet" type="text/css" href="css/alquiler.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 
 <body>
-	<?php require('views/layout/nav.php'); ?>
-	<div id="container">
+	 <?php include('views/layout/nav.php'); ?>
+	<div id="container" >
+		<img src="img/perfil.jpg" class="fondo_perfil">
 		<div id="contenido">
+			    <div class="col-xs-12">
+			    	 <div class="table-responsive">
 
-			<h1>Informacion del usuario</h1>
+			    	<h4 class="ctaflat" style="cursor:auto">Información del usuario</h4>
+			        <table class="table table-bordered table-hover">
+			          <thead>
+			            	<tr>
+							<th>Nombre</th>
+							<th>Apellidos</th>
+							<th>Email</th>
+							<th>Telefono</th>
+							<th>Descripcion</th>
+							<th>Acciones</th>
+						</tr>
+			          </thead>
+			         <tbody>
+						<tr>
+							<td>
+								<?= $datos['user']['username']?>
+							</td>
+							<td>
+								<?= $datos['user']['apellido']?>
+							</td>
+							<td>
+								<?= $datos['user']['email']?>
+							</td>
+							<td>
+								<?= $datos['user']['telefono']?>
+							</td>
+							<td>
+								<?= $datos['user']['descripcion']?>
+							</td>
+							<td>
+								<a class="email_btn" href="<?= $helper->url('user', 'cambiarDatos') ?>"> Modificar Datos</a>
+							</td>
+						</tr>
+					</tbody>
+			        </table>
 
-
-		<div id="container">
-		<!-- <div id="contenido"> -->
-		<div class="container_cards">
-			<div class="cards">
-				
-				
-				<div class="card">
-					<a href="" >
-					<span class="card-header" style="<?php echo " background-image: url( " . $helper->getCarListImageCSS($value['list_img']) ."); "?>">
-
-				<span class="card-title">
-					<h3><?php echo "Mis alquileres"; ?></h3>
-				</span>
-					</a>
-					</span>
-				<span class="card-summary">
-
-					
-
+			      </div><!--end of .table-responsive-->
+			       <div class="table-responsive">
+			       <h4 class="ctaflat" style="cursor:auto">Vehiculos de alquiler</h4>
+			        <table class="table table-bordered table-hover">
+			          <thead>
+						<tr>
+							<th>Marca</th>
+							<th>Modelo</th>
+							<th>Matricula</th>
+							<th>Fecha Inicio</th>
+							<th>Fecha Fin</th>
+							<th>Estado</th>
+							<th>Acciones</th>
+						</tr>
+					</thead>
+			         <tbody>
 					<?php
+					// var_dump($datos['rentCars']);
+					foreach ($datos['rentCars'] as $key => $car): ?>
+						<tr>
+							<td>
+								<?= $car['marca'] ?>
+							</td>
+							<td>
+								<?= $car['modelo'] ?>
+							</td>
+							<td>
+								<?= $car['matricula'] ?>
+							</td>
+							<td>
+								<?= $car['fecha_inicio'] ?>
+							</td>
+							<td>
+								<?= $car['fecha_fin'] ?>
+							</td>
+							<td class="text-center">
+								<form method="POST" action="<?= $helper->url('alquiler','devolver');?>">
+									<input type="hidden" name="alquiler_id" value="<?= $car['alquilerid'] ?>">
+									<button class="email_btn" class="btn btn-success" type="submit">Devolver</button>
+								</form>
+								<td><a  class="email_btn" href="<?= $helper->url('user', 'fichaVehiculoAlquiler', $car['id']) ?>"> Ver vehiculo</a></td>
+							</td>
+						</tr>
 
-					$cont=count($datos['rentCars'] );
-
-					if($cont==0){
-						echo"No tienes ningún  en alquiler";
-					}else{
-						
-
-						if($cont==1){
-							echo "Tienes " .$cont." coche en alquiler";
-
-						}else{
-							echo "Tienes " .$cont." coches en alquiler";
-
-						}
-						echo '<br><a href="" ><input class="ctaFlat" type="button" value="Consultar"></a>';
-					}
-					?>
-				
-				
-				
-					
-				</div>
-				
-			</div>
-		</div>
-
-		<div id="container">
-		<!-- <div id="contenido"> -->
-		<div class="container_cards">
-			<div class="cards">
-				
-				
-				<div class="card">
-					<a href="" >
-					<span class="card-header" style="<?php echo " background-image: url( " . $helper->getCarListImageCSS($value['list_img']) ."); "?>">
-
-				<span class="card-title">
-					<h3><?php echo "Mis leasing"; ?></h3>
-				</span>
-					</a>
-					</span>
-				<span class="card-summary">
-
+						<?php endforeach; ?>
+				</tbody>
+			        </table>
+			      </div><!--end of .table-responsive-->
+			       <div class="table-responsive">
+			       	<h4 class="ctaflat" style="cursor:auto">Vehiculos de leasing</h4>
+			        <table class="table table-bordered table-hover">
+			          <thead>
+						<tr>
+							<th>Marca</th>
+							<th>Modelo</th>
+							<th>Matricula</th>
+							<th>Fecha Inicio</th>
+							<th>Fecha Fin</th>
+							<th>Estado</th>
+							<th>Acciones</th>
+						</tr>
+					</thead>
+			         <tbody>
 					<?php
+					// var_dump($datos['rentCars']);
+					foreach ($datos['leasingCars'] as $key => $car): ?>
+						<tr>
+							<td>
+								<?= $car['marca'] ?>
+							</td>
+							<td>
+								<?= $car['modelo'] ?>
+							</td>
+							<td>
+								<?= $car['matricula'] ?>
+							</td>
+							<td>
+								<?= $car['fecha_inicio'] ?>
+							</td>
+							<td>
+								<?= $car['fecha_fin'] ?>
+							</td>
+							<td class="text-center">
+								<form method="POST" action="<?= $helper->url('leasing','devolver');?>">
+									<input type="hidden" name="leasing_id" value="<?= $car['leasingid'] ?>">
+									<button class="email_btn" class="btn btn-success" type="submit">Devolver</button>
+								</form>
+								<td><a class="email_btn" href="<?= $helper->url('user', 'fichaVehiculoLeasing', $car['id']) ?>"> Ver vehiculo</a></td>
+							</td>
+						</tr>
 
-					$cont=count($datos['leasingCars'] );
+						<?php endforeach; ?>
+					</tbody>
+			        </table>
+			      </div><!--end of .table-responsive-->
+			      
+			      <div class="table-responsive">
+			      	<h4 class="ctaflat" style="cursor:auto">Vehiculos en propiedad cedidos para alquiler</h4>
+			        <table class="table table-bordered table-hover">
+			          <thead>
+						<tr>
+							<th>Marca</th>
+							<th>Modelo</th>
+							<th>Matricula</th>
+							<th>Motor</th>
+							<th>Combustible</th>
+							<th>Color</th>
+							<th>Acciones</th>
+						</tr>
+					</thead>
+			        <tbody>
+					<?php foreach($datos['ownedCarsToAlquiler'] as $key => $car): ?>
+					<tr>
+							<td>
+								<?= $car['marca'] ?>
+							</td>
+							<td>
+								<?= $car['modelo'] ?>
+							</td>
+							<td>
+								<?= $car['matricula'] ?>
+							</td>
+							<td>
+								<?= $car['motor'] ?>
+							</td>
+							<td>
+								<?= $car['combustible'] ?>
+							</td>
+							<td>
+								<?= $car['color'] ?>
+							</td>
+							<td><a class="email_btn" href="<?= $helper->url('user', 'fichaVehiculoAlquiler', $car['id']) ?>"> Ver vehiculo</a></td>
+						</tr>
+					<?php endforeach; ?>
+				</tbody>
+			        </table>
 
-					if($cont==0){
-						echo"No tienes ningún  con leasing";
-					}else{
-						
-						if($cont==1){
-							echo "Tienes " .$cont." coche  en leasing";
+			      </div><!--end of .table-responsive-->
 
-						}else{
-							echo "Tienes " .$cont." coches en leasing";
+			      <div class="table-responsive">
+			      	<h4 class="ctaflat" style="cursor:auto">Vehiculos en propiedad cedidos para leasing</h4>
+			        <table class="table table-bordered table-hover">
+			          <thead>
+						<tr>
+							<th>Marca</th>
+							<th>Modelo</th>
+							<th>Matricula</th>
+							<th>Motor</th>
+							<th>Combustible</th>
+							<th>Color</th>
+							<th>Acciones</th>
+						</tr>
+					</thead>
+			        <tbody>
+					<?php foreach($datos['ownedCarsToLeasing'] as $key => $car): ?>
+						<tr>
+							<td>
+								<?= $car['marca'] ?>
+							</td>
+							<td>
+								<?= $car['modelo'] ?>
+							</td>
+							<td>
+								<?= $car['matricula'] ?>
+							</td>
+							<td>
+								<?= $car['motor'] ?>
+							</td>
+							<td>
+								<?= $car['combustible'] ?>
+							</td>
+							<td>
+								<?= $car['color'] ?>
+							</td>
+							<td><a class="email_btn" href="<?= $helper->url('user', 'fichaVehiculoLeasing', $car['id']) ?>"> Ver vehiculo</a></td>
+						</tr>
+					<?php endforeach; ?>
+					</tbody>
+			        </table>
 
-						}
-						echo '<br><a href="" ><input class="ctaFlat" type="button" value="Consultar"></a>';
-					}
-					?>
+			      </div><!--end of .table-responsive-->
 
-					
-				
-				
-				
-					
-				</div>
-				
-			</div>
+			    </div>
+
+		  </div>
 		</div>
-
-		<div id="container">
-		<!-- <div id="contenido"> -->
-		<div class="container_cards">
-			<div class="cards">
-				
-				
-				<div class="card">
-					<a href="" >
-					<span class="card-header" style="<?php echo " background-image: url( " . $helper->getCarListImageCSS($value['list_img']) ."); "?>">
-
-				<span class="card-title">
-					<h3><?php echo "Coches propios en leasing"; ?></h3>
-				</span>
-					</a>
-					</span>
-				<span class="card-summary">
-
-					<?php
-
-					$cont=count($datos['ownedCarsToLeasing']);
-
-					if($cont==0){
-						echo"No tienes ningún coche propio en leasing";
-					}else{
-						
-
-						if($cont==1){
-							echo "Tienes " .$cont." coche propio  en leasing";
-
-						}else{
-							echo "Tienes " .$cont." coches propios  en leasing";
-
-						}
-						echo '<br><a href="" ><input class="ctaFlat" type="button" value="Consultar"></a>';
-					}
-					?>
-
-					
-				
-				
-				
-					
-				</div>
-				
-			</div>
-		</div>
-		<div id="container">
-		<!-- <div id="contenido"> -->
-		<div class="container_cards">
-			<div class="cards">
-				
-				
-				<div class="card">
-					<a href="<?php echo $helper->url('user','fichaMisAlquileresPropios', $value['id'])?>" >
-					<span class="card-header" style="">
-
-				<span class="card-title">
-					<h3><?php echo "Coches propios en alquiler"; ?></h3>
-				</span>
-					</a>
-					</span>
-				<span class="card-summary">
-					<div class="info_list_car">
-
-					<?php
-
-					$cont=count($datos['ownedCarsToAlquiler']);
-
-					if($cont==0){
-						echo"No tienes ningún coche propio en alquiler";
-
-						
-
-
-					}else{
-						if($cont==1){
-							echo "Tienes " .$cont." coche propio  en alquiler";
-
-						}else{
-							echo "Tienes " .$cont." coches propios en alquiler";
-
-						}
-						
-
-						echo '<br><a href="" ><input class="ctaFlat" type="button" value="Consultar"></a>';
-					}
-					?>
-					
-				</div>
-				
-				
-					
-			</span>
-				</div>
-				
-				
-				
-					
-				</div>
-				
-			</div>
-		</div>
-		<div id="container">
-		<!-- <div id="contenido"> -->
-		<div class="container_cards">
-			<div class="cards">
-				<!-- <?php  var_dump($datos['result']); ?>	 -->
-				
-				<div class="card">
-					<a href="<?= $helper->url('user','fichaNoticia', $noticia['id']) ?>" >
-					<span class="card-header" style="">
-
-				<span class="card-title">
-					<h3><?php echo "Mis datos personales"; ?></h3>
-				</span>
-					</a>
-					</span>
-				<span class="card-summary">
-				<div class="info_list_car">
-					<img class="symbol_list_car" src="img/engine.png" alt="engine">
-					<p><?= $datos['user']['username']?></p>
-					<img class="symbol_list_car" src="img/fuel.png" alt="fuel">
-					<p><?= $datos['user']['apellido']?></p>
-				</div>
-				
-				<div class="info_list_car">
-					<img class="symbol_list_car" src="img/gear.png" alt="cambio">
-					<p><?= $datos['user']['email']?></p>
-					<img class="symbol_list_car" src="img/passenger.png" alt="cambio">
-					<p></p>
-				</div>
-				<div class="info_list_car">
-					<img class="symbol_list_car" src="img/price.png" alt="price">
-					<p><?= $datos['user']['telefono']?> </p>
-				</div>
-					<a href="" ><input class="ctaFlat" type="button" value="Modificar"></a>
-			</span>
-				</div>
-				
-			</div>
-		</div>
-		
-	</div>
-
-
-		
-	</div>
-			
-		</div>
-	</div>
 	<?php require('views/layout/footer.php'); ?>
+   </body>
 </body>
 </html>
+			

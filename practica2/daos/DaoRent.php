@@ -17,6 +17,20 @@ class DaoRent extends DaoBase
       return self::$instance;
     }
 
+    public function RentingOfCar($vehiculo_id){
+		$result = DataSource::getInstance()->getAllData(
+					"SELECT * FROM
+						 $this->table
+					WHERE
+						vehiculo_id = :vehiculo_id
+					ORDER BY fecha_fin DESC"
+						,array(':vehiculo_id'=>$vehiculo_id));
+
+		 // var_dump($result);
+		return $result;
+	}
+
+
   	public function rentalCarsOfTheUser($user_id){
 			$result = DataSource::getInstance()->getAllData(
 						"SELECT c.id,c.marca,c.modelo,c.matricula,r.fecha_fin,r.fecha_inicio,r.id AS alquilerid FROM

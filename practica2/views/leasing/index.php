@@ -25,6 +25,7 @@
 <body>
 	<?php include('views/layout/nav.php'); ?>
 	<div id="container">
+		
 		<div class="filtros"> 
 			<form class="form_date_filtro" method="POST" action="<?= $helper->url('leasing','dateCarFilter');?>">
 				

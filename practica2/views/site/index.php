@@ -15,13 +15,6 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="./js/calendar.js"></script>
 
-	<script>
-		$( function() {
-			$( "#datepickerAlquiler" ).datepicker();
-			$( "#datepickerDevolucion" ).datepicker();
-		} );
-	</script>
-
 </head>
 
 <body>
@@ -30,17 +23,18 @@
 		<div class="container-main">
 			<div class="index_header">
 				<div class="container">
+					
 					<h1>BIENVENIDO A <span class="span-caralcarro">CARALCARRO</span></h1>
+					<h2>¡ALQUILER RÁPIDO!</h2>
 					<div class="buscador_fechas_index">
-						<h2>¡ALQUILER RÁPIDO!</h2>
 						<div class="alquilar-wrapper row">
-		               		<div class="fecha_recogida col-50">
-			                  	<label>Fecha de recogida:</label>
+		               		<div class="fecha_recogida col-50-fechas">
+			                  	<label><h2>Fecha de recogida:</h2></label>
 			                  	<div class="datepicker_fecha_recogida"></div>
 			                  	
 			               	</div>
-			               	<div class="fecha_devolucion col-50">
-			                  	<label>Fecha de devolución:</label>
+			               	<div class="fecha_devolucion col-50-fechas">
+			                  	<label><h2>Fecha de devolución:</h2></label>
 			                  	<div class="datepicker_fecha_devolucion"></div>
 			               	</div>
 			               	<div class="buscador_botones">
@@ -56,8 +50,8 @@
 					</div>			
 				</div>
 			</div>
-			<div class="container section-padding">
-				<div class="button-wrapper col-50">
+			<div class="section-padding-text">
+				<div class="button-wrapper col50-text">
 					<div class="button-item">
 						<a href="<?= $helper->url('alquiler','index');?>" class="boton-verde boton-gigante">ALQUILER</a>
 					</div>
@@ -65,19 +59,14 @@
 						<a href="<?= $helper->url('leasing','index');?>" class="boton-verde boton-gigante">RENTING</a>
 					</div>
 				</div>
-				<div class="text_index col-50">			
-					<p> Somos una empresa dedicada al alquiler y renting de vehículos con más de 20 años de antigüedad, con sede en Madrid, c/Atapuerca. 
+				<div class="text_index_up">			
+					<p> Somos una empresa dedicada al alquiler y renting de vehículos con más de 20 años de antigüedad, con sede en Madrid, c/Atapuerca.</p>
 
-					Encuentra tu coche fácilmente entre todos nuestros anuncios de coches publicados por nuestros anunciantes profesionales y particulares. Estamos convencidos de que con nuestras herramientas de búsqueda encontrarás tu coche ideal de forma sencilla y rápida.</p>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
+					<p>Encuentra tu coche fácilmente entre todos nuestros anuncios de coches publicados por nuestros anunciantes profesionales y particulares.Estamos convencidos de que con nuestras herramientas de búsqueda encontrarás tu coche ideal de forma sencilla y rápida.</p>
 				</div>
 
 			</div>
-			<div class="container section-padding">
+			<div class="section-padding">
 				<div class="slideshow-container">
 					<div class="mySlides fade">
 						<img class="img-main" src="img/cibeles.jpg" style="width:100%">
@@ -98,7 +87,7 @@
 			</div>
 			
 
-			<div class="container section-padding">
+			<div class="section-padding">
 				<div class="text_index">
 					<p> La misión de Caralcarro es poner al alcance de todos un mecanismo de alquiler y renting de vehículos de y segunda mano de particulares y empresas en un par de clicks. Puedes consultar tu coche deseado en pocos segundos y desde cualquier lugar. Nuestro objetivo es ofrecer el buscador de coches de alquiler y renting más completo   </p>
 				</div>

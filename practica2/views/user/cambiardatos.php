@@ -3,7 +3,7 @@
 <html lang="es">
 
 <head>
-   <?php $pageTitle = "Cambiadatos!"; ?>
+   <?php $pageTitle = "Cambiar datos!"; ?>
   <title><?php echo $pageTitle; ?></title>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/style.css" />

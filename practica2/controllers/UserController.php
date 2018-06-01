@@ -153,6 +153,34 @@ class UserController extends ControladorBase
         );
     }
 
+    public function fichaVehiculoAlquiler(){
+
+        $idCoche = urldecode($_GET['id']);
+        $car = DaoRentCar::getInstance()->getById($idCoche);
+    
+        $this->view(
+            "user/view.php",
+            [
+                'coche' => $car,
+            ]
+        );
+    }
+
+
+
+    public function fichaVehiculoLeasing(){
+
+        $idCoche = urldecode($_GET['id']);
+        $car = DaoLeasingCar::getInstance()->getById($idCoche);
+     
+        $this->view(
+            "user/view.php",
+            [
+                'coche' => $car,
+            ]
+        );
+    }
+
 	public function perfil(){
 		if(!$this->helper()->isUserLogged())
 			return $this->redirect("user", "login");
@@ -180,7 +208,7 @@ class UserController extends ControladorBase
     }
 
 
-    public function cambiardatos() {
+    public function cambiarDatos() {
         $formErrors = [];
 
         $user_name = "";
@@ -233,8 +261,9 @@ class UserController extends ControladorBase
         }
 
         $this->view(
-            "user/cambiadatos.php",
-            [
+            "user/cambiardatos.php",
+            [   
+                'formErrors' => $formErrors,
                 'user' => $user
             ]
         );

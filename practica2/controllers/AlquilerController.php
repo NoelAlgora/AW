@@ -5,6 +5,40 @@ class AlquilerController extends ControladorBase{
     	parent::__construct();
 	}
 
+    public function dateCarFilter(){
+
+        if (isset($_POST["inicio"]) && isset($_POST["fin"]))
+        {
+            $fecha_recogida = htmlspecialchars(trim(strip_tags($_POST["inicio"])));
+            $fecha_devolucion = htmlspecialchars(trim(strip_tags($_POST["fin"])));
+
+
+            if (!empty($fecha_recogida) && !empty($fecha_devolucion)) {
+                
+                $result = DaoRentCar::getInstance()->carsDateFilter($fecha_recogida,$fecha_devolucion);
+
+                }   
+            else {
+            $result = DaoRentCar::getInstance()->getAllRentCarAvaliable();
+        }
+
+                
+        }
+        else {
+            $result = DaoRentCar::getInstance()->getAllRentCarAvaliable();
+        }
+
+        $this->view(
+            "alquiler/index.php",
+            [
+                'result' => $result,
+            ]
+        );
+
+        
+        
+    }
+
 	public function index()
 	{
 		$result = DaoRentCar::getInstance()->getAllRentCarAvaliable();
@@ -32,6 +66,8 @@ class AlquilerController extends ControladorBase{
 			]
 		);
 	}
+
+
 
   public function alquilar()
     {
@@ -81,20 +117,79 @@ class AlquilerController extends ControladorBase{
     }
 
 	public function fichaVehiculo(){
-		if(!isset($_GET['id']))
-        return $this->redirect("alquiler", "index");
 
-		$id = urldecode($_GET['id']);
-		$car = DaoRentCar::getInstance()->getById($id);
-		//
-		// var_dump($car);
-		$this->view(
-			"alquiler/view.php",
-			[
-				 'coche' => $car,
-			]
-		);
-	}
+        $idCoche = urldecode($_GET['id']);
+
+        $car = DaoRentCar::getInstance()->getById($idCoche);
+        $alquileres = DaoRent::getInstance()->RentingOfCar($idCoche);
+        $alquiler_str = '';
+
+        foreach ($alquileres as $key => $alquiler) {
+            $alquiler_str .= $alquiler["fecha_inicio"].';'.$alquiler["fecha_fin"].';';
+        }
+
+        $this->view(
+            "alquiler/view.php",
+            [
+                'coche' => $car,
+                'alquiler_str' => $alquiler_str,
+            ]
+        );
+    }
+
+    public function filter(){
+
+
+        //se pueden añadir facilmente filtros de cualquier tipo
+        if(isset($_POST["aplicar"])){
+
+            $filter = array();
+        
+            if (isset($_POST["combustible"])){
+                $combustible = array ("combustible" => $_POST["combustible"]);
+                if(!empty($combustible)){
+                    $filter = array_merge($combustible,$filter);
+                }
+            }
+
+            if (isset($_POST["color"])) {
+                $color = array ("color" => $_POST["color"]);
+                if(!empty($color)){
+                    $filter = array_merge($color,$filter);
+                }
+            }
+            if (isset($_POST["marca"])) {
+                $marca = array ("marca" => $_POST["marca"]);
+                if(!empty($marca)){
+                    $filter = array_merge($marca,$filter);
+                }
+            }
+
+            if (isset($_POST["cambio"])){
+                $cambio = array ("cambio" => $_POST["cambio"]);
+                if(!empty($cambio)){
+                    $filter = array_merge($cambio,$filter);
+                }
+            }
+            if (!empty($filter)) {
+                $result = DaoRentCar::getInstance()->carFilter($filter);
+            }
+            else {
+                $result = DaoRentCar::getInstance()->getAllRentCarAvaliable();
+            }
+        }
+        else {
+            $result = DaoRentCar::getInstance()->getAllRentCarAvaliable();
+        }
+
+        $this->view(
+            "alquiler/index.php",
+            [
+                'result' => $result,
+            ]
+        );
+    }
+
 
 	public function crear_vehiculo()
 	{

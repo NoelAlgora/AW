@@ -23,7 +23,7 @@ $(document).ready(function () {
 
     $(".datepicker_fecha_recogida").datepicker({
         minDate: 0,
-        numberOfMonths: 2,
+        numberOfMonths: 1,
         //dateFormat: "dd-mm-yy",
         onSelect: function (selected) {
             var dt = new Date(selected);
@@ -50,7 +50,7 @@ $(document).ready(function () {
     
     $(".datepicker_fecha_devolucion").datepicker({
         minDate: 0,
-        numberOfMonths: 2,
+         numberOfMonths: 1,
         //dateFormat: "dd-mm-yy",
         onSelect: function (selected) {
             var dt = new Date(selected);
