@@ -89,7 +89,7 @@
 
 			<div class="section-padding">
 				<div class="text_index">
-					<p> La misión de Caralcarro es poner al alcance de todos un mecanismo de alquiler y renting de vehículos de y segunda mano de particulares y empresas en un par de clicks. Puedes consultar tu coche deseado en pocos segundos y desde cualquier lugar. Nuestro objetivo es ofrecer el buscador de coches de alquiler y renting más completo   </p>
+					
 				</div>
 			</div>
 		</div>
