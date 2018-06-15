@@ -19,9 +19,14 @@
       <div class ="container_register">
         <div class = "row_center">
 
-          Somos una empresa dedicada al alquiler y renting de vehículos con más de 20 años de antigüedad, con sede en Madrid, c/Atapuerca.
-          Encuentra tu coche fácilmente entre todos nuestros anuncios de coches publicados por nuestros anunciantes profesionales y particulares.
-          Estamos convencidos de que con nuestras herramientas de búsqueda encontrarás tu coche ideal de forma sencilla y rápida.
+          La idea de crear Caralcarro surge porque los seis integrantes del equipo de desarrollo
+	  compartíamos coche y gastos para ir a la facultad de Informática de la
+	  Universidad Complutense de Madrid. Y apuntábamos los gastos en una hoja de
+	  cálculo en Google Drive. Entonces se nos ocurrió porque no hacer una
+	  aplicación web, donde usuarios pudieran prestar sus coches, y así poder
+	  beneficiarse toda la comunidad. Después empezando a desarrollar la idea de
+	  negocio, se nos ocurrió añadir el servicio de leasing/renting a nuestro proyecto,
+	  ya que es otra vía de negocio muy parecida a la idea inicial.
 
         </div>
       </div>
