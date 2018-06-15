@@ -208,7 +208,7 @@
 			<?php foreach ($datos['result'] as $value): ?>
 			<div class="card">
 				<a href=<?php echo $helper->url('alquiler','fichavehiculo', $value['id'])?> >
-				<span class="card-header" style="<?php echo " background-image: url( " . $helper->getCarListImageCSS($value['list_img']) ."); "?>">
+				<span class="card-header" style="<?php echo " background-image: url( " . $helper->getAlquilerImageUrl($value['id'], $value['list_img']) ."); "?>">
 
 			<span class="card-title">
 				<h3><?php echo $value['marca'] ." ". $value['modelo']; ?></h3>

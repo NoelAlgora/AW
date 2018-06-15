@@ -36,7 +36,7 @@
 								<label class="font_log" for="nombre">Email *</label>
 							</div>
 							<div class="col-75">
-								<input type="text" id="nombre" name="password" placeholder="Tu email..." required>
+								<input type="email" id="nombre" name="password" placeholder="Tu email..." required>
 							</div>
 						</div>
 						<div class="row">
@@ -44,11 +44,11 @@
 								<label class="font_log" for="descripción">Consulta *</label>
 							</div>
 							<div class="col-75">
-								<textarea class="font_log" id="descripcion" name="descripción" placeholder="Escribemos tu consulta..."></textarea>
+								<textarea class="font_log" id="descripcion" name="descripción" placeholder="Escribemos tu consulta..." required></textarea>
 							</div>
 						</div>
 						<div class="row">
-							<input type="checkbox" value="condiciones" />He leido y acepto los <a href="basesLegales.php"> Terminos y condiciones</a>
+							<label><input type="checkbox" value="condiciones" required>He leido y acepto los <a href="basesLegales.php"> Terminos y condiciones</a></label>
 						</div>
 						<div class="row">
 							<input type="submit" value="Enviar">

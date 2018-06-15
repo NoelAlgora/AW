@@ -3,6 +3,25 @@
   padding: 0;
 } */
 
+.msg-flash {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.msg-flash.success {
+    background-color: #81c781;
+    color: #0a4a0a;
+    border-color: color: #0a4a0a;
+}
+
+.msg-flash.error {
+    background-color: #f06868;
+    color: #790b0b;
+    border-color: color: #790b0b;
+}
+
 .container-main {
     width: 100%;
 }
@@ -522,7 +541,7 @@ meter mas elementos en el container*/
             box-sizing: border-box;
 }
 
-input[type=text], select, textarea {
+input[type=text], input[type=email], select, textarea {
     width:100%;
     padding: 12px;
     border: 1px solid #ccc;

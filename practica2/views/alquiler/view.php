@@ -19,17 +19,18 @@
       <div id="container">
          <div class="container-main">
             <div class="container">
+               <?php $helper->flash("alquilar_result") ?>
                <h2> FICHA TÉCNICA DEL VEHÍCULO </h2>
                <div class="img_ficha_vehiculo ">
                   <div class="slideshow-container">                  <?php
-                        $images = $helper->getImagesCarOfFolder($coche['img_folder_name']);
-                        foreach ($images as $value=>$image): ?>
+                     $images = $helper->getImagesOfCarAlquiler($coche['id']);
+                     foreach ($images as $value=>$image): ?>
                      <!-- Full-width images with number and caption text -->
-                     <div class="mySlides fade">
-                        <!-- <div class="numbertext">1 / 3</div> -->
-                        <img src="<?php echo $image ?>" style="width:100%">
-                        <!-- <div class="text">Caption Text</div> -->
-                     </div>
+                        <div class="mySlides fade">
+                           <!-- <div class="numbertext">1 / 3</div> -->
+                           <img src="<?= $image ?>" style="width:100%">
+                           <!-- <div class="text">Caption Text</div> -->
+                        </div>
                      <?php endforeach; ?>
                      <!-- Next and previous buttons -->
                      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>

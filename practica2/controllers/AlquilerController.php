@@ -88,12 +88,14 @@ class AlquilerController extends ControladorBase{
                 $id = DaoRent::getInstance()->insertAlquiler(
 									$vehiculo_id, $fecha_recogida,$fecha_devolucion,$user_id
 								);
-
-								//hacer algo cuando se ha podido alquilar
+                $this->helper()->flash("alquilar_result" , "El vehiculo se ha alquilado con exito!");
             }
+            else
+                $this->helper()->flash("alquilar_result" , "El vehiculo no se ha podido alquilar!", "error");
         }
-
-				//Si error...
+        else
+            $this->helper()->flash("alquilar_result" , "El vehiculo no se ha podido alquilar!", "error");
+        
         $this->goBack();
     }
 

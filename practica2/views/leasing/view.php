@@ -19,10 +19,11 @@
       <div id="container">
          <div class="container-main">
             <div class="container">
+               <?php $helper->flash("alquilar_result") ?>
                <h2> FICHA TÉCNICA DEL VEHÍCULO </h2>
                <div class="img_ficha_vehiculo ">
                   <div class="slideshow-container">                  <?php
-                        $images = $helper->getImagesCarOfFolder($coche['img_folder_name']);
+                        $images = $helper->getImagesOfCarLeasing($coche['id']);
                         foreach ($images as $value=>$image): ?>
                      <!-- Full-width images with number and caption text -->
                      <div class="mySlides fade">

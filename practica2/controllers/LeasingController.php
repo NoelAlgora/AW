@@ -86,9 +86,14 @@ class LeasingController extends ControladorBase{
 					$vehiculo_id, $fecha_recogida,$fecha_devolucion,$user_id
 				);
 
-									//hacer algo cuando se ha podido alquilar
+				$this->helper()->flash("alquilar_result" , "El vehiculo se ha alquilado con exito!");
+				//hacer algo cuando se ha podido alquilar
 			}
+			else
+				$this->helper()->flash("alquilar_result" , "El vehiculo no se ha podido alquilar!", "error");
 		}
+		else
+			$this->helper()->flash("alquilar_result" , "El vehiculo no se ha podido alquilar!", "error");
 
 					//Si error...
 		$this->goBack();
@@ -242,7 +247,7 @@ class LeasingController extends ControladorBase{
                     												$formValues["combustible"], $list_img, $formValues["descripcion"], $formValues["precio_dia"]);
 
                     if($id){
-                        $uploadFolder = 'uploads/alquiler/'.$id.'/';
+                        $uploadFolder = 'uploads/leasing/'.$id.'/';
                         if (!is_dir($uploadFolder))
                             mkdir($uploadFolder);
 

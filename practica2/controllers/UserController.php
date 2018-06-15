@@ -20,9 +20,9 @@ class UserController extends ControladorBase
         session_start();
         $_SESSION["login"] = false;
 
-        $this->view(
-            "user/logout.php"
-        );
+        $this->helper()->flash("logout" , "Sesion cerrada con exito!");
+
+        $this->redirect("site", "index");
     }
 
     public function login()
@@ -56,7 +56,7 @@ class UserController extends ControladorBase
                     $_SESSION["login"] = true;
                     $_SESSION["user_id"] =  $user['id'];
 
-                    $this->redirect("Site", "index");
+                    $this->redirect("site", "index");
                 }
             }
             else
