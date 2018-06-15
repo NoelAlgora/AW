@@ -46,8 +46,8 @@
             <div id="legal_content">
                <div class="legal_list">
                   <ul>
-                     <li><a href="<?= $helper->url('site','contact');?>">Política de privacidad</a></li>
-                     <li><a href="<?= $helper->url('site','contact');?>">Condiciones generales</a></li>
+                     <li><a href="<?= $helper->url('site','politica');?>">Política de privacidad</a></li>
+                     <li><a href="<?= $helper->url('site','condiciones');?>">Condiciones generales</a></li>
                   </ul>
                   <ul>
                      <li>
@@ -55,8 +55,8 @@
                      </li>
                   </ul>
                   <ul>
-                     <li><a href="<?= $helper->url('site','contact');?>">Sobre nosotros</a></li>
-                     <li><a href="<?= $helper->url('site','contact');?>">Por qué reservar con caralcarro</a></li>
+                     <li><a href="<?= $helper->url('site','info_caralcarro');?>">Sobre nosotros</a></li>
+                     <li><a href="<?= $helper->url('site','reservar');?>">Por qué reservar con caralcarro</a></li>
                   </ul>
                </div>
             </div>
