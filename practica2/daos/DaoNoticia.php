@@ -23,5 +23,13 @@ class DaoNoticia extends DaoBase
 		//llega la id o 0 si error, no devolvemos TO
 		return $result;
 	}
+
+	//Comprueba si el nombre que recibe coincide con algún usuario registrado
+	public function compruebaAutor($nombre) {
+    $result = DataSource::getInstance()->getData("SELECT username FROM usuario WHERE username = :nombre",
+      array(':nombre'=>$nombre));
+
+    return $result;
+	}
 }
 ?>

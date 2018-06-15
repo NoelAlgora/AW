@@ -47,15 +47,22 @@ class NoticiaController extends ControladorBase{
 
             if (!empty($titulo_n) && !empty($autor_n) && !empty($fecha_n) && !empty($cuerpo_n)) {
                 //se crear el dao
-                $result = DaoNoticia::getInstance()->insertNoticia($titulo_n, $autor_n, $fecha_n, $cuerpo_n, $list_img_n);
+                $autorCorrecto = DaoNoticia::getInstance()->compruebaAutor($autor_n);
+                $autorCorrecto_n=$autorCorrecto["username"];
 
+                if ($autorCorrecto_n == $autor_n){
+                    $result = DaoNoticia::getInstance()->insertNoticia($titulo_n, $autor_n, $fecha_n, $cuerpo_n, $list_img_n);
+                    $mensaje = '';
+                }
+                else{
+                    $result = null;
+                    $mensaje = 'El autor debe ser un usuario administrador';
+                }
                 var_dump($result);
                 if ($result == null){
-                    echo "<script type='text/javascript'>alert('Algún campo incorrecto de la noticia!')</script>";
+                    echo "<script type='text/javascript'>alert('Algún campo es incorrcto. ' + '$mensaje')</script>";
                 }
                 else {
-                    //$_SESSION["login"] = true;
-                    //$_SESSION["user_id"] = $result['id'];
                 	echo "<script type='text/javascript'>alert('La noticia se creo correctamente!')</script>";
                     $this->redirect("Site", "noticias");
                 }
