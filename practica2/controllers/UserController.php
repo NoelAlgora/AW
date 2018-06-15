@@ -211,16 +211,18 @@ class UserController extends ControladorBase
     public function cambiarDatos() {
         $formErrors = [];
 
-        $user_name = "";
+        if(!$this->helper()->isUserLogged())
+            return $this->redirect("user", "login");
+
+        $init_user = $this->helper()->getLoggedUser();
+
+        $username = $init_user['username'];
         $password = "";
         $repassword = "";
-        $email = "";
-        $telefono = "";
-        $apellido = "";
-        $descripcion =  "";
-
-        if($this->helper()->isUserLogged()){
-            
+        $email = $init_user['email'];
+        $telefono = $init_user['telefono'];
+        $apellido = $init_user['apellido'];
+        $descripcion =  $init_user['descripcion'];
 
         if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["repassword"]) &&
             isset($_POST["email"]) && isset($_POST["apellido"]) && isset($_POST["telefono"]))
@@ -264,11 +266,16 @@ class UserController extends ControladorBase
             "user/cambiardatos.php",
             [   
                 'formErrors' => $formErrors,
-                'user' => $user
+                'username' => $username,
+                'password' => $password,
+                'repassword' => $repassword,
+                'email' => $email,
+                'telefono' => $telefono,
+                'apellido' => $apellido,
+                'descripcion' => $descripcion,
             ]
         );
     }
-}
 }
 
 

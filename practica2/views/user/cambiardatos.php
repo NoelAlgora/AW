@@ -25,7 +25,7 @@
             <label class="font_log" for="nombre">Nombre *</label>
           </div>
           <div class="col-75">
-            <input type="text" id="username" name="username" placeholder="Tu nombre..." required>
+            <input type="text" id="username" name="username" placeholder="Tu nombre..." required value="<?= $username ?>">
           </div>
         </div>
         <div class="row">
@@ -33,7 +33,7 @@
             <label class="font_log" for="apellido">Apellidos *</label>
           </div>
           <div class="col-75">
-            <input type="text" id="apellido" name="apellido" placeholder="Tus apellidos..." required>
+            <input type="text" id="apellido" name="apellido" placeholder="Tus apellidos..." required value="<?= $apellido ?>">
           </div>
         </div>
          <div class="row">
@@ -41,7 +41,7 @@
             <label class="font_log" for="email">Email *</label>
           </div>
           <div class="col-75">
-            <input type="text" id="email" name="email" placeholder="Tu Email..." required>
+            <input type="text" id="email" name="email" placeholder="Tu Email..." required value="<?= $email ?>">
           </div>
         </div>
         <div class="row">
@@ -49,7 +49,7 @@
             <label class="font_log" for="telefono">Teléfono *</label>
           </div>
           <div class="col-75">
-            <input type="text" id="telefono" name="telefono" placeholder="Tu teléfono de contacto..." required>
+            <input type="text" id="telefono" name="telefono" placeholder="Tu teléfono de contacto..." required value="<?= $telefono ?>">
           </div>
         </div>
         <div class="row">
@@ -57,7 +57,7 @@
             <label class="font_log" for="password">Contraseña *</label>
           </div>
           <div class="col-75">
-            <input type="text" id="password" name="password" placeholder="Contraseña..." required>
+            <input type="text" id="password" name="password" placeholder="Contraseña..." required value="<?= $password ?>">
           </div>
         </div>
         <div class="row">
@@ -65,7 +65,7 @@
             <label class="font_log" for="repassword">Contraseña *</label>
           </div>
           <div class="col-75">
-            <input type="text" id="repassword" name="repassword" placeholder="Repite tu Contraseña..." required>
+            <input type="text" id="repassword" name="repassword" placeholder="Repite tu Contraseña..." required value="<?= $repassword ?>">
           </div>
         </div>
         <div class="row">
@@ -73,7 +73,7 @@
             <label  class="font_log" for="descripción">Descripción</label>
           </div>
           <div class="col-75">
-            <textarea  class="font_log" id="descripcion" name="descripcion" placeholder="Escribe algo sobre tí..."></textarea>
+            <textarea  class="font_log" id="descripcion" name="descripcion" placeholder="Escribe algo sobre tí..." value="<?= $descripcion ?>"></textarea>
           </div>
         </div>
         <div class="row">  
