@@ -11,7 +11,7 @@
 	<body>
 		<?php include('views/layout/nav.php'); ?>
 		<div id="container">
-			<div class ="container_crear_noticia">
+			<div class ="container_register">
 				<p class="font_log"> Publicar noticia </p>
 				<form class = "crear_noticia_box" method="post" action="<?= $helper->url('noticia','crearNoticia');?>">
 					<div class = "col-50">
@@ -20,7 +20,7 @@
 								<label>Autor de la noticia<label/>
 							</div>
 							<div>
-								<input type="text" name="autor" maxlength="255" />
+								<input type="text" name="autor" maxlength="255" required/>
 							</div>
 						</div>
 						<div class = "row">
@@ -28,7 +28,7 @@
 								<label>Título de la noticia<label/>
 							</div>
 							<div>
-								<input type="text" name="titulo" maxlength="255" />
+								<input type="text" name="titulo" maxlength="255" required/>
 							</div>
 						</div>
 						<div class = "row">
@@ -36,7 +36,7 @@
 								<label>Noticia<label/>
 							</div>
 							<div>
-								<textarea name="cuerpo_noticia" rows="10" cols="40"></textarea>
+								<textarea name="cuerpo_noticia" rows="10" cols="40" required></textarea>
 							</div>
 						</div>
 						<div class = "row">
